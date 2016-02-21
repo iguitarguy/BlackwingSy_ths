@@ -40,3 +40,6 @@
 ##				   ##
 #####################################
 #####################################
+
+Trello Invite Link
+https://trello.com/invite/b/cpxm5uhE/a492d5ecad90738d876a9a985f6171da/gpg-messaging-platform
