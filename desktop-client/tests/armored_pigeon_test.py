@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 # armored_pigeon_test.py by Mike Deiters and Eric Kim
 # This will test all of our functions
 
