@@ -4,3 +4,6 @@
 
 import gnupg
 import pymysql
+
+gpg = gnupg.GPG()
+gpg.encoding = 'utf-8'
