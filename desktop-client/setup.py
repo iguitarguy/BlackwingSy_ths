@@ -8,9 +8,9 @@ config = {
     'author' : 'Mike Deiters, Eric Kim',
     'url' : 'https://github.com/soft-eng-practicum/gpg-messaging.git',
     'author_email' : 'contact@armoredpigeon.io',
-    'verison' : '0.1',
+    'version' : '0.1',
     'install_requires' : [
-        'gnupg',
+        'python-gnupg',
         'PyMySQL'
     ],
     'packages' : ['armored_pigeon'],
