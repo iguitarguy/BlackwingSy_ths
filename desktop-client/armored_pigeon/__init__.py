@@ -4,6 +4,18 @@
 
 import gnupg
 import pymysql
+import pymysql.cursors
 
 gpg = gnupg.GPG()
 gpg.encoding = 'utf-8'
+
+connection = pymysql.connect(
+    host='',
+    user='',
+    password='',
+    db='',
+    charset='utf8mb4',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+keyserver = ''
