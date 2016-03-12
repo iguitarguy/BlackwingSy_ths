@@ -1,6 +1,8 @@
 #!usr/bin/python3
 # message.py by Mike Deiters
 # Class to handle encrypting and decrypting messages
+from armored_pigeon import gpg
+import smtplib
 
 class Message:
     def __init__(self, **kwargs):
@@ -12,14 +14,27 @@ class Message:
     def get_property(self, key):
         return self._properties.get(key, None)
 
-    def encrypt(self):
-        # Define encrypt method
-        return
+    # Define encrypt method
+    def encrypt(self, user, message):
+        encrypted_message = gpg.encrypt(message, user.public_key)
+        return encrypted_message
 
-    def decrypt(self):
-        # Define decrypt method
-        return
+    # Define decrypt method
+    def decrypt(self, message):
+        decrypted_message = gpg.decrypt(message)
+        return decrypted_message
 
-    def send(self):
-        # Send email method
-        return
+    # Send email method
+    def send(self, user, message):
+        encrypted_message = gpg.encrypt(message, user.public_key)
+        reciever = user.get_property('email')
+
+        # Replace with actual email address after domain purchased
+        sender = 'no_reply@armoredpigeon.io'
+
+        try:
+            smtpObj = smtplib.SMTP('localhost')
+            smtpObj.sendmail(sender, reciever, message)
+            return True # Email was sent
+        except smtplib.SMTPException:
+            return False # Email failed to send
