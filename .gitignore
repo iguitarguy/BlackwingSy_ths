@@ -40,5 +40,6 @@ Thumbs.db
 # Folders #
 ###########
 node_modules
+__pycache__/
 .sass-cache
 .idea
