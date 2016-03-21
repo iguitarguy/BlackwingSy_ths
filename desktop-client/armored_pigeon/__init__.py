@@ -11,10 +11,10 @@ gpg.encoding = 'utf-8'
 
 
 connection = pymysql.connect(
-    host='',
-    user='',
-    password='',
-    db='',
+    host='172.20.0.90:3306',
+    user='admin',
+    password='password',
+    db='armored_pigeon',
     charset='utf8mb4',
     cursorclass=pymysql.cursors.DictCursor
 )
