@@ -26,3 +26,5 @@ https://trello.com/invite/b/cpxm5uhE/a492d5ecad90738d876a9a985f6171da/gpg-messag
 
 ## Documentation
 To use the web site, first navigate to the website URL e.g. "armoredpigeon.io". Then click on the link for registration. Next, fill out the form, ensuring that the username is not already being used and entering a password that you will remember, but is also not easy to guess. By saving this information, then you will be logged in successfully and you will be able to download the application. The remaining steps are to install the application after successfully downloading, run the application, login to your pre-existing account, and use the client.
+
+Database URL: 172.20.0.90:3000
