@@ -17,12 +17,12 @@ class Message:
     # Define encrypt method
     def encrypt(self, user, message):
         encrypted_message = gpg.encrypt(message, user.public_key)
-        return encrypted_message
+        return str(encrypted_message)
 
     # Define decrypt method
     def decrypt(self, message):
         decrypted_message = gpg.decrypt(message)
-        return decrypted_message
+        return str(decrypted_message)
 
     # Send email method
     def send(self, user, message):
