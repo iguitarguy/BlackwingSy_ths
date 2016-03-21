@@ -9,6 +9,7 @@ import pymysql.cursors
 gpg = gnupg.GPG()
 gpg.encoding = 'utf-8'
 
+
 connection = pymysql.connect(
     host='',
     user='',
@@ -18,4 +19,4 @@ connection = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor
 )
 
-keyserver = ''
+keyserver = '172.20.0.90:11371'
