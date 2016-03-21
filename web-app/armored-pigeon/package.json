@@ -11,9 +11,13 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
-    "gpg": "^0.4.0",
+    "express-session": "*",
+    "bcrypt-node.js": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "mysql": "*",
     "morgan": "~1.6.1",
-    "mysql": "^2.10.2",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bookshelf": "0.5"
   }
 }
