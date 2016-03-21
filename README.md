@@ -26,9 +26,7 @@ https://trello.com/invite/b/cpxm5uhE/a492d5ecad90738d876a9a985f6171da/gpg-messag
 
 ## Documentation
 Instruction
-1. Navigate to the website URL e.g. http://armoredpigeon.io/ and click on the link for registration. 
-2. Fill out the registration form. By saving this information, you will be logged in successfully and will be able to download the application. 
-3. Download and install the application.
-4. Run the application, log in to your pre-existing account, and you are now ready.
-
-Current web URL: 172.20.0.90:3000
+* Navigate to the website URL 172.20.0.90:3000 and click on the link for registration. 
+* Fill out the registration form. By saving this information, you will be logged in successfully and will be able to download the application. 
+* Download and install the application.
+* Run the application, log in to your pre-existing account, and you are now ready.
