@@ -1,3 +1,4 @@
+import javafx.scene.input.KeyCode;
 public class Data {
 
 	public Button Qbtn;
@@ -20,7 +21,24 @@ public class Data {
 	public ButtonControls Cctrl;
 
 	public Data() {
-
+		Qbtn = new Button("Q");
+		Qctrl = new ButtonControls(KeyCode.Q, Qbtn);
+		Wbtn = new Button("W");
+		Wctrl = new ButtonControls(KeyCode.W, Wbtn);
+		Ebtn = new Button("E");
+		Ectrl = new ButtonControls(KeyCode.E, Ebtn);
+		Abtn = new Button("A");
+		Actrl = new ButtonControls(KeyCode.A, Abtn);
+		Sbtn = new Button("S");
+		Sctrl = new ButtonControls(KeyCode.S, Sbtn);
+		Dbtn = new Button("D");
+		Dctrl = new ButtonControls(KeyCode.D, Dbtn);
+		Zbtn = new Button("Z");
+		Zctrl = new ButtonControls(KeyCode.Z, Zbtn);
+		Xbtn = new Button("X");
+		Xctrl = new ButtonControls(KeyCode.X, Xbtn);
+		Cbtn = new Button("C");
+		Cctrl = new ButtonControls(KeyCode.C, Cbtn);
 	}
 
 }
