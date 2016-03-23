@@ -16,7 +16,7 @@ class Message:
 
     # Define encrypt method
     def encrypt(self, user, message):
-        encrypted_message = gpg.encrypt(message, user.public_key)
+        encrypted_message = gpg.encrypt(message, user.get_property('email'))
         return str(encrypted_message)
 
     # Define decrypt method

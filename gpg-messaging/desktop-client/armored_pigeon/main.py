@@ -4,8 +4,10 @@ from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 import os
+# from armored_pigeon.auth import Auth
 
-from connected import Connected
+from armored_pigeon.connected import Connected
+from armored_pigeon.sendmessage import SendMessage
 
 class Login(Screen):
     def do_login(self, loginText, passwordText):
@@ -14,10 +16,17 @@ class Login(Screen):
         app.username = loginText
         app.password = passwordText
 
-        print('username:', app.username, 'password: ', app.password)
+        # auth = Auth(app.username, app.password)
+        # auth.hash_pass()
+        # authenticated = auth.authenticate()
 
-        self.manager.transition = SlideTransition(direction='left')
-        self.manager.current = 'connected'
+        # if (authenticated.isAuth):
+        if (True):
+            self.manager.transition = SlideTransition(direction='left')
+            self.manager.current = 'connected'
+            self.manager.get_screen('connected')
+        else:
+            print('Not Authenticated')
 
         # app.config.read(app.get_application_config())
         # app.config.write()

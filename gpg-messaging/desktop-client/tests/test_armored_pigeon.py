@@ -7,7 +7,7 @@ import pytest
 
 # def test_encrypt(self):
 #     self.test_user = User(first_name='Jim', last_name='Bob', email='jim.bob@example.com')
-#     self.public_key("""
+#     self.test_user.public_key("""
 #             mQENBFbu/SIBCADZqp062Ky3evGJjzormGDFhk5RSnce/r0dOmyrX+fi6v0iLKJf
 #             9pbEaRViUQmm4J0qbsbX7YyYmOieqmo+iorMXdpImgcdEi3T/Q/jcZstbWJ2wnO1
 #             lUy7GDCHNYvswf3BlGgBPAA4yJxVK+vbACq61Ky080YDKxbkfO2PbdhIvnkyoMme
