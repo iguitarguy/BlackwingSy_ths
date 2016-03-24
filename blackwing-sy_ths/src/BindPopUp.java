@@ -1,51 +1,65 @@
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-public class BindPopUp {
+/**
+ * Class: BindPopUp
+ * @author Mike Deiters
+ * @version 1.0
+ * March 23, 2016
+ * ITEC 3860-01
+ *
+ * Description: TODO
+ *
+ * Purpose: TODO
+ */
 
-	private final int HEIGHT = 0;
-	private final int WIDTH = 0;
+public class BindPopUp extends Stage {
+
+	private final double WIDTH = 300;
+	private final double HEIGHT = 400;
 
 	private Label title;
 	private Label key;
 	private Label fileName;
-	private Button selector;
+	private javafx.scene.control.Button selector;
+	private Button bindingBtn;
 	private BorderPane mainPane;
 	private BorderPane selectorPane;
+	private Scene priamryScene;
 
 	public BindPopUp() {
 
+		setup();
 	}
 
-	public BindPopUp(String title) {
+	public BindPopUp(String key, Button btn ) {
 
+		setup();
+		this.key.setText(key);
+		this.bindingBtn = btn;
 	}
 
-	public BindPopUp(char key, Button btn) {
+	public void setKey(String key) {
 
+		this.key.setText(key);
 	}
 
-	public BindPopUp(String title, char key, Button btn) {
+	public String getKey() {
 
+        return this.key.getText();
 	}
 
-	public void setTitle(String title) {
+	public void setBindingBtn( Button bindingBtn ) {
 
+		this.bindingBtn = bindingBtn;
 	}
 
-	public String getTitle() {
+	public Button getBindingBtn() {
 
-        return null;
-	}
-
-	public void setKey(char key) {
-
-	}
-
-	public char getKey() {
-
-        return 0;
+		return bindingBtn;
 	}
 
 	private void selectFile() {
@@ -54,6 +68,16 @@ public class BindPopUp {
 
 	private void setup() {
 
+		this.title = new Label();
+		this.key = new Label();
+		this.fileName = new Label();
+		this.selector = new javafx.scene.control.Button("Open File");
+		this.bindingBtn = new Button();
+		this.mainPane = new BorderPane();
+		this.selectorPane = new BorderPane();
+		this.priamryScene = new Scene(mainPane, WIDTH, HEIGHT);
+		super.setScene(priamryScene);
+		super.setTitle("Bind Sound Bite");
 	}
 
 }
