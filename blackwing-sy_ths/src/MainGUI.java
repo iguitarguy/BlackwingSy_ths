@@ -1,12 +1,17 @@
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.MediaException;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -23,19 +28,19 @@ import java.util.ArrayList;
 
 public class MainGUI extends Application {
 
-    private double WIDTH = 1000;
-    private double HEIGHT = 500;
-    private double BUTTON_WIDTH = 100;
-    private double BUTTON_HEIGHT = 100;
+    private final double WIDTH = 600;
+    private final double HEIGHT = 400;
+    private final double BUTTON_WIDTH = 50;
+    private final double BUTTON_HEIGHT = 50;
     private Scene primaryScene;
     private Stage mainStage;
     private BorderPane pane;
     private GridPane btnGrid;
     private Data data;
-    private BindPopUp bind;
-    private ArrayList< Button > btns;
+    private ArrayList<Button> btns;
+    private Label error;
 
-    public void start( Stage args ) {
+    public void start( Stage primaryStage ) throws Exception {
 
         this.pane = new BorderPane();
         this.primaryScene = new Scene(this.pane, this.WIDTH, this.HEIGHT);
@@ -45,6 +50,14 @@ public class MainGUI extends Application {
         setup();
         btnActions();
         this.mainStage.show();
+
+        this.mainStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle( WindowEvent event ) {
+
+                mainStage.close();
+            }
+        });
     }
 
     /**
@@ -57,18 +70,21 @@ public class MainGUI extends Application {
         this.btnGrid = new GridPane();
         this.btnGrid.setHgap(10);
         this.btnGrid.setVgap(10);
-        this.bind = new BindPopUp();
+        this.btns = new ArrayList<>();
+        this.error = new Label();
 
         buildGrid();
         collectBtns();
 
         for ( int i = 0; i < this.btns.size(); i++ ) {
 
-            this.btns.get(i).setMaxWidth(this.BUTTON_WIDTH);
-            this.btns.get(i).setMaxHeight(this.BUTTON_HEIGHT);
+            this.btns.get(i).setMinWidth(this.BUTTON_WIDTH);
+            this.btns.get(i).setMinHeight(this.BUTTON_HEIGHT);
         }
 
-        this.pane.setCenter(btnGrid);
+        this.pane.setCenter(this.btnGrid);
+        this.pane.setBottom(this.error);
+        this.pane.setPadding(new Insets(100, 200, 100, 200));
     }
 
     /**
@@ -115,37 +131,36 @@ public class MainGUI extends Application {
 
             Button btn = this.btns.get(i);
 
-            btn.setOnMouseClicked(new EventHandler< MouseEvent >() {
+            btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle( MouseEvent event ) {
 
-                    bindMusic(btn);
+                    selectFile(btn);
                 }
             });
         }
     }
 
-    /**
-     * bindMusic
-     * @param btn Button
-     * Set up the eventhandler for the button
-     */
-    private void bindMusic(Button btn) {
+    private void selectFile(Button btn) {
 
-        String key = btn.getText();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        fileChooser.setTitle("Select Music Bite");
 
-        this.bind.setKey(key);
-        this.bind.setBtn(btn);
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Music", "*.*"),
+                new FileChooser.ExtensionFilter("MP3", "*.mp3"));
 
-        Stage bind = new Stage();
-        bind.show();
-
-        bind.setOnCloseRequest(new EventHandler< WindowEvent >() {
-            @Override
-            public void handle( WindowEvent event ) {
-                bind.close();
-            }
-        });
+        try {
+            File file = fileChooser.showOpenDialog(mainStage);
+            btn.setSound(file);
+            this.error.setText("");
+        }
+        catch ( NullPointerException npe ) {
+            this.error.setText("No File Selected");
+        }
+        catch ( MediaException me ) {
+            this.error.setText("Unsupported File Type");
+        }
     }
-
 }
