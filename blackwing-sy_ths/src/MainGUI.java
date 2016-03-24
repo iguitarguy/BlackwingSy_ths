@@ -132,21 +132,18 @@ public class MainGUI extends Application {
      */
     private void bindMusic(Button btn) {
 
-        String title = "Bind a Sound Bite";
         String key = btn.getText();
 
-        this.bind.setTitle(title);
         this.bind.setKey(key);
         this.bind.setBtn(btn);
 
-        Stage bindStage = new Stage();
-        bindStage.setScene(this.bind);
-        bindStage.show();
+        Stage bind = new Stage();
+        bind.show();
 
-        bindStage.setOnCloseRequest(new EventHandler< WindowEvent >() {
+        bind.setOnCloseRequest(new EventHandler< WindowEvent >() {
             @Override
             public void handle( WindowEvent event ) {
-                bindStage.close();
+                bind.close();
             }
         });
     }
