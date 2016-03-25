@@ -3,6 +3,8 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -49,6 +51,7 @@ public class MainGUI extends Application {
         this.mainStage.setScene(this.primaryScene);
         setup();
         btnActions();
+        keyActions();
         this.mainStage.show();
 
         this.mainStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -94,13 +97,13 @@ public class MainGUI extends Application {
     public void buildGrid() {
 
         this.btnGrid.add(this.data.Qbtn, 0, 0);
-        this.btnGrid.add(this.data.Wbtn, 0, 1);
-        this.btnGrid.add(this.data.Ebtn, 0, 2);
-        this.btnGrid.add(this.data.Abtn, 1, 0);
+        this.btnGrid.add(this.data.Wbtn, 1, 0);
+        this.btnGrid.add(this.data.Ebtn, 2, 0);
+        this.btnGrid.add(this.data.Abtn, 0, 1);
         this.btnGrid.add(this.data.Sbtn, 1, 1);
-        this.btnGrid.add(this.data.Dbtn, 1, 2);
-        this.btnGrid.add(this.data.Zbtn, 2, 0);
-        this.btnGrid.add(this.data.Xbtn, 2, 1);
+        this.btnGrid.add(this.data.Dbtn, 2, 1);
+        this.btnGrid.add(this.data.Zbtn, 0, 2);
+        this.btnGrid.add(this.data.Xbtn, 1, 2);
         this.btnGrid.add(this.data.Cbtn, 2, 2);
     }
 
@@ -141,7 +144,58 @@ public class MainGUI extends Application {
         }
     }
 
-    private void selectFile(Button btn) {
+    public void keyActions() {
+
+        this.primaryScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle( KeyEvent event ) {
+
+                Button eventBtn = null;
+
+                switch ( event.getCode() ) {
+
+                    case Q:
+                        eventBtn = data.Qbtn;
+                        break;
+                    case W:
+                        eventBtn = data.Wbtn;
+                        break;
+                    case E:
+                        eventBtn = data.Ebtn;
+                        break;
+                    case A:
+                        eventBtn = data.Abtn;
+                        break;
+                    case S:
+                        eventBtn = data.Sbtn;
+                        break;
+                    case D:
+                        eventBtn = data.Dbtn;
+                        break;
+                    case Z:
+                        eventBtn = data.Zbtn;
+                        break;
+                    case X:
+                        eventBtn = data.Xbtn;
+                        break;
+                    case C:
+                        eventBtn = data.Cbtn;
+                        break;
+                }
+
+                if ( !eventBtn.isPlaying() ) {
+
+                    eventBtn.playSound();
+                }
+                else {
+
+                    eventBtn.stopSound();
+                }
+            }
+        });
+    }
+
+    private void selectFile( Button btn ) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
@@ -163,9 +217,8 @@ public class MainGUI extends Application {
             this.error.setText("Unsupported File Type");
         }
     }
-    
-    public Scene getScene()
-    {
-    	return primaryScene;
+
+    public Scene getScene() {
+        return primaryScene;
     }
 }
