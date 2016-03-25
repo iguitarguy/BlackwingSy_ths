@@ -13,19 +13,19 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 * Repeat for remaining keys
 * Once all keys are mapped, turn to your keyboard and mash away!*
 * Download our app for Windows
-https://drive.google.com/open?id=0B10t50zhIuzvVDJsSE9nUnEtVTg
+https://drive.google.com/file/d/0B10t50zhIuzvVDJsSE9nUnEtVTg/view?usp=sharing
 
 * Download our app for Mac
-https://drive.google.com/open?id=0B10t50zhIuzvck1oaXNpZHV3VE0
+https://drive.google.com/file/d/0B10t50zhIuzvck1oaXNpZHV3VE0/view?usp=sharing
 
-#### Minimum System Requirements
+###### Minimum System Requirements
 * Java 8 Update 73 (Java 1.8.0_73)
 * Computer keyboard
 
-#### Recommended System Requirements
+###### Recommended System Requirements
 * Anti-Ghosting Keyboard
 
-*_DISCLAIMERS_*
+**_DISCLAIMERS_**
 * Mash away responsibly. Please don't break your keyboard.
 * For the best experience, try this app on keyboards that support anti-ghosting. If you do not own an anti-ghosting keyboard, you won't be able to press and hold more than 3 keys at a time.
 
@@ -39,8 +39,8 @@ For the moment being, our application will be written entirely in Java.
 * Import keystrokes for editing
 
 ## Terminology
-* *MIDI*: (Musical Instrument Digital Interface) is a protocol designed for recording and playing back music, which does not represent musical sound directly, but rather stores information on how the music is produced.
+* **MIDI**: (Musical Instrument Digital Interface) is a protocol designed for recording and playing back music, which does not represent musical sound directly, but rather stores information on how the music is produced.
 
-* *Mapping*: Assigning of sound bites to specific keys or buttons on your MIDI controller.
+* **Mapping**: Assigning of sound bites to specific keys or buttons on your MIDI controller.
 
-* *Ghosting*: the problem that some keyboard keys don't work when multiple keys are pressed simultaneously. It is typically the result of hardware that can't read the given key combination.
+* **Ghosting**: the problem that some keyboard keys don't work when multiple keys are pressed simultaneously. It is typically the result of hardware that can't read the given key combination.
