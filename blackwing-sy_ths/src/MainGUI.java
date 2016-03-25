@@ -3,7 +3,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -146,52 +145,51 @@ public class MainGUI extends Application {
 
     public void keyActions() {
 
-        this.primaryScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
+        this.primaryScene.setOnKeyPressed(new EventHandler<KeyEvent>()
+        {
+			@Override
             public void handle( KeyEvent event ) {
 
                 Button eventBtn = null;
 
                 switch ( event.getCode() ) {
 
-                    case Q:
-                        eventBtn = data.Qbtn;
-                        break;
-                    case W:
-                        eventBtn = data.Wbtn;
-                        break;
-                    case E:
-                        eventBtn = data.Ebtn;
-                        break;
-                    case A:
-                        eventBtn = data.Abtn;
-                        break;
-                    case S:
-                        eventBtn = data.Sbtn;
-                        break;
-                    case D:
-                        eventBtn = data.Dbtn;
-                        break;
-                    case Z:
-                        eventBtn = data.Zbtn;
-                        break;
-                    case X:
-                        eventBtn = data.Xbtn;
-                        break;
-                    case C:
-                        eventBtn = data.Cbtn;
-                        break;
-                }
-
-                if ( !eventBtn.isPlaying() ) {
-
-                    eventBtn.playSound();
-                }
-                else {
-
-                    eventBtn.stopSound();
+                    case Q: eventBtn = data.Qbtn; eventBtn.playSound(); break;
+                    case W: eventBtn = data.Wbtn; eventBtn.playSound(); break;
+                    case E: eventBtn = data.Ebtn; eventBtn.playSound(); break;
+                    case A: eventBtn = data.Abtn; eventBtn.playSound(); break;
+                    case S: eventBtn = data.Sbtn; eventBtn.playSound(); break;
+                    case D: eventBtn = data.Dbtn; eventBtn.playSound(); break;
+                    case Z: eventBtn = data.Zbtn; eventBtn.playSound(); break;
+                    case X: eventBtn = data.Xbtn; eventBtn.playSound(); break;
+                    case C: eventBtn = data.Cbtn; eventBtn.playSound(); break;
+                    default: break;
                 }
             }
+			
+        });
+        this.primaryScene.setOnKeyReleased(new EventHandler<KeyEvent>()
+        {
+			@Override
+            public void handle( KeyEvent event ) {
+
+                Button eventBtn = null;
+
+                switch ( event.getCode() ) {
+
+                    case Q: eventBtn = data.Qbtn; eventBtn.stopSound(); break;
+                    case W: eventBtn = data.Wbtn; eventBtn.stopSound(); break;
+                    case E: eventBtn = data.Ebtn; eventBtn.stopSound(); break;
+                    case A: eventBtn = data.Abtn; eventBtn.stopSound(); break;
+                    case S: eventBtn = data.Sbtn; eventBtn.stopSound(); break;
+                    case D: eventBtn = data.Dbtn; eventBtn.stopSound(); break;
+                    case Z: eventBtn = data.Zbtn; eventBtn.stopSound(); break;
+                    case X: eventBtn = data.Xbtn; eventBtn.stopSound(); break;
+                    case C: eventBtn = data.Cbtn; eventBtn.stopSound(); break;
+                    default: break;
+                }
+            }
+			
         });
     }
 

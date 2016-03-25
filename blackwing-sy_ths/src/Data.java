@@ -1,4 +1,3 @@
-import javafx.scene.input.KeyCode;
 public class Data {
 
 	public Button Qbtn;
@@ -10,6 +9,7 @@ public class Data {
 	public Button Zbtn;
 	public Button Xbtn;
 	public Button Cbtn;
+	public Button other;
 
 	public Data() {
 		Qbtn = new Button("Q");
