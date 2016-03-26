@@ -1,3 +1,4 @@
+![alt tag] (https://raw.githubusercontent.com/soft-eng-practicum/gpg-messaging/master/blackwing-sy_ths/src/Blackwing-Syths.png?token=AGSoqoYoPXnhsDu34h4uS2DEWaYcN5eJks5W_wvYwA%3D%3D "BlackWing Sy_ths")
 
 
 ## Description
