@@ -22,9 +22,9 @@ import java.util.ArrayList;
  * March 23, 2016
  * ITEC 3860-01
  *
- * Description: TODO
+ * Description: Gui Interface for Blackwing Sy_ths
  *
- * Purpose: TODO
+ * Purpose: Create a javafx application
  */
 
 public class MainGUI extends Application {
@@ -41,6 +41,12 @@ public class MainGUI extends Application {
     private ArrayList<Button> btns;
     private Label error;
 
+    /**
+     * start
+     * @param primaryStage Stage
+     * @throws Exception
+     * start the application
+     */
     public void start( Stage primaryStage ) throws Exception {
 
         this.pane = new BorderPane();
@@ -143,6 +149,10 @@ public class MainGUI extends Application {
         }
     }
 
+    /**
+     * keyActions
+     * create the key event handlers
+     */
     public void keyActions() {
 
         this.primaryScene.setOnKeyPressed(new EventHandler<KeyEvent>()
@@ -166,7 +176,7 @@ public class MainGUI extends Application {
                     default: break;
                 }
             }
-			
+
         });
         this.primaryScene.setOnKeyReleased(new EventHandler<KeyEvent>()
         {
@@ -189,10 +199,15 @@ public class MainGUI extends Application {
                     default: break;
                 }
             }
-			
+
         });
     }
 
+    /**
+     * selectFile
+     * @param btn Button
+     * select the music file to assign to button
+     */
     private void selectFile( Button btn ) {
 
         FileChooser fileChooser = new FileChooser();
