@@ -15,8 +15,10 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 * Click Open
 * Repeat for remaining buttons
 * Once all keys are mapped, turn to your keyboard and mash away!*
+
 ##### Windows
 * Download [here] (https://goo.gl/trMGNq)
+
 ##### Mac
 * Download [here] (https://goo.gl/p8HBfJ)
 
