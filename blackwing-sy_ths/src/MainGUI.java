@@ -3,6 +3,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -53,6 +54,7 @@ public class MainGUI extends Application {
         this.primaryScene = new Scene(this.pane, this.WIDTH, this.HEIGHT);
         this.mainStage = new Stage();
         this.mainStage.setTitle("Blackwing Sy_ths");
+        this.mainStage.getIcons().add(new Image("/Blackwing-Syths.png"));
         this.mainStage.setScene(this.primaryScene);
         setup();
         btnActions();

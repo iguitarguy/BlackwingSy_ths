@@ -7,18 +7,19 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 
 
 ## Instructions
+* Download in the appropriate link below
 * Run the app
 * In the app, click on the desired button to map out
 * Browse through your files
-* Select the file
+* Select the file (.mp3 supported)
 * Click Open
-* Repeat for remaining keys
+* Repeat for remaining buttons
 * Once all keys are mapped, turn to your keyboard and mash away!*
-* Download our app for Windows
-https://drive.google.com/file/d/0B10t50zhIuzvVDJsSE9nUnEtVTg/view?usp=sharing
+##### Windows
+* Download [here] (https://goo.gl/trMGNq)
+##### Mac
+* Download [here] (https://goo.gl/p8HBfJ)
 
-* Download our app for Mac
-https://drive.google.com/file/d/0B10t50zhIuzvck1oaXNpZHV3VE0/view?usp=sharing
 
 ###### Minimum System Requirements
 * Java 8 Update 73 (Java 1.8.0_73)
