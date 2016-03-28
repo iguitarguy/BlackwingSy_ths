@@ -230,8 +230,4 @@ public class MainGUI extends Application {
             this.error.setText("Unsupported File Type");
         }
     }
-
-    public Scene getScene() {
-        return primaryScene;
-    }
 }
