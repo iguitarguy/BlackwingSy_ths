@@ -1,4 +1,4 @@
-![alt tag] (https://raw.githubusercontent.com/soft-eng-practicum/gpg-messaging/master/blackwing-sy_ths/src/Blackwing-Syths.png?token=AGSoqoYoPXnhsDu34h4uS2DEWaYcN5eJks5W_wvYwA%3D%3D "BlackWing Sy_ths")
+![alt tag] (https://raw.githubusercontent.com/soft-eng-practicum/gpg-messaging/master/src/Blackwing-Syths.png?token=AGSoqmdrUsydXHcMjjwX784YB0XAnHb0ks5XBZexwA%3D%3D "BlackWing Sy_ths")
 
 
 ## Description
@@ -22,6 +22,7 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 ##### Mac
 * Download [here] (https://goo.gl/p8HBfJ)
 
+To download previous versions go [here] (https://github.com/soft-eng-practicum/gpg-messaging/releases).
 
 ###### Minimum System Requirements
 * Java 8 Update 73 (Java 1.8.0_73)
@@ -29,6 +30,7 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 
 ###### Recommended System Requirements
 * Anti-Ghosting Keyboard
+
 
 **_DISCLAIMERS_**
 * Mash away responsibly. Please don't break your keyboard.
