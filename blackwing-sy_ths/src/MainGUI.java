@@ -54,7 +54,7 @@ public class MainGUI extends Application {
         this.primaryScene = new Scene(this.pane, this.WIDTH, this.HEIGHT);
         this.mainStage = new Stage();
         this.mainStage.setTitle("Blackwing Sy_ths");
-        this.mainStage.getIcons().add(new Image("/Blackwing-Syths.png"));
+        this.mainStage.getIcons().add(new Image("/Icon.png"));
         this.mainStage.setScene(this.primaryScene);
         setup();
         btnActions();
