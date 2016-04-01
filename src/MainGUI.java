@@ -218,53 +218,6 @@ public class MainGUI extends Application {
 
                 switch ( event.getCode() ) {
 
-                    case NUMPAD1: data.N1btn.stopSound(); break;
-                    case NUMPAD2: data.N2btn.stopSound(); break;
-                    case NUMPAD3: data.N3btn.stopSound(); break;
-                    case NUMPAD4: data.N4btn.stopSound(); break;
-                    case NUMPAD5: data.N5btn.stopSound(); break;
-                    case NUMPAD6: data.N6btn.stopSound(); break;
-                    case NUMPAD7: data.N7btn.stopSound(); break;
-                    case NUMPAD8: data.N8btn.stopSound(); break;
-                    case NUMPAD9: data.N9btn.stopSound(); break;
-                    case NUMPAD0: data.N0btn.stopSound(); break;
-                    case Q: data.Qbtn.stopSound(); break;
-                    case W: data.Wbtn.stopSound(); break;
-                    case E: data.Ebtn.stopSound(); break;
-                    case R: data.Rbtn.stopSound(); break;
-                    case T: data.Tbtn.stopSound(); break;
-                    case Y: data.Ybtn.stopSound(); break;
-                    case U: data.Ubtn.stopSound(); break;
-                    case I: data.Ibtn.stopSound(); break;
-                    case O: data.Obtn.stopSound(); break;
-                    case P: data.Pbtn.stopSound(); break;
-                    case A: data.Abtn.stopSound(); break;
-                    case S: data.Sbtn.stopSound(); break;
-                    case D: data.Dbtn.stopSound(); break;
-                    case F: data.Fbtn.stopSound(); break;
-                    case G: data.Gbtn.stopSound(); break;
-                    case H: data.Hbtn.stopSound(); break;
-                    case J: data.Jbtn.stopSound(); break;
-                    case K: data.Kbtn.stopSound(); break;
-                    case L: data.Lbtn.stopSound(); break;
-                    case Z: data.Zbtn.stopSound(); break;
-                    case X: data.Xbtn.stopSound(); break;
-                    case C: data.Cbtn.stopSound(); break;
-                    case V: data.Vbtn.stopSound(); break;
-                    case B: data.Bbtn.stopSound(); break;
-                    case N: data.Nbtn.stopSound(); break;
-                    case M: data.Mbtn.stopSound(); break;
-                    default: break;
-                }
-            }
-        });
-        this.primaryScene.setOnKeyReleased(new EventHandler<KeyEvent>()
-        {
-			@Override
-            public void handle( KeyEvent event ) {
-
-                switch ( event.getCode() ) {
-
                     case NUMPAD1: data.N1btn.playSound(); break;
                     case NUMPAD2: data.N2btn.playSound(); break;
                     case NUMPAD3: data.N3btn.playSound(); break;
@@ -301,6 +254,53 @@ public class MainGUI extends Application {
                     case B: data.Bbtn.playSound(); break;
                     case N: data.Nbtn.playSound(); break;
                     case M: data.Mbtn.playSound(); break;
+                    default: break;
+                }
+            }
+        });
+        this.primaryScene.setOnKeyReleased(new EventHandler<KeyEvent>()
+        {
+			@Override
+            public void handle( KeyEvent event ) {
+
+                switch ( event.getCode() ) {
+
+                    case NUMPAD1: data.N1btn.stopSound(); break;
+                    case NUMPAD2: data.N2btn.stopSound(); break;
+                    case NUMPAD3: data.N3btn.stopSound(); break;
+                    case NUMPAD4: data.N4btn.stopSound(); break;
+                    case NUMPAD5: data.N5btn.stopSound(); break;
+                    case NUMPAD6: data.N6btn.stopSound(); break;
+                    case NUMPAD7: data.N7btn.stopSound(); break;
+                    case NUMPAD8: data.N8btn.stopSound(); break;
+                    case NUMPAD9: data.N9btn.stopSound(); break;
+                    case NUMPAD0: data.N0btn.stopSound(); break;
+                    case Q: data.Qbtn.stopSound(); break;
+                    case W: data.Wbtn.stopSound(); break;
+                    case E: data.Ebtn.stopSound(); break;
+                    case R: data.Rbtn.stopSound(); break;
+                    case T: data.Tbtn.stopSound(); break;
+                    case Y: data.Ybtn.stopSound(); break;
+                    case U: data.Ubtn.stopSound(); break;
+                    case I: data.Ibtn.stopSound(); break;
+                    case O: data.Obtn.stopSound(); break;
+                    case P: data.Pbtn.stopSound(); break;
+                    case A: data.Abtn.stopSound(); break;
+                    case S: data.Sbtn.stopSound(); break;
+                    case D: data.Dbtn.stopSound(); break;
+                    case F: data.Fbtn.stopSound(); break;
+                    case G: data.Gbtn.stopSound(); break;
+                    case H: data.Hbtn.stopSound(); break;
+                    case J: data.Jbtn.stopSound(); break;
+                    case K: data.Kbtn.stopSound(); break;
+                    case L: data.Lbtn.stopSound(); break;
+                    case Z: data.Zbtn.stopSound(); break;
+                    case X: data.Xbtn.stopSound(); break;
+                    case C: data.Cbtn.stopSound(); break;
+                    case V: data.Vbtn.stopSound(); break;
+                    case B: data.Bbtn.stopSound(); break;
+                    case N: data.Nbtn.stopSound(); break;
+                    case M: data.Mbtn.stopSound(); break;
                     default: break;
                 }
             }
