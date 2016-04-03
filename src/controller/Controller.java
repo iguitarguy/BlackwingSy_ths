@@ -98,6 +98,11 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * playMusic
+     * @param event KeyEvent
+     * Play music based on key press
+     */
     @FXML
     private void playMusic( KeyEvent event ) {
 
