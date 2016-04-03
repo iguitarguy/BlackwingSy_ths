@@ -13,6 +13,13 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller
+ * @author Mike Deiters
+ * @version 1.0
+ *
+ * Description: FX Controls
+ */
 public class Controller implements Initializable {
 
     @FXML private Label error;
@@ -95,6 +102,36 @@ public class Controller implements Initializable {
     private void playMusic( KeyEvent event ) {
 
         switch ( event.getCode() ) {
+            case DIGIT1:
+                N1btn.playSound();
+                break;
+            case DIGIT2:
+                N2btn.playSound();
+                break;
+            case DIGIT3:
+                N3btn.playSound();
+                break;
+            case DIGIT4:
+                N4btn.playSound();
+                break;
+            case DIGIT5:
+                N5btn.playSound();
+                break;
+            case DIGIT6:
+                N6btn.playSound();
+                break;
+            case DIGIT7:
+                N7btn.playSound();
+                break;
+            case DIGIT8:
+                N8btn.playSound();
+                break;
+            case DIGIT9:
+                N9btn.playSound();
+                break;
+            case DIGIT0:
+                N0btn.playSound();
+                break;
             case NUMPAD1:
                 N1btn.playSound();
                 break;
@@ -212,6 +249,36 @@ public class Controller implements Initializable {
     private void stopMusic( KeyEvent event ) {
 
         switch ( event.getCode() ) {
+            case DIGIT1:
+                N1btn.stopSound();
+                break;
+            case DIGIT2:
+                N2btn.stopSound();
+                break;
+            case DIGIT3:
+                N3btn.stopSound();
+                break;
+            case DIGIT4:
+                N4btn.stopSound();
+                break;
+            case DIGIT5:
+                N5btn.stopSound();
+                break;
+            case DIGIT6:
+                N6btn.stopSound();
+                break;
+            case DIGIT7:
+                N7btn.stopSound();
+                break;
+            case DIGIT8:
+                N8btn.stopSound();
+                break;
+            case DIGIT9:
+                N9btn.stopSound();
+                break;
+            case DIGIT0:
+                N0btn.stopSound();
+                break;
             case NUMPAD1:
                 N1btn.stopSound();
                 break;

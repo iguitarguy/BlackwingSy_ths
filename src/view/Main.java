@@ -7,6 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * Main
+ * @author Mike Deiters
+ * @version 1.0
+ *
+ * Description: FX application
+ */
 public class Main extends Application {
 
     public static void main(String[] args) {
