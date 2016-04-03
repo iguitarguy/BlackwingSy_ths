@@ -1,7 +1,10 @@
-import java.io.File;
-import java.net.URL;
+package model;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+import java.net.URL;
 
 public class Button extends javafx.scene.control.Button {
 

@@ -1,3 +1,5 @@
+package view;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,6 +14,8 @@ import javafx.scene.media.MediaException;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.Button;
+import model.Data;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -310,7 +314,7 @@ public class MainGUI extends Application {
 
     /**
      * selectFile
-     * @param btn Button
+     * @param btn model.Button
      * select the music file to assign to button
      */
     private void selectFile( Button btn ) {

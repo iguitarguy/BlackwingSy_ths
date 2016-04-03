@@ -1,3 +1,5 @@
+package model;
+
 public class Data {
 
 	public Button N1btn;
