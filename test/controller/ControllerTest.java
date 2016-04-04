@@ -62,11 +62,6 @@ public class ControllerTest {
     }
 
     @Test
-    public void assignMusic() throws Exception {
-
-    }
-
-    @Test
     public void playMusic() throws Exception {
 
         System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
