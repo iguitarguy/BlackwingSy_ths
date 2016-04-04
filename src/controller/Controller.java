@@ -116,7 +116,8 @@ public class Controller implements Initializable {
      * reset
      * reset the application
      */
-    protected void reset () {
+    @FXML
+    protected void reset (ActionEvent event) {
     	this.Qbtn.unbindSound();
     	this.Wbtn.unbindSound();
     	this.Ebtn.unbindSound();
