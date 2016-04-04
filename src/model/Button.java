@@ -58,5 +58,9 @@ public class Button extends javafx.scene.control.Button {
     public boolean isPlaying() {
         return playing;
     }
+    
+    public void unbindSound() {
+    	this.sound = null;
+    }
 
 }
