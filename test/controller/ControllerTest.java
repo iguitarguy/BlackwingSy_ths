@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.io.File;
 
 import static javafx.scene.input.KeyEvent.KEY_PRESSED;
+import static javafx.scene.input.KeyEvent.KEY_RELEASED;
 
 /**
  * ControllerTest
@@ -67,7 +68,7 @@ public class ControllerTest {
 
     @Test
     public void playMusic() throws Exception {
-
+        
         Button Qbtn = new Button();
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
         Controller ctrl = new Controller();
@@ -80,5 +81,12 @@ public class ControllerTest {
     @Test
     public void stopMusic() throws Exception {
 
+        Button Qbtn = new Button();
+        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        Controller ctrl = new Controller();
+        ctrl.Qbtn = Qbtn;
+        KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
+        ctrl.stopMusic(event);
+        assert (!Qbtn.isPlaying());
     }
 }
