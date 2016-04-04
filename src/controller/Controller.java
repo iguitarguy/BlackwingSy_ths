@@ -1,10 +1,14 @@
 package controller;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
 import javafx.stage.FileChooser;
 import model.Button;
@@ -60,11 +64,17 @@ public class Controller implements Initializable {
     @FXML protected Button Nbtn;
     @FXML protected Button Mbtn;
 
+    @FXML protected Pane gui;
+    protected boolean tapHoldToggle;
+    private final boolean TAP = true;
+    private final boolean HOLD = false;
+
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
 
         System.out.println("View is now loaded!");
         error.setText("Menu Buttons not implemented yet.");
+        this.tapHoldToggle = HOLD;
     }
 
     /**
@@ -394,6 +404,421 @@ public class Controller implements Initializable {
                 break;
             default:
                 break;
+        }
+    }
+
+    /**
+     * toggleMusic
+     * @param event KeyEvent
+     * Play music based on key press
+     */
+    @FXML
+    protected void toggleMusic( KeyEvent event ) {
+
+        switch ( event.getCode() ) {
+            case DIGIT1:
+                if ( !N1btn.isPlaying() ) {
+                    N1btn.playSound();
+                }
+                else {
+                    N1btn.stopSound();
+                }
+                break;
+            case DIGIT2:
+                if ( !N2btn.isPlaying() ) {
+                    N2btn.playSound();
+                }
+                else {
+                    N2btn.stopSound();
+                }
+                break;
+            case DIGIT3:
+                if ( !N3btn.isPlaying() ) {
+                    N3btn.playSound();
+                }
+                else {
+                    N3btn.stopSound();
+                }
+                break;
+            case DIGIT4:
+                if ( !N4btn.isPlaying() ) {
+                    N4btn.playSound();
+                }
+                else {
+                    N4btn.stopSound();
+                }
+                break;
+            case DIGIT5:
+                if ( !N5btn.isPlaying() ) {
+                    N5btn.playSound();
+                }
+                else {
+                    N5btn.stopSound();
+                }
+                break;
+            case DIGIT6:
+                if ( !N6btn.isPlaying() ) {
+                    N6btn.playSound();
+                }
+                else {
+                    N6btn.stopSound();
+                }
+                break;
+            case DIGIT7:
+                if ( !N7btn.isPlaying() ) {
+                    N7btn.playSound();
+                }
+                else {
+                    N7btn.stopSound();
+                }
+                break;
+            case DIGIT8:
+                if ( !N8btn.isPlaying() ) {
+                    N8btn.playSound();
+                }
+                else {
+                    N8btn.stopSound();
+                }
+                break;
+            case DIGIT9:
+                if ( !N9btn.isPlaying() ) {
+                    N9btn.playSound();
+                }
+                else {
+                    N9btn.stopSound();
+                }
+                break;
+            case DIGIT0:
+                if ( !N0btn.isPlaying() ) {
+                    N0btn.playSound();
+                }
+                else {
+                    N0btn.stopSound();
+                }
+                break;
+            case NUMPAD1:
+                if ( !N1btn.isPlaying() ) {
+                    N1btn.playSound();
+                }
+                else {
+                    N1btn.stopSound();
+                }
+                break;
+            case NUMPAD2:
+                if ( !N2btn.isPlaying() ) {
+                    N2btn.playSound();
+                }
+                else {
+                    N2btn.stopSound();
+                }
+                break;
+            case NUMPAD3:
+                if ( !N3btn.isPlaying() ) {
+                    N3btn.playSound();
+                }
+                else {
+                    N3btn.stopSound();
+                }
+                break;
+            case NUMPAD4:
+                if ( !N4btn.isPlaying() ) {
+                    N4btn.playSound();
+                }
+                else {
+                    N4btn.stopSound();
+                }
+                break;
+            case NUMPAD5:
+                if ( !N5btn.isPlaying() ) {
+                    N5btn.playSound();
+                }
+                else {
+                    N5btn.stopSound();
+                }
+                break;
+            case NUMPAD6:
+                if ( !N6btn.isPlaying() ) {
+                    N6btn.playSound();
+                }
+                else {
+                    N6btn.stopSound();
+                }
+                break;
+            case NUMPAD7:
+                if ( !N7btn.isPlaying() ) {
+                    N7btn.playSound();
+                }
+                else {
+                    N7btn.stopSound();
+                }
+                break;
+            case NUMPAD8:
+                if ( !N8btn.isPlaying() ) {
+                    N8btn.playSound();
+                }
+                else {
+                    N8btn.stopSound();
+                }
+                break;
+            case NUMPAD9:
+                if ( !N9btn.isPlaying() ) {
+                    N9btn.playSound();
+                }
+                else {
+                    N9btn.stopSound();
+                }
+                break;
+            case NUMPAD0:
+                if ( !N0btn.isPlaying() ) {
+                    N0btn.playSound();
+                }
+                else {
+                    N0btn.stopSound();
+                }
+                break;
+            case Q:
+                if ( !Qbtn.isPlaying() ) {
+                    Qbtn.playSound();
+                }
+                else {
+                    Qbtn.stopSound();
+                }
+                break;
+            case W:
+                if ( !Wbtn.isPlaying() ) {
+                    Wbtn.playSound();
+                }
+                else {
+                    Wbtn.stopSound();
+                }
+                break;
+            case E:
+                if ( !Ebtn.isPlaying() ) {
+                    Ebtn.playSound();
+                }
+                else {
+                    Ebtn.stopSound();
+                }
+                break;
+            case R:
+                if ( !Rbtn.isPlaying() ) {
+                    Rbtn.playSound();
+                }
+                else {
+                    Rbtn.stopSound();
+                }
+                break;
+            case T:
+                if ( !Tbtn.isPlaying() ) {
+                    Tbtn.playSound();
+                }
+                else {
+                    Tbtn.stopSound();
+                }
+                break;
+            case Y:
+                if ( !Ybtn.isPlaying() ) {
+                    Ybtn.playSound();
+                }
+                else {
+                    Ybtn.stopSound();
+                }
+                break;
+            case U:
+                if ( !Ubtn.isPlaying() ) {
+                    Ubtn.playSound();
+                }
+                else {
+                    Ubtn.stopSound();
+                }
+                break;
+            case I:
+                if ( !Ibtn.isPlaying() ) {
+                    Ibtn.playSound();
+                }
+                else {
+                    Ibtn.stopSound();
+                }
+                break;
+            case O:
+                if ( !Obtn.isPlaying() ) {
+                    Obtn.playSound();
+                }
+                else {
+                    Obtn.stopSound();
+                }
+                break;
+            case P:
+                if ( !Pbtn.isPlaying() ) {
+                    Pbtn.playSound();
+                }
+                else {
+                    Pbtn.stopSound();
+                }
+                break;
+            case A:
+                if ( !Abtn.isPlaying() ) {
+                    Abtn.playSound();
+                }
+                else {
+                    Abtn.stopSound();
+                }
+                break;
+            case S:
+                if ( !Sbtn.isPlaying() ) {
+                    Sbtn.playSound();
+                }
+                else {
+                    Sbtn.stopSound();
+                }
+                break;
+            case D:
+                if ( !Dbtn.isPlaying() ) {
+                    Dbtn.playSound();
+                }
+                else {
+                    Dbtn.stopSound();
+                }
+                break;
+            case F:
+                if ( !Fbtn.isPlaying() ) {
+                    Fbtn.playSound();
+                }
+                else {
+                    Fbtn.stopSound();
+                }
+                break;
+            case G:
+                if ( !Gbtn.isPlaying() ) {
+                    Gbtn.playSound();
+                }
+                else {
+                    Gbtn.stopSound();
+                }
+                break;
+            case H:
+                if ( !Hbtn.isPlaying() ) {
+                    Hbtn.playSound();
+                }
+                else {
+                    Hbtn.stopSound();
+                }
+                break;
+            case J:
+                if ( !Jbtn.isPlaying() ) {
+                    Jbtn.playSound();
+                }
+                else {
+                    Jbtn.stopSound();
+                }
+                break;
+            case K:
+                if ( !Kbtn.isPlaying() ) {
+                    Kbtn.playSound();
+                }
+                else {
+                    Kbtn.stopSound();
+                }
+                break;
+            case L:
+                if ( !Lbtn.isPlaying() ) {
+                    Lbtn.playSound();
+                }
+                else {
+                    Lbtn.stopSound();
+                }
+                break;
+            case Z:
+                if ( !Zbtn.isPlaying() ) {
+                    Zbtn.playSound();
+                }
+                else {
+                    Zbtn.stopSound();
+                }
+                break;
+            case X:
+                if ( !Xbtn.isPlaying() ) {
+                    Xbtn.playSound();
+                }
+                else {
+                    Xbtn.stopSound();
+                }
+                break;
+            case C:
+                if ( !Cbtn.isPlaying() ) {
+                    Cbtn.playSound();
+                }
+                else {
+                    Cbtn.stopSound();
+                }
+                break;
+            case V:
+                if ( !Vbtn.isPlaying() ) {
+                    Vbtn.playSound();
+                }
+                else {
+                    Vbtn.stopSound();
+                }
+                break;
+            case B:
+                if ( !Bbtn.isPlaying() ) {
+                    Bbtn.playSound();
+                }
+                else {
+                    Bbtn.stopSound();
+                }
+                break;
+            case N:
+                if ( !Nbtn.isPlaying() ) {
+                    Nbtn.playSound();
+                }
+                else {
+                    Nbtn.stopSound();
+                }
+                break;
+            case M:
+                if ( !Mbtn.isPlaying() ) {
+                    Mbtn.playSound();
+                }
+                else {
+                    Mbtn.stopSound();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    @FXML
+    protected void toggleTapHold( ActionEvent event ) {
+        System.out.println(event);
+
+        if ( tapHoldToggle == HOLD ) {
+
+            tapHoldToggle = TAP;
+            gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle( KeyEvent event ) {
+                    toggleMusic(event);
+                }
+            });
+            gui.setOnKeyReleased(null);
+        }
+        else {
+
+            tapHoldToggle = HOLD;
+            gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle( KeyEvent event ) {
+                    playMusic(event);
+                }
+            });
+            gui.setOnKeyReleased(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle( KeyEvent event ) {
+                    stopMusic(event);
+                }
+            });
         }
     }
 }
