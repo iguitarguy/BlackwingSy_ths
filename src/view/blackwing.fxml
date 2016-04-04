@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import model.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playMusic"
-      onKeyReleased="#stopMusic" prefHeight="292.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<Pane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      onKeyPressed="#playMusic" onKeyReleased="#stopMusic" prefHeight="292.0" prefWidth="561.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
 	<children>
 		<Label fx:id="error" layoutX="14.0" layoutY="263.0" text="Errors"/>
 		<Button fx:id="N1btn" layoutX="30.0" layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity"
@@ -129,7 +130,7 @@
 				</Menu>
 				<Menu mnemonicParsing="false" text="Edit">
 					<items>
-						<MenuItem mnemonicParsing="false" text="Toggle Tap/Hold Playback"/>
+						<MenuItem mnemonicParsing="false" onAction="#toggleTapHold" text="Toggle Tap/Hold Playback"/>
 					</items>
 				</Menu>
 				<Menu mnemonicParsing="false" text="Help">
