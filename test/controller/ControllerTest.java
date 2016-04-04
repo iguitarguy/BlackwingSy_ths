@@ -68,12 +68,21 @@ public class ControllerTest {
 
     @Test
     public void playMusic() throws Exception {
-        
+
+        System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
         Button Qbtn = new Button();
+
+        System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+
         Controller ctrl = new Controller();
+        System.out.printf("Intercept Qbtn\n");
         ctrl.Qbtn = Qbtn;
+
+        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
         KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+
+        System.out.printf("Start sound track\n\n");
         ctrl.playMusic(event);
         assert (Qbtn.isPlaying());
     }
@@ -81,12 +90,23 @@ public class ControllerTest {
     @Test
     public void stopMusic() throws Exception {
 
+        System.out.printf("\nStop Music:\nStop playing the music track assigned to the Qbtn when key released\n\n");
         Button Qbtn = new Button();
+
+        System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
         Controller ctrl = new Controller();
+
+        System.out.printf("Intercept Qbtn\n");
         ctrl.Qbtn = Qbtn;
-        KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
-        ctrl.stopMusic(event);
+
+        System.out.printf("Emulate a KEY_RELEASED KeyEvent of the \'Q\' button\n");
+        KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+        KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
+
+        System.out.printf("Stop sound track\n\n");
+        ctrl.playMusic(press);
+        ctrl.stopMusic(release);
         assert (!Qbtn.isPlaying());
     }
 }
