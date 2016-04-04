@@ -109,6 +109,50 @@ public class Controller implements Initializable {
     }
 
     /**
+     * reset
+     * reset the application
+     */
+    protected void reset () {
+    	this.Qbtn.unbindSound();
+    	this.Wbtn.unbindSound();
+    	this.Ebtn.unbindSound();
+    	this.Rbtn.unbindSound();
+    	this.Tbtn.unbindSound();
+    	this.Ybtn.unbindSound();
+    	this.Ubtn.unbindSound();
+    	this.Ibtn.unbindSound();
+    	this.Obtn.unbindSound();
+    	this.Pbtn.unbindSound();
+    	this.Abtn.unbindSound();
+    	this.Sbtn.unbindSound();
+    	this.Dbtn.unbindSound();
+    	this.Fbtn.unbindSound();
+    	this.Gbtn.unbindSound();
+    	this.Hbtn.unbindSound();
+    	this.Jbtn.unbindSound();
+    	this.Kbtn.unbindSound();
+    	this.Lbtn.unbindSound();
+    	this.Zbtn.unbindSound();
+    	this.Xbtn.unbindSound();
+    	this.Cbtn.unbindSound();
+    	this.Vbtn.unbindSound();
+    	this.Bbtn.unbindSound();
+    	this.Nbtn.unbindSound();
+    	this.Mbtn.unbindSound();
+    	this.N0btn.unbindSound();
+    	this.N1btn.unbindSound();
+    	this.N2btn.unbindSound();
+    	this.N3btn.unbindSound();
+    	this.N4btn.unbindSound();
+    	this.N5btn.unbindSound();
+    	this.N6btn.unbindSound();
+    	this.N7btn.unbindSound();
+    	this.N8btn.unbindSound();
+    	this.N9btn.unbindSound();
+    	
+    }
+    
+    /**
      * playMusic
      * @param event KeyEvent
      * Play music based on key press
