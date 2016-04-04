@@ -22,43 +22,43 @@ import java.util.ResourceBundle;
  */
 public class Controller implements Initializable {
 
-    @FXML private Label error;
-    @FXML private Button N1btn;
-    @FXML private Button N2btn;
-    @FXML private Button N3btn;
-    @FXML private Button N4btn;
-    @FXML private Button N5btn;
-    @FXML private Button N6btn;
-    @FXML private Button N7btn;
-    @FXML private Button N8btn;
-    @FXML private Button N9btn;
-    @FXML private Button N0btn;
-    @FXML private Button Qbtn;
-    @FXML private Button Wbtn;
-    @FXML private Button Ebtn;
-    @FXML private Button Rbtn;
-    @FXML private Button Tbtn;
-    @FXML private Button Ybtn;
-    @FXML private Button Ubtn;
-    @FXML private Button Ibtn;
-    @FXML private Button Obtn;
-    @FXML private Button Pbtn;
-    @FXML private Button Abtn;
-    @FXML private Button Sbtn;
-    @FXML private Button Dbtn;
-    @FXML private Button Fbtn;
-    @FXML private Button Gbtn;
-    @FXML private Button Hbtn;
-    @FXML private Button Jbtn;
-    @FXML private Button Kbtn;
-    @FXML private Button Lbtn;
-    @FXML private Button Zbtn;
-    @FXML private Button Xbtn;
-    @FXML private Button Cbtn;
-    @FXML private Button Vbtn;
-    @FXML private Button Bbtn;
-    @FXML private Button Nbtn;
-    @FXML private Button Mbtn;
+    @FXML protected Label error;
+    @FXML protected Button N1btn;
+    @FXML protected Button N2btn;
+    @FXML protected Button N3btn;
+    @FXML protected Button N4btn;
+    @FXML protected Button N5btn;
+    @FXML protected Button N6btn;
+    @FXML protected Button N7btn;
+    @FXML protected Button N8btn;
+    @FXML protected Button N9btn;
+    @FXML protected Button N0btn;
+    @FXML protected Button Qbtn;
+    @FXML protected Button Wbtn;
+    @FXML protected Button Ebtn;
+    @FXML protected Button Rbtn;
+    @FXML protected Button Tbtn;
+    @FXML protected Button Ybtn;
+    @FXML protected Button Ubtn;
+    @FXML protected Button Ibtn;
+    @FXML protected Button Obtn;
+    @FXML protected Button Pbtn;
+    @FXML protected Button Abtn;
+    @FXML protected Button Sbtn;
+    @FXML protected Button Dbtn;
+    @FXML protected Button Fbtn;
+    @FXML protected Button Gbtn;
+    @FXML protected Button Hbtn;
+    @FXML protected Button Jbtn;
+    @FXML protected Button Kbtn;
+    @FXML protected Button Lbtn;
+    @FXML protected Button Zbtn;
+    @FXML protected Button Xbtn;
+    @FXML protected Button Cbtn;
+    @FXML protected Button Vbtn;
+    @FXML protected Button Bbtn;
+    @FXML protected Button Nbtn;
+    @FXML protected Button Mbtn;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -73,7 +73,7 @@ public class Controller implements Initializable {
      * select the music file to assign to button
      */
     @FXML
-    private void assignMusic( MouseEvent event ) {
+    protected void assignMusic( MouseEvent event ) {
 
         Button btn = (Button) event.getSource();
 
@@ -104,7 +104,7 @@ public class Controller implements Initializable {
      * Play music based on key press
      */
     @FXML
-    private void playMusic( KeyEvent event ) {
+    protected void playMusic( KeyEvent event ) {
 
         switch ( event.getCode() ) {
             case DIGIT1:
@@ -251,7 +251,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void stopMusic( KeyEvent event ) {
+    protected void stopMusic( KeyEvent event ) {
 
         switch ( event.getCode() ) {
             case DIGIT1:
@@ -396,109 +396,4 @@ public class Controller implements Initializable {
                 break;
         }
     }
-
-    /**
-     * keyActions
-     * create the key event handlers
-     */
-//    public void keyActions() {
-//
-//        this.primaryScene.setOnKeyPressed(new EventHandler<KeyEvent>()
-//        {
-//            @Override
-//            public void handle( KeyEvent event ) {
-//
-//                switch ( event.getCode() ) {
-//
-//                    case NUMPAD1: data.N1btn.playSound(); break;
-//                    case NUMPAD2: data.N2btn.playSound(); break;
-//                    case NUMPAD3: data.N3btn.playSound(); break;
-//                    case NUMPAD4: data.N4btn.playSound(); break;
-//                    case NUMPAD5: data.N5btn.playSound(); break;
-//                    case NUMPAD6: data.N6btn.playSound(); break;
-//                    case NUMPAD7: data.N7btn.playSound(); break;
-//                    case NUMPAD8: data.N8btn.playSound(); break;
-//                    case NUMPAD9: data.N9btn.playSound(); break;
-//                    case NUMPAD0: data.N0btn.playSound(); break;
-//                    case Q: data.Qbtn.playSound(); break;
-//                    case W: data.Wbtn.playSound(); break;
-//                    case E: data.Ebtn.playSound(); break;
-//                    case R: data.Rbtn.playSound(); break;
-//                    case T: data.Tbtn.playSound(); break;
-//                    case Y: data.Ybtn.playSound(); break;
-//                    case U: data.Ubtn.playSound(); break;
-//                    case I: data.Ibtn.playSound(); break;
-//                    case O: data.Obtn.playSound(); break;
-//                    case P: data.Pbtn.playSound(); break;
-//                    case A: data.Abtn.playSound(); break;
-//                    case S: data.Sbtn.playSound(); break;
-//                    case D: data.Dbtn.playSound(); break;
-//                    case F: data.Fbtn.playSound(); break;
-//                    case G: data.Gbtn.playSound(); break;
-//                    case H: data.Hbtn.playSound(); break;
-//                    case J: data.Jbtn.playSound(); break;
-//                    case K: data.Kbtn.playSound(); break;
-//                    case L: data.Lbtn.playSound(); break;
-//                    case Z: data.Zbtn.playSound(); break;
-//                    case X: data.Xbtn.playSound(); break;
-//                    case C: data.Cbtn.playSound(); break;
-//                    case V: data.Vbtn.playSound(); break;
-//                    case B: data.Bbtn.playSound(); break;
-//                    case N: data.Nbtn.playSound(); break;
-//                    case M: data.Mbtn.playSound(); break;
-//                    default: break;
-//                }
-//            }
-//        });
-//        this.primaryScene.setOnKeyReleased(new EventHandler<KeyEvent>()
-//        {
-//            @Override
-//            public void handle( KeyEvent event ) {
-//
-//                switch ( event.getCode() ) {
-//
-//                    case NUMPAD1: data.N1btn.stopSound(); break;
-//                    case NUMPAD2: data.N2btn.stopSound(); break;
-//                    case NUMPAD3: data.N3btn.stopSound(); break;
-//                    case NUMPAD4: data.N4btn.stopSound(); break;
-//                    case NUMPAD5: data.N5btn.stopSound(); break;
-//                    case NUMPAD6: data.N6btn.stopSound(); break;
-//                    case NUMPAD7: data.N7btn.stopSound(); break;
-//                    case NUMPAD8: data.N8btn.stopSound(); break;
-//                    case NUMPAD9: data.N9btn.stopSound(); break;
-//                    case NUMPAD0: data.N0btn.stopSound(); break;
-//                    case Q: data.Qbtn.stopSound(); break;
-//                    case W: data.Wbtn.stopSound(); break;
-//                    case E: data.Ebtn.stopSound(); break;
-//                    case R: data.Rbtn.stopSound(); break;
-//                    case T: data.Tbtn.stopSound(); break;
-//                    case Y: data.Ybtn.stopSound(); break;
-//                    case U: data.Ubtn.stopSound(); break;
-//                    case I: data.Ibtn.stopSound(); break;
-//                    case O: data.Obtn.stopSound(); break;
-//                    case P: data.Pbtn.stopSound(); break;
-//                    case A: data.Abtn.stopSound(); break;
-//                    case S: data.Sbtn.stopSound(); break;
-//                    case D: data.Dbtn.stopSound(); break;
-//                    case F: data.Fbtn.stopSound(); break;
-//                    case G: data.Gbtn.stopSound(); break;
-//                    case H: data.Hbtn.stopSound(); break;
-//                    case J: data.Jbtn.stopSound(); break;
-//                    case K: data.Kbtn.stopSound(); break;
-//                    case L: data.Lbtn.stopSound(); break;
-//                    case Z: data.Zbtn.stopSound(); break;
-//                    case X: data.Xbtn.stopSound(); break;
-//                    case C: data.Cbtn.stopSound(); break;
-//                    case V: data.Vbtn.stopSound(); break;
-//                    case B: data.Bbtn.stopSound(); break;
-//                    case N: data.Nbtn.stopSound(); break;
-//                    case M: data.Mbtn.stopSound(); break;
-//                    default: break;
-//                }
-//            }
-//
-//        });
-//    }
-//
-
 }
