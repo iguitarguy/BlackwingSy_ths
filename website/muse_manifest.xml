@@ -1,0 +1,33 @@
+<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1459902630823">
+  <folder name="css">
+    <file name="site_global.css" crc="131700929"/>
+    <file name="master_a-master.css" crc="3782729317" ref="contact:download:index:about"/>
+    <file name="nomq_preview_master_a-master.css" crc="321525473" ref="contact:download:index:about"/>
+    <file name="contact.css" crc="490308509" ref="contact"/>
+    <file name="nomq_contact.css" crc="4107949814" ref="contact"/>
+    <file name="download.css" crc="3774132606" ref="download"/>
+    <file name="nomq_download.css" crc="4065990873" ref="download"/>
+    <file name="index.css" crc="197251730" ref="index"/>
+    <file name="nomq_index.css" crc="197359937" ref="index"/>
+    <file name="about.css" crc="251933442" ref="about"/>
+    <file name="nomq_about.css" crc="258118082" ref="about"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about:contact"/>
+    <file name="museutils.js" crc="3790713428" ref="index:download:about:contact"/>
+    <file name="whatinput.js" crc="84559013" ref="index:download:about:contact"/>
+    <file name="jquery.watch.js" crc="4244854265" ref="index:download:about:contact"/>
+    <file name="jquery.musemenu.js" crc="238543590" ref="index:download:about:contact"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:download:about:contact"/>
+    <file name="jquery.museresponsive.js" crc="3895133147" ref="index:download:about:contact"/>
+  </folder>
+  <folder name="images">
+    <file name="600px-blackwing-syths.png" crc="302152248" seo="true" ref="index:download:about:contact"/>
+    <file name="icon2.png" crc="283725729" seo="true" ref="index:download:about:contact"/>
+    <file name="blank.gif" crc="4208392903" ref="index:download:about:contact"/>
+  </folder>
+  <file name="index.html" crc="3833134492" seo="true" mt="1459899879347" redirect="true"/>
+  <file name="download.html" crc="4050067343" seo="true" mt="1459902568213" redirect="true"/>
+  <file name="about.html" crc="336772468" seo="true" mt="1459899900265" redirect="true"/>
+  <file name="contact.html" crc="408991290" seo="true" mt="1459899908065" redirect="true"/>
+</manifest>

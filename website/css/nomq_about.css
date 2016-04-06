@@ -1,0 +1,158 @@
+	#muse_css_mq
+	{
+		background-color: #FFFFFF;
+	}
+
+	#bp_infinity.active
+	{
+		display: block;
+	}
+
+	#page
+	{
+		min-height: 580px;
+		padding-bottom: 12px;
+		max-width: 1920px;
+	}
+
+	#u2668
+	{
+		min-height: 85px;
+		padding-bottom: 13px;
+	}
+
+	#u2668_align_to_page
+	{
+		max-width: 1920px;
+	}
+
+	#u2669
+	{
+		width: 13.29%;
+		left: 1.05%;
+	}
+
+	#menuu2671
+	{
+		width: 643px;
+		margin-top: 30px;
+		left: 64.8%;
+	}
+
+	#u2693,#u2696,#u2697-4
+	{
+		width: 126px;
+	}
+
+	#u2696:hover #u2697-4
+	{
+		width: 126px;
+	}
+
+	#u2696.MuseMenuActive #u2697-4
+	{
+		width: 126px;
+	}
+
+	#u2679
+	{
+		width: 127px;
+		left: 128px;
+	}
+
+	#u2680,#u2683-4
+	{
+		width: 127px;
+	}
+
+	#u2680:hover #u2683-4
+	{
+		width: 127px;
+	}
+
+	#u2700
+	{
+		width: 127px;
+		left: 257px;
+	}
+
+	#u2680.MuseMenuActive #u2683-4,#u2703
+	{
+		width: 127px;
+	}
+
+	#u2703.MuseMenuActive,#u2705-4
+	{
+		width: 127px;
+	}
+
+	#u2703:hover #u2705-4
+	{
+		width: 127px;
+	}
+
+	#u2672
+	{
+		width: 127px;
+		left: 386px;
+	}
+
+	#u2703.MuseMenuActive #u2705-4,#u2675
+	{
+		width: 127px;
+	}
+
+	#u2675.MuseMenuActive,#u2676-4
+	{
+		width: 127px;
+	}
+
+	#u2675:hover #u2676-4
+	{
+		width: 127px;
+	}
+
+	#u2686
+	{
+		width: 127px;
+		left: 515px;
+	}
+
+	#u2675.MuseMenuActive #u2676-4,#u2689,#u2692-4
+	{
+		width: 127px;
+	}
+
+	#u2689:hover #u2692-4
+	{
+		width: 127px;
+	}
+
+	#u2689.MuseMenuActive #u2692-4
+	{
+		width: 127px;
+	}
+
+	#u2668-bw
+	{
+		min-height: 85px;
+	}
+
+	#u302
+	{
+		margin-top: 63px;
+		left: 47.97%;
+	}
+
+	#u247-4
+	{
+		margin-top: 116px;
+		width: 13.13%;
+		left: 82.66%;
+	}
+
+	.verticalspacer
+	{
+		min-height: 340px;
+	}
+
