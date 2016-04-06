@@ -75,7 +75,7 @@ public class Controller implements Initializable {
     public void initialize( URL location, ResourceBundle resources ) {
 
         System.out.println("View is now loaded!");
-        error.setText("Not all menu buttons not implemented yet.");
+        error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
     }
 
