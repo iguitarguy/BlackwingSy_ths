@@ -112,7 +112,7 @@ public class Controller implements Initializable {
             }
         }
         else if (event.getButton().equals(MouseButton.SECONDARY)) {
-        	System.out.println("Right mouse clicked.");
+        	 //System.out.println("Right mouse clicked.");
         	 Button btn = (Button) event.getSource();
 
              FileChooser fileChooser = new FileChooser();
