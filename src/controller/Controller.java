@@ -66,6 +66,7 @@ public class Controller implements Initializable {
     @FXML protected Button Mbtn;
 
     @FXML protected Pane gui;
+    @FXML protected MenuItem playStopToggle;
     protected boolean tapHoldToggle;
     private final boolean TAP = true;
     private final boolean HOLD = false;
@@ -840,11 +841,12 @@ public class Controller implements Initializable {
 
     @FXML
     protected void toggleTapHold( ActionEvent event ) {
-        System.out.println(event);
+//        System.out.println(event);
 
         if ( tapHoldToggle == HOLD ) {
 
             tapHoldToggle = TAP;
+            playStopToggle.setText("Hold to Play");
             gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle( KeyEvent event ) {
@@ -856,6 +858,7 @@ public class Controller implements Initializable {
         else {
 
             tapHoldToggle = HOLD;
+            playStopToggle.setText("Tap to Play");
             gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle( KeyEvent event ) {
