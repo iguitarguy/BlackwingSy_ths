@@ -75,7 +75,7 @@ public class Controller implements Initializable {
     public void initialize( URL location, ResourceBundle resources ) {
 
         System.out.println("View is now loaded!");
-        error.setText("Not all menu buttons not implemented yet.");
+        error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
     }
 
@@ -112,6 +112,30 @@ public class Controller implements Initializable {
             catch ( MediaException me ) {
                 this.error.setText("Unsupported File Type");
             }
+        }
+        else if (event.getButton().equals(MouseButton.SECONDARY)) {
+        	 //System.out.println("Right mouse clicked.");
+        	 Button btn = (Button) event.getSource();
+
+             FileChooser fileChooser = new FileChooser();
+             fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + System.getProperty("file.separator") + "workspace/Blackwing Sy_ths/bin/Composite"));
+             fileChooser.setTitle("Select Music Bite");
+
+             fileChooser.getExtensionFilters().addAll(
+                     new FileChooser.ExtensionFilter("All Music", "*.*"),
+                     new FileChooser.ExtensionFilter("MP3", "*.mp3"));
+           
+             try {
+                 File file = fileChooser.showOpenDialog(null);
+                 btn.setSound(file);
+                 this.error.setText("");
+             }
+             catch ( NullPointerException npe ) {
+                 this.error.setText("No File Selected");
+             }
+             catch ( MediaException me ) {
+                 this.error.setText("Unsupported File Type");
+             }
         }
     }
 
