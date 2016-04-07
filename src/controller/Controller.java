@@ -102,6 +102,8 @@ public class Controller implements Initializable {
             try {
                 File file = fileChooser.showOpenDialog(null);
                 btn.setSound(file);
+                btn.getStyleClass().add("light-bg");
+                btn.getStyleClass().remove("medium-bg");
                 this.error.setText("");
             }
             catch ( NullPointerException npe ) {
