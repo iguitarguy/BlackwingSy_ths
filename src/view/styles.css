@@ -1,0 +1,58 @@
+/* Dark: 1a1919
+ * Medium: 353535
+ * Light: 464646
+ */
+
+.active {
+
+}
+
+.dark-bg {
+  -fx-background-color: #1a1919;
+  -fx-text-fill: #fff;
+}
+
+.medium-bg {
+  -fx-background-color: #464646;
+  -fx-text-fill: #fff;
+}
+
+.light-bg {
+  -fx-background-color: #fff;
+  -fx-text-fill: #000;
+}
+
+.menu-bar {
+  -fx-background-color: #464646;
+}
+
+.menu .label {
+  -fx-text-fill: #fff;
+}
+
+.menu:hover {
+  -fx-background-color: #353535;
+}
+
+.menu:showing {
+  -fx-background-color: #353535;
+}
+
+.menu-item .label {
+  -fx-text-fill: #000;
+}
+
+.menu-item:focused {
+  -fx-background-color: #464646;
+}
+
+.menu-item:focused .label {
+  -fx-text-fill: #fff;
+}
+
+.context-menu {
+  -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+  -fx-background-color: #fff;
+  -fx-background-insets: 0,1,2;
+  -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+}
