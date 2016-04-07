@@ -1,4 +1,4 @@
-![alt tag] (Blackwing-Syths.png "BlackWing Sy_ths")
+![alt tag] (https://raw.githubusercontent.com/soft-eng-practicum/BlackwingSy_ths/master/src/img/Blackwing-Syths.png?token=AGSoqjvMjKMIlWX257rJn-C75WxZjUddks5XDwlqwA%3D%3D "BlackWing Sy_ths")
 
 
 ## Description
