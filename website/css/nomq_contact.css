@@ -28,6 +28,8 @@
 
 	#u2945
 	{
+		margin-right: -10000px;
+		margin-top: 13px;
 		width: 13.29%;
 		left: 1.05%;
 	}
@@ -35,6 +37,7 @@
 	#menuu2947
 	{
 		width: 643px;
+		margin-right: -10000px;
 		margin-top: 30px;
 		left: 64.8%;
 	}
@@ -140,12 +143,14 @@
 
 	#u302
 	{
+		margin-right: -10000px;
 		margin-top: 63px;
 		left: 47.97%;
 	}
 
 	#u247-4
 	{
+		margin-right: -10000px;
 		margin-top: 116px;
 		width: 13.13%;
 		left: 82.66%;
