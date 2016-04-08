@@ -1,16 +1,16 @@
-<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460074583316">
+<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460134050404">
   <folder name="css">
     <file name="site_global.css" crc="131700929"/>
-    <file name="master_a-master.css" crc="290471261" ref="contact:download:index:about"/>
+    <file name="master_a-master.css" crc="273771827" ref="contact:download:index:about"/>
     <file name="nomq_preview_master_a-master.css" crc="321525473" ref="contact:download:index:about"/>
-    <file name="contact.css" crc="3758741262" ref="contact"/>
-    <file name="nomq_contact.css" crc="161983300" ref="contact"/>
-    <file name="download.css" crc="232599463" ref="download"/>
-    <file name="nomq_download.css" crc="3821655024" ref="download"/>
-    <file name="index.css" crc="3898787494" ref="index"/>
+    <file name="contact.css" crc="4047978239" ref="contact"/>
+    <file name="nomq_contact.css" crc="3816584888" ref="contact"/>
+    <file name="download.css" crc="289333588" ref="download"/>
+    <file name="nomq_download.css" crc="3930162296" ref="download"/>
+    <file name="index.css" crc="4122300215" ref="index"/>
     <file name="nomq_index.css" crc="3858973460" ref="index"/>
-    <file name="about.css" crc="4288032025" ref="about"/>
-    <file name="nomq_about.css" crc="4282561316" ref="about"/>
+    <file name="about.css" crc="4237756424" ref="about"/>
+    <file name="nomq_about.css" crc="208125267" ref="about"/>
   </folder>
   <folder name="scripts">
     <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about:contact"/>
@@ -30,8 +30,8 @@
     <file name="layoutv030-beta.jpg" crc="4168725262" seo="true" ref="index"/>
     <file name="layoutv030-beta332x191.jpg" crc="106701251" seo="true" ref="index"/>
   </folder>
-  <file name="index.html" crc="462888510" seo="true" mt="1460074546802" redirect="true"/>
-  <file name="download.html" crc="316358217" seo="true" mt="1460074222941" redirect="true"/>
-  <file name="about.html" crc="487770436" seo="true" mt="1460074222941" redirect="true"/>
-  <file name="contact.html" crc="499800293" seo="true" mt="1460074222941" redirect="true"/>
+  <file name="index.html" crc="4123737462" seo="true" mt="1460132615681" redirect="true"/>
+  <file name="download.html" crc="4293366966" seo="true" mt="1460132937337" redirect="true"/>
+  <file name="about.html" crc="237729911" seo="true" mt="1460132408018" redirect="true"/>
+  <file name="contact.html" crc="4031101306" seo="true" mt="1460132408018" redirect="true"/>
 </manifest>
