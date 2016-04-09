@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playMusic" onKeyReleased="#stopMusic" prefHeight="292.0" prefWidth="561.0" styleClass="dark-bg" stylesheets="/view/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<Pane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playMusicEvent" onKeyReleased="#stopMusicEvent" prefHeight="292.0" prefWidth="561.0" styleClass="dark-bg" stylesheets="/view/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
 	<children>
 		<Label fx:id="error" layoutX="14.0" layoutY="263.0" text="Errors" />
 		<Button fx:id="N1btn" layoutX="30.0" layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#assignMusic" prefHeight="40.0" prefWidth="40.0" styleClass="medium-bg" text="1" textAlignment="CENTER" />
