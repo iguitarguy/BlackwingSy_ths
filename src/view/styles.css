@@ -2,11 +2,6 @@
  * Medium: 353535
  * Light: 464646
  */
-
-.active {
-
-}
-
 .dark-bg {
   -fx-background-color: #1a1919;
   -fx-text-fill: #fff;
@@ -55,4 +50,8 @@
   -fx-background-color: #fff;
   -fx-background-insets: 0,1,2;
   -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+}
+
+.active {
+  -fx-background-color: rgb(57, 205, 54);
 }
