@@ -1,7 +1,7 @@
 .version.index /* version checker */
 {
-	color: #0000F5;
-	background-color: #B54F37;
+	color: #0000E7;
+	background-color: #EB3E73;
 }
 
 .js body
@@ -16,14 +16,14 @@
 
 #page
 {
-	margin-left: auto;
 	border-width: 0px;
+	margin-left: auto;
 	background-color: transparent;
-	background-image: none;
-	border-color: #000000;
 	z-index: 1;
-	width: 100%;
+	background-image: none;
 	margin-right: auto;
+	width: 100%;
+	border-color: #000000;
 }
 
 #u698
@@ -35,15 +35,15 @@
 #u708-4
 {
 	color: #FFFFFF;
-	text-align: center;
-	position: relative;
-	line-height: 72px;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 60px;
-	z-index: 4;
 	font-family: amaranth, sans-serif;
+	z-index: 4;
 	margin-right: -10000px;
+	position: relative;
+	text-align: center;
+	font-weight: 400;
+	line-height: 72px;
 }
 
 #u698-bw
@@ -59,9 +59,9 @@
 
 #u319
 {
+	z-index: 51;
 	background-color: transparent;
 	position: relative;
-	z-index: 51;
 }
 
 #u319_img
@@ -82,26 +82,26 @@
 #u3879-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
 	background-color: transparent;
-	font-family: amaranth, sans-serif;
-	font-weight: 400;
 	font-size: 48px;
+	font-family: amaranth, sans-serif;
 	z-index: 8;
+	position: relative;
+	text-align: center;
+	font-weight: 400;
 	line-height: 58px;
 }
 
 #u3891-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
 	background-color: transparent;
-	font-family: ubuntu-mono, sans-serif;
-	font-weight: 400;
 	font-size: 36px;
+	font-family: ubuntu-mono, sans-serif;
+	position: relative;
 	z-index: 16;
+	text-align: center;
+	font-weight: 400;
 	line-height: 43px;
 }
 
@@ -114,67 +114,67 @@
 #u4270-4
 {
 	color: #000000;
-	text-align: left;
-	position: relative;
-	font-family: carme, sans-serif;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 18px;
+	font-family: carme, sans-serif;
+	position: relative;
 	z-index: 20;
+	text-align: left;
+	font-weight: 400;
 	line-height: 22px;
 }
 
 #u4301
 {
-	z-index: 3;
 	background-color: #7F7F7F;
+	z-index: 3;
 }
 
 #u698_align_to_page,#u316_align_to_page,#u4301_align_to_page
 {
-	margin-right: auto;
 	margin-left: auto;
+	margin-right: auto;
 	width: 100%;
 	position: relative;
 }
 
 #u4289-4
 {
-	color: #000000;
-	text-align: center;
-	position: relative;
-	font-family: amaranth, sans-serif;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 48px;
+	color: #000000;
+	font-family: amaranth, sans-serif;
+	position: relative;
 	z-index: 12;
+	text-align: center;
+	font-weight: 400;
 	line-height: 58px;
 }
 
 #u4313-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
-	line-height: 43px;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 36px;
-	z-index: 24;
 	font-family: ubuntu-mono, sans-serif;
+	position: relative;
+	z-index: 24;
+	text-align: center;
+	font-weight: 400;
+	line-height: 43px;
 }
 
 #u4319-4
 {
 	color: #000000;
-	text-align: left;
-	position: relative;
-	line-height: 22px;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 18px;
-	z-index: 28;
 	font-family: carme, sans-serif;
+	position: relative;
+	z-index: 28;
+	text-align: left;
+	font-weight: 400;
+	line-height: 22px;
 }
 
 #u4301-bw
@@ -185,73 +185,73 @@
 #u4325-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
-	line-height: 58px;
 	background-color: transparent;
-	font-weight: 400;
-	font-size: 48px;
 	min-height: 72px;
-	z-index: 32;
+	font-size: 48px;
 	font-family: amaranth, sans-serif;
+	position: relative;
+	z-index: 32;
+	text-align: center;
+	font-weight: 400;
+	line-height: 58px;
 }
 
 #u4331-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
-	line-height: 43px;
 	background-color: transparent;
-	font-weight: 400;
-	font-size: 36px;
 	min-height: 46px;
-	z-index: 36;
+	font-size: 36px;
 	font-family: ubuntu-mono, sans-serif;
+	position: relative;
+	z-index: 36;
+	text-align: center;
+	font-weight: 400;
+	line-height: 43px;
 }
 
 #u4337-4
 {
 	color: #000000;
-	text-align: center;
-	position: relative;
-	line-height: 22px;
 	background-color: transparent;
-	font-weight: 400;
 	font-size: 18px;
-	z-index: 40;
 	font-family: carme, sans-serif;
+	position: relative;
+	z-index: 40;
+	text-align: center;
+	font-weight: 400;
+	line-height: 22px;
 }
 
 #u4343-4
 {
-	color: #FFFFFF;
-	text-align: center;
-	position: relative;
-	border-width: 1px;
-	background-color: #1A1919;
-	border-color: #7F7F7F;
-	line-height: 36px;
-	font-weight: 400;
-	font-size: 30px;
-	min-height: 73px;
 	border-radius: 10px;
-	width: 243px;
+	background-color: #1A1919;
+	min-height: 73px;
+	font-size: 30px;
+	color: #FFFFFF;
 	font-family: amaranth, sans-serif;
+	border-color: #7F7F7F;
+	border-width: 1px;
 	border-style: solid;
+	position: relative;
+	text-align: center;
+	width: 243px;
+	font-weight: 400;
+	line-height: 36px;
 }
 
 #u4343-4::before
 {
 	bottom: -1px;
-	left: -1px;
-	right: -1px;
-	pointer-events: none;
-	box-shadow: inset 3px 3px 4px rgba(255,255,255,0.75), inset -3px -3px 4px rgba(0,0,0,0.75);
-	position: absolute;
 	z-index: -1;
 	border-radius: 10px;
 	top: -1px;
+	right: -1px;
+	position: absolute;
+	left: -1px;
+	box-shadow: inset 3px 3px 4px rgba(255,255,255,0.75), inset -3px -3px 4px rgba(0,0,0,0.75);
+	pointer-events: none;
 	content: "";
 }
 
@@ -262,16 +262,16 @@
 
 #u302
 {
-	position: relative;
 	z-index: 48;
+	position: relative;
 	width: 79px;
 }
 
 #u247-4
 {
-	min-height: 18px;
-	position: relative;
 	z-index: 44;
+	position: relative;
+	min-height: 18px;
 }
 
 .html
@@ -2139,7 +2139,7 @@ body
 
 	#u4301
 	{
-		min-height: 400.54999999999995px;
+		min-height: 400.5499999999997px;
 		padding-bottom: 0px;
 	}
 
@@ -2173,7 +2173,7 @@ body
 
 	#u4301-bw
 	{
-		min-height: 400.54999999999995px;
+		min-height: 400.5499999999997px;
 		margin-top: 122px;
 	}
 
@@ -2626,7 +2626,7 @@ body
 
 	#u4301
 	{
-		min-height: 429.54999999999995px;
+		min-height: 429.5499999999997px;
 		padding-bottom: 0px;
 	}
 
@@ -2660,7 +2660,7 @@ body
 
 	#u4301-bw
 	{
-		min-height: 429.54999999999995px;
+		min-height: 429.5499999999997px;
 	}
 
 	#u4325-4

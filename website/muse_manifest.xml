@@ -1,16 +1,20 @@
-<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460134050404">
+<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460218165396">
+  <folder name="assets">
+    <file name="blackwing-v0.3.2-beta.jar" crc="322530860" seo="true" mt="1460210967000"/>
+    <file name="blackwing-v0.3.2-beta.exe" crc="502109909" seo="true" mt="1460211131000"/>
+  </folder>
   <folder name="css">
     <file name="site_global.css" crc="131700929"/>
     <file name="master_a-master.css" crc="273771827" ref="contact:download:index:about"/>
     <file name="nomq_preview_master_a-master.css" crc="321525473" ref="contact:download:index:about"/>
-    <file name="contact.css" crc="4047978239" ref="contact"/>
-    <file name="nomq_contact.css" crc="3816584888" ref="contact"/>
-    <file name="download.css" crc="289333588" ref="download"/>
-    <file name="nomq_download.css" crc="3930162296" ref="download"/>
-    <file name="index.css" crc="4122300215" ref="index"/>
+    <file name="contact.css" crc="3969958516" ref="contact"/>
+    <file name="nomq_contact.css" crc="4043333968" ref="contact"/>
+    <file name="download.css" crc="434856979" ref="download"/>
+    <file name="nomq_download.css" crc="330141419" ref="download"/>
+    <file name="index.css" crc="3890953843" ref="index"/>
     <file name="nomq_index.css" crc="3858973460" ref="index"/>
-    <file name="about.css" crc="4237756424" ref="about"/>
-    <file name="nomq_about.css" crc="208125267" ref="about"/>
+    <file name="about.css" crc="372035567" ref="about"/>
+    <file name="nomq_about.css" crc="4257071988" ref="about"/>
   </folder>
   <folder name="scripts">
     <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about:contact"/>
@@ -29,9 +33,11 @@
     <file name="a-master-favicon.ico" crc="123104215" ref="index"/>
     <file name="layoutv030-beta.jpg" crc="4168725262" seo="true" ref="index"/>
     <file name="layoutv030-beta332x191.jpg" crc="106701251" seo="true" ref="index"/>
+    <file name="apple.png" crc="4155777929" seo="true" ref="download"/>
+    <file name="windows.png" crc="22730482" seo="true" ref="download"/>
   </folder>
-  <file name="index.html" crc="4123737462" seo="true" mt="1460132615681" redirect="true"/>
-  <file name="download.html" crc="4293366966" seo="true" mt="1460132937337" redirect="true"/>
-  <file name="about.html" crc="237729911" seo="true" mt="1460132408018" redirect="true"/>
-  <file name="contact.html" crc="4031101306" seo="true" mt="1460132408018" redirect="true"/>
+  <file name="index.html" crc="3808746184" seo="true" mt="1460213914773" redirect="true"/>
+  <file name="download.html" crc="4141373812" seo="true" mt="1460217684784" redirect="true"/>
+  <file name="about.html" crc="4096367257" seo="true" mt="1460217983254" redirect="true"/>
+  <file name="contact.html" crc="225427101" seo="true" mt="1460216306986" redirect="true"/>
 </manifest>
