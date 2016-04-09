@@ -301,10 +301,10 @@ public class Controller implements Initializable {
                         btn.getStyleClass().remove("active");
                     }
                 });
-            }
-            if ( !btn.getStyleClass().contains("active") ) {
+                if ( !btn.getStyleClass().contains("active") ) {
 
-                btn.getStyleClass().add("active");
+                    btn.getStyleClass().add("active");
+                }
             }
         }
     }
