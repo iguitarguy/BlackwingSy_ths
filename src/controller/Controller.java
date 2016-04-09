@@ -190,10 +190,7 @@ public class Controller implements Initializable {
      */
     public void playMusic(Button btn) {
 
-        if (btn.getSound() != null) {
-
-            btn.playSound();
-        }
+        btn.playSound();
         if (!btn.getStyleClass().contains("active")) {
 
             btn.getStyleClass().add("active");
@@ -207,10 +204,7 @@ public class Controller implements Initializable {
      */
     public void stopMusic(Button btn) {
 
-        if (btn.getSound() != null) {
-
-            btn.stopSound();
-        }
+        btn.stopSound();
         btn.getStyleClass().remove("active");
     }
 
@@ -222,20 +216,14 @@ public class Controller implements Initializable {
     public void toggleMusic(Button btn) {
 
       if (!btn.isPlaying()) {
-          if (btn.getSound() != null) {
-
-              btn.playSound();
-          }
+          btn.playSound();
           if (!btn.getStyleClass().contains("active")) {
 
               btn.getStyleClass().add("active");
           }
       }
       else {
-          if (btn.getSound() != null) {
-
-              btn.stopSound();
-          }
+          btn.stopSound();
           btn.getStyleClass().remove("active");
       }
     }
