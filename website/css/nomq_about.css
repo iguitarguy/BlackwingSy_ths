@@ -197,7 +197,7 @@
 
 	#u2703.MuseMenuActive #u2705-4 p
 	{
-		color: #7F7F7F;
+		color: #000000;
 		visibility: inherit;
 		font-family: dosis, sans-serif;
 		font-weight: 600;
@@ -322,9 +322,6 @@
 	{
 		color: #000000;
 		visibility: inherit;
-		font-family: carme, sans-serif;
-		font-weight: 400;
-		font-style: normal;
 	}
 
 	#u2668-bw
