@@ -54,4 +54,5 @@
 
 .active {
   -fx-background-color: rgb(57, 205, 54);
+  -fx-text-fill: #fff;
 }
