@@ -11,6 +11,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import model.Button;
 
@@ -213,18 +214,24 @@ public class Controller implements Initializable {
      * @param btn
      * Toggle playback of sound
      */
-    public void toggleMusic(Button btn) {
+    public void toggleMusic( final Button btn ) {
 
-      if (!btn.isPlaying()) {
+      if (btn.isPlaying()) {
+          btn.stopSound();
+          btn.getStyleClass().remove("active");
+      }
+      else {
           btn.playSound();
+          btn.getSound().setOnEndOfMedia(new Runnable() {
+              public void run() {
+                  btn.stopSound();
+                  btn.getStyleClass().remove("active");
+              }
+          });
           if (!btn.getStyleClass().contains("active")) {
 
               btn.getStyleClass().add("active");
           }
-      }
-      else {
-          btn.stopSound();
-          btn.getStyleClass().remove("active");
       }
     }
 
