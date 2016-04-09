@@ -124,7 +124,7 @@ public class Controller implements Initializable {
              fileChooser.getExtensionFilters().addAll(
                      new FileChooser.ExtensionFilter("All Music", "*.*"),
                      new FileChooser.ExtensionFilter("MP3", "*.mp3"));
-           
+
              try {
                  File file = fileChooser.showOpenDialog(null);
                  btn.setSound(file);
@@ -181,501 +181,239 @@ public class Controller implements Initializable {
     	this.N7btn.unbindSound();
     	this.N8btn.unbindSound();
     	this.N9btn.unbindSound();
-    	
     }
-    
+
     /**
      * playMusic
-     * @param event KeyEvent
-     * Play music based on key press
+     * @param btn Button
+     * Start playback of sound
      */
-    @FXML
-    protected void playMusic( KeyEvent event ) {
+    public void playMusic(Button btn) {
 
-        switch ( event.getCode() ) {
-            case DIGIT1: N1btn.playSound(); break;
-            case DIGIT2: N2btn.playSound(); break;
-            case DIGIT3: N3btn.playSound(); break;
-            case DIGIT4: N4btn.playSound(); break;
-            case DIGIT5: N5btn.playSound(); break;
-            case DIGIT6: N6btn.playSound(); break;
-            case DIGIT7: N7btn.playSound(); break;
-            case DIGIT8: N8btn.playSound(); break;
-            case DIGIT9: N9btn.playSound(); break;
-            case DIGIT0: N0btn.playSound(); break;
-            case NUMPAD1: N1btn.playSound(); break;
-            case NUMPAD2: N2btn.playSound(); break;
-            case NUMPAD3: N3btn.playSound(); break;
-            case NUMPAD4: N4btn.playSound(); break;
-            case NUMPAD5: N5btn.playSound(); break;
-            case NUMPAD6: N6btn.playSound(); break;
-            case NUMPAD7: N7btn.playSound(); break;
-            case NUMPAD8: N8btn.playSound(); break;
-            case NUMPAD9: N9btn.playSound(); break;
-            case NUMPAD0: N0btn.playSound(); break;
-            case A: Abtn.playSound(); break;
-            case B: Bbtn.playSound(); break;
-            case C: Cbtn.playSound(); break;
-            case D: Dbtn.playSound(); break;
-            case E: Ebtn.playSound(); break;
-            case F: Fbtn.playSound(); break;
-            case G: Gbtn.playSound(); break;
-            case H: Hbtn.playSound(); break;
-            case I: Ibtn.playSound(); break;
-            case J: Jbtn.playSound(); break;
-            case K: Kbtn.playSound(); break;
-            case L: Lbtn.playSound(); break;
-            case M: Mbtn.playSound(); break;
-            case N: Nbtn.playSound(); break;
-            case O: Obtn.playSound(); break;
-            case P: Pbtn.playSound(); break;
-            case Q: Qbtn.playSound(); break;
-            case R: Rbtn.playSound(); break;
-            case S: Sbtn.playSound(); break;
-            case T: Tbtn.playSound(); break;
-            case U: Ubtn.playSound(); break;
-            case V: Vbtn.playSound(); break;
-            case W: Wbtn.playSound(); break;
-            case X: Xbtn.playSound(); break;
-            case Y: Ybtn.playSound(); break;
-            case Z: Zbtn.playSound(); break;
-            default: break;
+        if (btn.getSound() != null) {
+
+            btn.playSound();
+        }
+        if (!btn.getStyleClass().contains("active")) {
+
+            btn.getStyleClass().add("active");
         }
     }
 
-    @FXML
-    protected void stopMusic( KeyEvent event ) {
+    /**
+     * stopMusic
+     * @param btn Button
+     * Stop playback of sound
+     */
+    public void stopMusic(Button btn) {
 
-        switch ( event.getCode() ) {
-            case DIGIT1: N1btn.stopSound(); break;
-            case DIGIT2: N2btn.stopSound(); break;
-            case DIGIT3: N3btn.stopSound(); break;
-            case DIGIT4: N4btn.stopSound(); break;
-            case DIGIT5: N5btn.stopSound(); break;
-            case DIGIT6: N6btn.stopSound(); break;
-            case DIGIT7: N7btn.stopSound(); break;
-            case DIGIT8: N8btn.stopSound(); break;
-            case DIGIT9: N9btn.stopSound(); break;
-            case DIGIT0: N0btn.stopSound(); break;
-            case NUMPAD1: N1btn.stopSound(); break;
-            case NUMPAD2: N2btn.stopSound(); break;
-            case NUMPAD3: N3btn.stopSound(); break;
-            case NUMPAD4: N4btn.stopSound(); break;
-            case NUMPAD5: N5btn.stopSound(); break;
-            case NUMPAD6: N6btn.stopSound(); break;
-            case NUMPAD7: N7btn.stopSound(); break;
-            case NUMPAD8: N8btn.stopSound(); break;
-            case NUMPAD9: N9btn.stopSound(); break;
-            case NUMPAD0: N0btn.stopSound(); break;
-            case Q: Qbtn.stopSound(); break;
-            case W: Wbtn.stopSound(); break;
-            case E: Ebtn.stopSound(); break;
-            case R: Rbtn.stopSound(); break;
-            case T: Tbtn.stopSound(); break;
-            case Y: Ybtn.stopSound(); break;
-            case U: Ubtn.stopSound(); break;
-            case I: Ibtn.stopSound(); break;
-            case O: Obtn.stopSound(); break;
-            case P: Pbtn.stopSound(); break;
-            case A: Abtn.stopSound(); break;
-            case S: Sbtn.stopSound(); break;
-            case D: Dbtn.stopSound(); break;
-            case F: Fbtn.stopSound(); break;
-            case G: Gbtn.stopSound(); break;
-            case H: Hbtn.stopSound(); break;
-            case J: Jbtn.stopSound(); break;
-            case K: Kbtn.stopSound(); break;
-            case L: Lbtn.stopSound(); break;
-            case Z: Zbtn.stopSound(); break;
-            case X: Xbtn.stopSound(); break;
-            case C: Cbtn.stopSound(); break;
-            case V: Vbtn.stopSound(); break;
-            case B: Bbtn.stopSound(); break;
-            case N: Nbtn.stopSound(); break;
-            case M: Mbtn.stopSound(); break;
-            default: break;
+        if (btn.getSound() != null) {
+
+            btn.stopSound();
         }
+        btn.getStyleClass().remove("active");
     }
 
     /**
      * toggleMusic
+     * @param btn
+     * Toggle playback of sound
+     */
+    public void toggleMusic(Button btn) {
+
+      if (!btn.isPlaying()) {
+          if (btn.getSound() != null) {
+
+              btn.playSound();
+          }
+          if (!btn.getStyleClass().contains("active")) {
+
+              btn.getStyleClass().add("active");
+          }
+      }
+      else {
+          if (btn.getSound() != null) {
+
+              btn.stopSound();
+          }
+          btn.getStyleClass().remove("active");
+      }
+    }
+
+    /**
+     * playMusicEvent
      * @param event KeyEvent
      * Play music based on key press
      */
     @FXML
-    protected void toggleMusic( KeyEvent event ) {
+    protected void playMusicEvent( KeyEvent event ) {
 
         switch ( event.getCode() ) {
-            case DIGIT1:
-                if ( !N1btn.isPlaying() ) {
-                    N1btn.playSound();
-                }
-                else {
-                    N1btn.stopSound();
-                }
-                break;
-            case DIGIT2:
-                if ( !N2btn.isPlaying() ) {
-                    N2btn.playSound();
-                }
-                else {
-                    N2btn.stopSound();
-                }
-                break;
-            case DIGIT3:
-                if ( !N3btn.isPlaying() ) {
-                    N3btn.playSound();
-                }
-                else {
-                    N3btn.stopSound();
-                }
-                break;
-            case DIGIT4:
-                if ( !N4btn.isPlaying() ) {
-                    N4btn.playSound();
-                }
-                else {
-                    N4btn.stopSound();
-                }
-                break;
-            case DIGIT5:
-                if ( !N5btn.isPlaying() ) {
-                    N5btn.playSound();
-                }
-                else {
-                    N5btn.stopSound();
-                }
-                break;
-            case DIGIT6:
-                if ( !N6btn.isPlaying() ) {
-                    N6btn.playSound();
-                }
-                else {
-                    N6btn.stopSound();
-                }
-                break;
-            case DIGIT7:
-                if ( !N7btn.isPlaying() ) {
-                    N7btn.playSound();
-                }
-                else {
-                    N7btn.stopSound();
-                }
-                break;
-            case DIGIT8:
-                if ( !N8btn.isPlaying() ) {
-                    N8btn.playSound();
-                }
-                else {
-                    N8btn.stopSound();
-                }
-                break;
-            case DIGIT9:
-                if ( !N9btn.isPlaying() ) {
-                    N9btn.playSound();
-                }
-                else {
-                    N9btn.stopSound();
-                }
-                break;
-            case DIGIT0:
-                if ( !N0btn.isPlaying() ) {
-                    N0btn.playSound();
-                }
-                else {
-                    N0btn.stopSound();
-                }
-                break;
-            case NUMPAD1:
-                if ( !N1btn.isPlaying() ) {
-                    N1btn.playSound();
-                }
-                else {
-                    N1btn.stopSound();
-                }
-                break;
-            case NUMPAD2:
-                if ( !N2btn.isPlaying() ) {
-                    N2btn.playSound();
-                }
-                else {
-                    N2btn.stopSound();
-                }
-                break;
-            case NUMPAD3:
-                if ( !N3btn.isPlaying() ) {
-                    N3btn.playSound();
-                }
-                else {
-                    N3btn.stopSound();
-                }
-                break;
-            case NUMPAD4:
-                if ( !N4btn.isPlaying() ) {
-                    N4btn.playSound();
-                }
-                else {
-                    N4btn.stopSound();
-                }
-                break;
-            case NUMPAD5:
-                if ( !N5btn.isPlaying() ) {
-                    N5btn.playSound();
-                }
-                else {
-                    N5btn.stopSound();
-                }
-                break;
-            case NUMPAD6:
-                if ( !N6btn.isPlaying() ) {
-                    N6btn.playSound();
-                }
-                else {
-                    N6btn.stopSound();
-                }
-                break;
-            case NUMPAD7:
-                if ( !N7btn.isPlaying() ) {
-                    N7btn.playSound();
-                }
-                else {
-                    N7btn.stopSound();
-                }
-                break;
-            case NUMPAD8:
-                if ( !N8btn.isPlaying() ) {
-                    N8btn.playSound();
-                }
-                else {
-                    N8btn.stopSound();
-                }
-                break;
-            case NUMPAD9:
-                if ( !N9btn.isPlaying() ) {
-                    N9btn.playSound();
-                }
-                else {
-                    N9btn.stopSound();
-                }
-                break;
-            case NUMPAD0:
-                if ( !N0btn.isPlaying() ) {
-                    N0btn.playSound();
-                }
-                else {
-                    N0btn.stopSound();
-                }
-                break;
-            case Q:
-                if ( !Qbtn.isPlaying() ) {
-                    Qbtn.playSound();
-                }
-                else {
-                    Qbtn.stopSound();
-                }
-                break;
-            case W:
-                if ( !Wbtn.isPlaying() ) {
-                    Wbtn.playSound();
-                }
-                else {
-                    Wbtn.stopSound();
-                }
-                break;
-            case E:
-                if ( !Ebtn.isPlaying() ) {
-                    Ebtn.playSound();
-                }
-                else {
-                    Ebtn.stopSound();
-                }
-                break;
-            case R:
-                if ( !Rbtn.isPlaying() ) {
-                    Rbtn.playSound();
-                }
-                else {
-                    Rbtn.stopSound();
-                }
-                break;
-            case T:
-                if ( !Tbtn.isPlaying() ) {
-                    Tbtn.playSound();
-                }
-                else {
-                    Tbtn.stopSound();
-                }
-                break;
-            case Y:
-                if ( !Ybtn.isPlaying() ) {
-                    Ybtn.playSound();
-                }
-                else {
-                    Ybtn.stopSound();
-                }
-                break;
-            case U:
-                if ( !Ubtn.isPlaying() ) {
-                    Ubtn.playSound();
-                }
-                else {
-                    Ubtn.stopSound();
-                }
-                break;
-            case I:
-                if ( !Ibtn.isPlaying() ) {
-                    Ibtn.playSound();
-                }
-                else {
-                    Ibtn.stopSound();
-                }
-                break;
-            case O:
-                if ( !Obtn.isPlaying() ) {
-                    Obtn.playSound();
-                }
-                else {
-                    Obtn.stopSound();
-                }
-                break;
-            case P:
-                if ( !Pbtn.isPlaying() ) {
-                    Pbtn.playSound();
-                }
-                else {
-                    Pbtn.stopSound();
-                }
-                break;
-            case A:
-                if ( !Abtn.isPlaying() ) {
-                    Abtn.playSound();
-                }
-                else {
-                    Abtn.stopSound();
-                }
-                break;
-            case S:
-                if ( !Sbtn.isPlaying() ) {
-                    Sbtn.playSound();
-                }
-                else {
-                    Sbtn.stopSound();
-                }
-                break;
-            case D:
-                if ( !Dbtn.isPlaying() ) {
-                    Dbtn.playSound();
-                }
-                else {
-                    Dbtn.stopSound();
-                }
-                break;
-            case F:
-                if ( !Fbtn.isPlaying() ) {
-                    Fbtn.playSound();
-                }
-                else {
-                    Fbtn.stopSound();
-                }
-                break;
-            case G:
-                if ( !Gbtn.isPlaying() ) {
-                    Gbtn.playSound();
-                }
-                else {
-                    Gbtn.stopSound();
-                }
-                break;
-            case H:
-                if ( !Hbtn.isPlaying() ) {
-                    Hbtn.playSound();
-                }
-                else {
-                    Hbtn.stopSound();
-                }
-                break;
-            case J:
-                if ( !Jbtn.isPlaying() ) {
-                    Jbtn.playSound();
-                }
-                else {
-                    Jbtn.stopSound();
-                }
-                break;
-            case K:
-                if ( !Kbtn.isPlaying() ) {
-                    Kbtn.playSound();
-                }
-                else {
-                    Kbtn.stopSound();
-                }
-                break;
-            case L:
-                if ( !Lbtn.isPlaying() ) {
-                    Lbtn.playSound();
-                }
-                else {
-                    Lbtn.stopSound();
-                }
-                break;
-            case Z:
-                if ( !Zbtn.isPlaying() ) {
-                    Zbtn.playSound();
-                }
-                else {
-                    Zbtn.stopSound();
-                }
-                break;
-            case X:
-                if ( !Xbtn.isPlaying() ) {
-                    Xbtn.playSound();
-                }
-                else {
-                    Xbtn.stopSound();
-                }
-                break;
-            case C:
-                if ( !Cbtn.isPlaying() ) {
-                    Cbtn.playSound();
-                }
-                else {
-                    Cbtn.stopSound();
-                }
-                break;
-            case V:
-                if ( !Vbtn.isPlaying() ) {
-                    Vbtn.playSound();
-                }
-                else {
-                    Vbtn.stopSound();
-                }
-                break;
-            case B:
-                if ( !Bbtn.isPlaying() ) {
-                    Bbtn.playSound();
-                }
-                else {
-                    Bbtn.stopSound();
-                }
-                break;
-            case N:
-                if ( !Nbtn.isPlaying() ) {
-                    Nbtn.playSound();
-                }
-                else {
-                    Nbtn.stopSound();
-                }
-                break;
-            case M:
-                if ( !Mbtn.isPlaying() ) {
-                    Mbtn.playSound();
-                }
-                else {
-                    Mbtn.stopSound();
-                }
-                break;
-            default:
-                break;
+            case DIGIT1: playMusic(N1btn); break;
+            case DIGIT2: playMusic(N2btn); break;
+            case DIGIT3: playMusic(N3btn); break;
+            case DIGIT4: playMusic(N4btn); break;
+            case DIGIT5: playMusic(N5btn); break;
+            case DIGIT6: playMusic(N6btn); break;
+            case DIGIT7: playMusic(N7btn); break;
+            case DIGIT8: playMusic(N8btn); break;
+            case DIGIT9: playMusic(N9btn); break;
+            case DIGIT0: playMusic(N0btn); break;
+            case NUMPAD1: playMusic(N1btn); break;
+            case NUMPAD2: playMusic(N2btn); break;
+            case NUMPAD3: playMusic(N3btn); break;
+            case NUMPAD4: playMusic(N4btn); break;
+            case NUMPAD5: playMusic(N5btn); break;
+            case NUMPAD6: playMusic(N6btn); break;
+            case NUMPAD7: playMusic(N7btn); break;
+            case NUMPAD8: playMusic(N8btn); break;
+            case NUMPAD9: playMusic(N9btn); break;
+            case NUMPAD0: playMusic(N0btn); break;
+            case A: playMusic(Abtn); break;
+            case B: playMusic(Bbtn); break;
+            case C: playMusic(Cbtn); break;
+            case D: playMusic(Dbtn); break;
+            case E: playMusic(Ebtn); break;
+            case F: playMusic(Fbtn); break;
+            case G: playMusic(Gbtn); break;
+            case H: playMusic(Hbtn); break;
+            case I: playMusic(Ibtn); break;
+            case J: playMusic(Jbtn); break;
+            case K: playMusic(Kbtn); break;
+            case L: playMusic(Lbtn); break;
+            case M: playMusic(Mbtn); break;
+            case N: playMusic(Nbtn); break;
+            case O: playMusic(Obtn); break;
+            case P: playMusic(Pbtn); break;
+            case Q: playMusic(Qbtn); break;
+            case R: playMusic(Rbtn); break;
+            case S: playMusic(Sbtn); break;
+            case T: playMusic(Tbtn); break;
+            case U: playMusic(Ubtn); break;
+            case V: playMusic(Vbtn); break;
+            case W: playMusic(Wbtn); break;
+            case X: playMusic(Xbtn); break;
+            case Y: playMusic(Ybtn); break;
+            case Z: playMusic(Zbtn); break;
+            default: break;
+        }
+    }
+
+    /**
+     * stopMusicEvent
+     * @param event KeyEvent
+     * Stop music based on key press
+     */
+    @FXML
+    protected void stopMusicEvent( KeyEvent event ) {
+
+        switch ( event.getCode() ) {
+            case DIGIT1: stopMusic(N1btn); break;
+            case DIGIT2: stopMusic(N2btn); break;
+            case DIGIT3: stopMusic(N3btn); break;
+            case DIGIT4: stopMusic(N4btn); break;
+            case DIGIT5: stopMusic(N5btn); break;
+            case DIGIT6: stopMusic(N6btn); break;
+            case DIGIT7: stopMusic(N7btn); break;
+            case DIGIT8: stopMusic(N8btn); break;
+            case DIGIT9: stopMusic(N9btn); break;
+            case DIGIT0: stopMusic(N0btn); break;
+            case NUMPAD1: stopMusic(N1btn); break;
+            case NUMPAD2: stopMusic(N2btn); break;
+            case NUMPAD3: stopMusic(N3btn); break;
+            case NUMPAD4: stopMusic(N4btn); break;
+            case NUMPAD5: stopMusic(N5btn); break;
+            case NUMPAD6: stopMusic(N6btn); break;
+            case NUMPAD7: stopMusic(N7btn); break;
+            case NUMPAD8: stopMusic(N8btn); break;
+            case NUMPAD9: stopMusic(N9btn); break;
+            case NUMPAD0: stopMusic(N0btn); break;
+            case A: stopMusic(Abtn); break;
+            case B: stopMusic(Bbtn); break;
+            case C: stopMusic(Cbtn); break;
+            case D: stopMusic(Dbtn); break;
+            case E: stopMusic(Ebtn); break;
+            case F: stopMusic(Fbtn); break;
+            case G: stopMusic(Gbtn); break;
+            case H: stopMusic(Hbtn); break;
+            case I: stopMusic(Ibtn); break;
+            case J: stopMusic(Jbtn); break;
+            case K: stopMusic(Kbtn); break;
+            case L: stopMusic(Lbtn); break;
+            case M: stopMusic(Mbtn); break;
+            case N: stopMusic(Nbtn); break;
+            case O: stopMusic(Obtn); break;
+            case P: stopMusic(Pbtn); break;
+            case Q: stopMusic(Qbtn); break;
+            case R: stopMusic(Rbtn); break;
+            case S: stopMusic(Sbtn); break;
+            case T: stopMusic(Tbtn); break;
+            case U: stopMusic(Ubtn); break;
+            case V: stopMusic(Vbtn); break;
+            case W: stopMusic(Wbtn); break;
+            case X: stopMusic(Xbtn); break;
+            case Y: stopMusic(Ybtn); break;
+            case Z: stopMusic(Zbtn); break;
+            default: break;
+        }
+    }
+
+    /**
+     * toggleMusicEvent
+     * @param event KeyEvent
+     * Play music based on key press
+     */
+    @FXML
+    protected void toggleMusicEvent( KeyEvent event ) {
+
+        switch ( event.getCode() ) {
+          case DIGIT1: toggleMusic(N1btn); break;
+          case DIGIT2: toggleMusic(N2btn); break;
+          case DIGIT3: toggleMusic(N3btn); break;
+          case DIGIT4: toggleMusic(N4btn); break;
+          case DIGIT5: toggleMusic(N5btn); break;
+          case DIGIT6: toggleMusic(N6btn); break;
+          case DIGIT7: toggleMusic(N7btn); break;
+          case DIGIT8: toggleMusic(N8btn); break;
+          case DIGIT9: toggleMusic(N9btn); break;
+          case DIGIT0: toggleMusic(N0btn); break;
+          case NUMPAD1: toggleMusic(N1btn); break;
+          case NUMPAD2: toggleMusic(N2btn); break;
+          case NUMPAD3: toggleMusic(N3btn); break;
+          case NUMPAD4: toggleMusic(N4btn); break;
+          case NUMPAD5: toggleMusic(N5btn); break;
+          case NUMPAD6: toggleMusic(N6btn); break;
+          case NUMPAD7: toggleMusic(N7btn); break;
+          case NUMPAD8: toggleMusic(N8btn); break;
+          case NUMPAD9: toggleMusic(N9btn); break;
+          case NUMPAD0: toggleMusic(N0btn); break;
+          case A: toggleMusic(Abtn); break;
+          case B: toggleMusic(Bbtn); break;
+          case C: toggleMusic(Cbtn); break;
+          case D: toggleMusic(Dbtn); break;
+          case E: toggleMusic(Ebtn); break;
+          case F: toggleMusic(Fbtn); break;
+          case G: toggleMusic(Gbtn); break;
+          case H: toggleMusic(Hbtn); break;
+          case I: toggleMusic(Ibtn); break;
+          case J: toggleMusic(Jbtn); break;
+          case K: toggleMusic(Kbtn); break;
+          case L: toggleMusic(Lbtn); break;
+          case M: toggleMusic(Mbtn); break;
+          case N: toggleMusic(Nbtn); break;
+          case O: toggleMusic(Obtn); break;
+          case P: toggleMusic(Pbtn); break;
+          case Q: toggleMusic(Qbtn); break;
+          case R: toggleMusic(Rbtn); break;
+          case S: toggleMusic(Sbtn); break;
+          case T: toggleMusic(Tbtn); break;
+          case U: toggleMusic(Ubtn); break;
+          case V: toggleMusic(Vbtn); break;
+          case W: toggleMusic(Wbtn); break;
+          case X: toggleMusic(Xbtn); break;
+          case Y: toggleMusic(Ybtn); break;
+          case Z: toggleMusic(Zbtn); break;
+          default: break;
         }
     }
 
@@ -690,7 +428,7 @@ public class Controller implements Initializable {
             gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle( KeyEvent event ) {
-                    toggleMusic(event);
+                    toggleMusicEvent(event);
                 }
             });
             gui.setOnKeyReleased(null);
@@ -702,13 +440,13 @@ public class Controller implements Initializable {
             gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle( KeyEvent event ) {
-                    playMusic(event);
+                    playMusicEvent(event);
                 }
             });
             gui.setOnKeyReleased(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle( KeyEvent event ) {
-                    stopMusic(event);
+                    stopMusicEvent(event);
                 }
             });
         }
