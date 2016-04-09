@@ -78,7 +78,7 @@ public class ControllerTest {
         KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
 
         System.out.printf("Start sound track\n\n");
-        ctrl.playMusic(event);
+        ctrl.playMusicEvent(event);
         assert (Qbtn.isPlaying());
     }
 
@@ -100,8 +100,8 @@ public class ControllerTest {
         KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
 
         System.out.printf("Stop sound track\n\n");
-        ctrl.playMusic(press);
-        ctrl.stopMusic(release);
+        ctrl.playMusicEvent(press);
+        ctrl.stopMusicEvent(release);
         assert (!Qbtn.isPlaying());
     }
 }
