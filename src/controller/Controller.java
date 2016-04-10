@@ -4,14 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
-import javafx.scene.media.MediaPlayer;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import model.Button;
 
@@ -78,6 +80,43 @@ public class Controller implements Initializable {
         System.out.println("View is now loaded!");
         error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
+
+        setupContextMenu(N1btn);
+        setupContextMenu(N2btn);
+        setupContextMenu(N3btn);
+        setupContextMenu(N4btn);
+        setupContextMenu(N5btn);
+        setupContextMenu(N6btn);
+        setupContextMenu(N7btn);
+        setupContextMenu(N8btn);
+        setupContextMenu(N9btn);
+        setupContextMenu(N0btn);
+        setupContextMenu(Qbtn);
+        setupContextMenu(Wbtn);
+        setupContextMenu(Ebtn);
+        setupContextMenu(Rbtn);
+        setupContextMenu(Tbtn);
+        setupContextMenu(Ybtn);
+        setupContextMenu(Ubtn);
+        setupContextMenu(Ibtn);
+        setupContextMenu(Obtn);
+        setupContextMenu(Pbtn);
+        setupContextMenu(Abtn);
+        setupContextMenu(Sbtn);
+        setupContextMenu(Dbtn);
+        setupContextMenu(Fbtn);
+        setupContextMenu(Gbtn);
+        setupContextMenu(Hbtn);
+        setupContextMenu(Jbtn);
+        setupContextMenu(Kbtn);
+        setupContextMenu(Lbtn);
+        setupContextMenu(Zbtn);
+        setupContextMenu(Xbtn);
+        setupContextMenu(Cbtn);
+        setupContextMenu(Vbtn);
+        setupContextMenu(Bbtn);
+        setupContextMenu(Nbtn);
+        setupContextMenu(Mbtn);
     }
 
     /**
@@ -105,30 +144,6 @@ public class Controller implements Initializable {
                 btn.setSound(file);
                 btn.getStyleClass().add("light-bg");
                 btn.getStyleClass().remove("medium-bg");
-                this.error.setText("");
-            }
-            catch ( NullPointerException npe ) {
-                this.error.setText("No File Selected");
-            }
-            catch ( MediaException me ) {
-                this.error.setText("Unsupported File Type");
-            }
-        }
-        else if ( event.getButton().equals(MouseButton.SECONDARY) ) {
-            //System.out.println("Right mouse clicked.");
-            Button btn = (Button) event.getSource();
-
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + System.getProperty("file.separator") + "workspace/Blackwing Sy_ths/bin/Composite"));
-            fileChooser.setTitle("Select Music Bite");
-
-            fileChooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("All Music", "*.*"),
-                    new FileChooser.ExtensionFilter("MP3", "*.mp3"));
-
-            try {
-                File file = fileChooser.showOpenDialog(null);
-                btn.setSound(file);
                 this.error.setText("");
             }
             catch ( NullPointerException npe ) {
@@ -800,4 +815,79 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * styleButton
+     * @param btn Button
+     * @param event ActionEvent
+     * Change the background color of the button
+     */
+    @FXML
+    protected void styleButton( Button btn, ActionEvent event ) {
+
+        // Retrieve the MenuItem clicked on
+        MenuItem item = (MenuItem) event.getSource();
+
+        // Retrieve the css class from the circle on the menuitem
+        String newClass = item.getGraphic().getStyleClass().get(item.getGraphic().getStyleClass().size() - 1);
+
+        // Assign newClass to btn
+        btn.getStyleClass().add(newClass);
+    }
+
+    /**
+     * setupContextMenu
+     * @param btn Button
+     * Create a context menu for btn
+     */
+    protected void setupContextMenu( Button btn ) {
+        final ContextMenu menu = new ContextMenu();
+
+        // Create a sub-menu for the colors
+        Menu colors = new Menu("Colors");
+
+        // Add the menu items to the sub-menu
+        colors.getItems().add(colorMenuItem(btn, "red"));
+        colors.getItems().add(colorMenuItem(btn, "orange"));
+        colors.getItems().add(colorMenuItem(btn, "yellow"));
+        colors.getItems().add(colorMenuItem(btn, "green"));
+        colors.getItems().add(colorMenuItem(btn, "blue"));
+        colors.getItems().add(colorMenuItem(btn, "teal"));
+        colors.getItems().add(colorMenuItem(btn, "violet"));
+
+        // Add the sub-menu to the context menu
+        menu.getItems().add(colors);
+
+        // Assign the context menu to btn
+        btn.setContextMenu(menu);
+    }
+
+    /**
+     * colorMenuItem
+     * @param btn Button
+     * @param str String
+     * @return item MenuItem
+     * Creates a the menu item for the colors sub-menu
+     * Creates an event handler for the menu item
+     */
+    protected MenuItem colorMenuItem( final Button btn, String str ) {
+
+        // Capitalize the first letter of the string
+        str = str.toLowerCase();
+        str = Character.toString(str.charAt(0)).toUpperCase() + str.substring(1);
+
+        // Circle to display the color
+        Circle circle = new Circle();
+        circle.setRadius(6);
+        circle.getStyleClass().add(str.toLowerCase());
+
+        // Create the MenuItem and create an event handler
+        MenuItem item = new MenuItem(str, circle);
+        item.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle( ActionEvent event ) {
+                styleButton(btn, event);
+            }
+        });
+
+        return item;
+    }
 }
