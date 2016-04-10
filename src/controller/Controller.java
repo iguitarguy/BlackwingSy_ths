@@ -261,7 +261,7 @@ public class Controller implements Initializable {
      * @param btn Button
      * Start playback of sound
      */
-    public void playMusic( Button btn ) {
+    protected void playMusic( Button btn ) {
 
         btn.playSound();
         if ( !btn.getStyleClass().contains("active") ) {
@@ -275,7 +275,7 @@ public class Controller implements Initializable {
      * @param btn Button
      * Stop playback of sound
      */
-    public void stopMusic( Button btn ) {
+    protected void stopMusic( Button btn ) {
 
         btn.stopSound();
         btn.getStyleClass().remove("active");
@@ -286,7 +286,7 @@ public class Controller implements Initializable {
      * @param btn
      * Toggle playback of sound
      */
-    public void toggleMusic( final Button btn ) {
+    protected void toggleMusic( final Button btn ) {
 
         if ( btn.isPlaying() ) {
             btn.stopSound();
