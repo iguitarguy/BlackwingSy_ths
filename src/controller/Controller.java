@@ -32,46 +32,85 @@ import java.util.ResourceBundle;
  */
 public class Controller implements Initializable {
 
-    @FXML protected Label error;
-    @FXML protected Button N1btn;
-    @FXML protected Button N2btn;
-    @FXML protected Button N3btn;
-    @FXML protected Button N4btn;
-    @FXML protected Button N5btn;
-    @FXML protected Button N6btn;
-    @FXML protected Button N7btn;
-    @FXML protected Button N8btn;
-    @FXML protected Button N9btn;
-    @FXML protected Button N0btn;
-    @FXML protected Button Qbtn;
-    @FXML protected Button Wbtn;
-    @FXML protected Button Ebtn;
-    @FXML protected Button Rbtn;
-    @FXML protected Button Tbtn;
-    @FXML protected Button Ybtn;
-    @FXML protected Button Ubtn;
-    @FXML protected Button Ibtn;
-    @FXML protected Button Obtn;
-    @FXML protected Button Pbtn;
-    @FXML protected Button Abtn;
-    @FXML protected Button Sbtn;
-    @FXML protected Button Dbtn;
-    @FXML protected Button Fbtn;
-    @FXML protected Button Gbtn;
-    @FXML protected Button Hbtn;
-    @FXML protected Button Jbtn;
-    @FXML protected Button Kbtn;
-    @FXML protected Button Lbtn;
-    @FXML protected Button Zbtn;
-    @FXML protected Button Xbtn;
-    @FXML protected Button Cbtn;
-    @FXML protected Button Vbtn;
-    @FXML protected Button Bbtn;
-    @FXML protected Button Nbtn;
-    @FXML protected Button Mbtn;
+    @FXML
+    protected Label error;
+    @FXML
+    protected Button N1btn;
+    @FXML
+    protected Button N2btn;
+    @FXML
+    protected Button N3btn;
+    @FXML
+    protected Button N4btn;
+    @FXML
+    protected Button N5btn;
+    @FXML
+    protected Button N6btn;
+    @FXML
+    protected Button N7btn;
+    @FXML
+    protected Button N8btn;
+    @FXML
+    protected Button N9btn;
+    @FXML
+    protected Button N0btn;
+    @FXML
+    protected Button Qbtn;
+    @FXML
+    protected Button Wbtn;
+    @FXML
+    protected Button Ebtn;
+    @FXML
+    protected Button Rbtn;
+    @FXML
+    protected Button Tbtn;
+    @FXML
+    protected Button Ybtn;
+    @FXML
+    protected Button Ubtn;
+    @FXML
+    protected Button Ibtn;
+    @FXML
+    protected Button Obtn;
+    @FXML
+    protected Button Pbtn;
+    @FXML
+    protected Button Abtn;
+    @FXML
+    protected Button Sbtn;
+    @FXML
+    protected Button Dbtn;
+    @FXML
+    protected Button Fbtn;
+    @FXML
+    protected Button Gbtn;
+    @FXML
+    protected Button Hbtn;
+    @FXML
+    protected Button Jbtn;
+    @FXML
+    protected Button Kbtn;
+    @FXML
+    protected Button Lbtn;
+    @FXML
+    protected Button Zbtn;
+    @FXML
+    protected Button Xbtn;
+    @FXML
+    protected Button Cbtn;
+    @FXML
+    protected Button Vbtn;
+    @FXML
+    protected Button Bbtn;
+    @FXML
+    protected Button Nbtn;
+    @FXML
+    protected Button Mbtn;
 
-    @FXML protected Pane gui;
-    @FXML protected MenuItem playStopToggle;
+    @FXML
+    protected Pane gui;
+    @FXML
+    protected MenuItem playStopToggle;
     protected boolean tapHoldToggle;
     private final boolean TAP = true;
     private final boolean HOLD = false;
@@ -146,7 +185,7 @@ public class Controller implements Initializable {
 //        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
             fileChooser.setTitle("Select Music Bite");
 
-            fileChooser.getExtensionFilters().addAll(
+            fileChooser.getExtensionFilters().addAll               (
                     new FileChooser.ExtensionFilter("All Music", "*.*"),
                     new FileChooser.ExtensionFilter("WAV", "*.wav", "*.wave"),
                     new FileChooser.ExtensionFilter("MP4", "*.mp4"),
@@ -801,7 +840,7 @@ public class Controller implements Initializable {
 
             tapHoldToggle = TAP;
             playStopToggle.setText("Hold to Play");
-            gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            gui.setOnKeyPressed(new EventHandler< KeyEvent >() {
                 @Override
                 public void handle( KeyEvent event ) {
                     toggleMusicEvent(event);
@@ -813,13 +852,13 @@ public class Controller implements Initializable {
 
             tapHoldToggle = HOLD;
             playStopToggle.setText("Tap to Play");
-            gui.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            gui.setOnKeyPressed(new EventHandler< KeyEvent >() {
                 @Override
                 public void handle( KeyEvent event ) {
                     playMusicEvent(event);
                 }
             });
-            gui.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            gui.setOnKeyReleased(new EventHandler< KeyEvent >() {
                 @Override
                 public void handle( KeyEvent event ) {
                     stopMusicEvent(event);
@@ -843,7 +882,8 @@ public class Controller implements Initializable {
         // Retrieve the css class from the circle on the menuitem
         String newClass = item.getGraphic().getStyleClass().get(item.getGraphic().getStyleClass().size() - 1);
 
-        // Assign newClass to btn
+        // Replace old class with newClass to btn
+        btn.getStyleClass().remove(btn.getStyleClass().get(btn.getStyleClass().size() - 1));
         btn.getStyleClass().add(newClass);
     }
 
@@ -895,7 +935,7 @@ public class Controller implements Initializable {
 
         // Create the MenuItem and create an event handler
         MenuItem item = new MenuItem(str, circle);
-        item.setOnAction(new EventHandler<ActionEvent>() {
+        item.setOnAction(new EventHandler< ActionEvent >() {
             public void handle( ActionEvent event ) {
                 styleButton(btn, event);
             }
@@ -909,7 +949,7 @@ public class Controller implements Initializable {
      * Redirect the user to our help page
      */
     @FXML
-    protected void helpBtn(ActionEvent event) {
+    protected void helpBtn( ActionEvent event ) {
         hostServices.showDocument("http://syths.io");
     }
 }
