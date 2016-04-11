@@ -23,7 +23,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("blackwing.fxml"));
-        primaryStage.setTitle("Blackwing Sy_ths");
+        primaryStage.setTitle("Blackwing");
         primaryStage.getIcons().add(new Image("/img/Icon.png"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
