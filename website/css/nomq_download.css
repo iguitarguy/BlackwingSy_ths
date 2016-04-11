@@ -36,7 +36,7 @@
 
 	#menuu2395
 	{
-		z-index: 30;
+		z-index: 34;
 		width: 643px;
 		border-width: 0px;
 		border-color: transparent;
@@ -60,31 +60,33 @@
 	{
 		width: 126px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2421-4
 	{
 		width: 126px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2420:hover #u2421-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -93,7 +95,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -118,24 +120,26 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2407-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 		left: 0px;
 	}
 
@@ -143,7 +147,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -156,10 +160,11 @@
 
 	#u2404.MuseMenuActive #u2407-4 p
 	{
-		color: #7F7F7F;
+		color: #000000;
 		visibility: inherit;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-size: 18px;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		font-style: normal;
 	}
 
@@ -176,24 +181,26 @@
 	#u2429-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2404.MuseMenuActive #u2407-4,#u2427:hover #u2429-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -218,7 +225,7 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
@@ -232,24 +239,26 @@
 	#u2400-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2427.MuseMenuActive #u2429-4,#u2399:hover #u2400-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -274,31 +283,33 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2416-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2399.MuseMenuActive #u2400-4,#u2413:hover #u2416-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -307,7 +318,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -322,9 +333,6 @@
 	{
 		color: #000000;
 		visibility: inherit;
-		font-family: carme, sans-serif;
-		font-weight: 400;
-		font-style: normal;
 	}
 
 	#u2392-bw
@@ -334,7 +342,7 @@
 
 	#u3225-4
 	{
-		z-index: 61;
+		z-index: 65;
 		min-height: 70px;
 		margin-top: 22px;
 		width: 21.36%;
@@ -363,9 +371,27 @@
 		left: 58.03%;
 	}
 
+	#pu9800-4
+	{
+		margin-top: -1px;
+	}
+
+	#u9800-4
+	{
+		margin-top: 4px;
+		left: 36.78%;
+	}
+
+	#u9818-4
+	{
+		min-height: 36px;
+		width: 7.24%;
+		left: 57.09%;
+	}
+
 	#u9200-6
 	{
-		margin-top: 87px;
+		margin-top: 52px;
 		width: 57.24%;
 		margin-left: 21.41%;
 	}

@@ -1,20 +1,20 @@
-<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460218913338">
+<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460347019916">
   <folder name="assets">
-    <file name="blackwing-v0.3.2-beta.jar" crc="322530860" seo="true" mt="1460210967000"/>
-    <file name="blackwing-v0.3.2-beta.exe" crc="502109909" seo="true" mt="1460211131000"/>
+    <file name="blackwing-v0.4.0-beta.jar" crc="4140462348" seo="true" mt="1460343950000"/>
+    <file name="blackwing-v0.4.0-beta.exe" crc="288685159" seo="true" mt="1460344125000"/>
   </folder>
   <folder name="css">
     <file name="site_global.css" crc="131700929"/>
-    <file name="master_a-master.css" crc="273771827" ref="contact:download:index:about"/>
+    <file name="master_a-master.css" crc="109968158" ref="contact:download:index:about"/>
     <file name="nomq_preview_master_a-master.css" crc="321525473" ref="contact:download:index:about"/>
-    <file name="contact.css" crc="137906709" ref="contact"/>
-    <file name="nomq_contact.css" crc="4043333968" ref="contact"/>
-    <file name="download.css" crc="4211041564" ref="download"/>
-    <file name="nomq_download.css" crc="4112464087" ref="download"/>
-    <file name="index.css" crc="441689522" ref="index"/>
-    <file name="nomq_index.css" crc="3870868429" ref="index"/>
-    <file name="about.css" crc="8510722" ref="about"/>
-    <file name="nomq_about.css" crc="474589234" ref="about"/>
+    <file name="contact.css" crc="4294517784" ref="contact"/>
+    <file name="nomq_contact.css" crc="4238102204" ref="contact"/>
+    <file name="download.css" crc="150457527" ref="download"/>
+    <file name="nomq_download.css" crc="3865250600" ref="download"/>
+    <file name="index.css" crc="194841675" ref="index"/>
+    <file name="nomq_index.css" crc="353572489" ref="index"/>
+    <file name="about.css" crc="57880068" ref="about"/>
+    <file name="nomq_about.css" crc="393196079" ref="about"/>
   </folder>
   <folder name="scripts">
     <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about:contact"/>
@@ -35,9 +35,12 @@
     <file name="layoutv030-beta332x191.jpg" crc="106701251" seo="true" ref="index"/>
     <file name="apple.png" crc="4155777929" seo="true" ref="download"/>
     <file name="windows.png" crc="22730482" seo="true" ref="download"/>
+    <file name="sayagata-400px.png" crc="280243021" ref="index:download:about:contact"/>
+    <file name="use_your_illusion.jpg" crc="3972078751" ref="index"/>
+    <file name="grey_wash_wall.jpg" crc="356112155" ref="index:download"/>
   </folder>
-  <file name="index.html" crc="3808746184" seo="true" mt="1460218449652" redirect="true"/>
-  <file name="download.html" crc="4141373812" seo="true" mt="1460218368486" redirect="true"/>
-  <file name="about.html" crc="3879968991" seo="true" mt="1460218723457" redirect="true"/>
-  <file name="contact.html" crc="4011563669" seo="true" mt="1460218801445" redirect="true"/>
+  <file name="index.html" crc="4019236875" seo="true" mt="1460346910936" redirect="true"/>
+  <file name="download.html" crc="3990855818" seo="true" mt="1460346792999" redirect="true"/>
+  <file name="about.html" crc="453952146" seo="true" mt="1460346830099" redirect="true"/>
+  <file name="contact.html" crc="3985409568" seo="true" mt="1460346826934" redirect="true"/>
 </manifest>

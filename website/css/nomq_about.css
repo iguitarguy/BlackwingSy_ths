@@ -60,31 +60,33 @@
 	{
 		width: 126px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2697-4
 	{
 		width: 126px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2696:hover #u2697-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -93,7 +95,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -117,24 +119,26 @@
 	#u2683-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2680:hover #u2683-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -159,24 +163,26 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2705-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 		left: 0px;
 	}
 
@@ -184,7 +190,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -199,8 +205,9 @@
 	{
 		color: #000000;
 		visibility: inherit;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-size: 18px;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		font-style: normal;
 	}
 
@@ -218,7 +225,7 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
@@ -232,24 +239,26 @@
 	#u2676-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2703.MuseMenuActive #u2705-4,#u2675:hover #u2676-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -274,31 +283,33 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2692-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2675.MuseMenuActive #u2676-4,#u2689:hover #u2692-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -307,7 +318,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -348,7 +359,7 @@
 
 	#pu302
 	{
-		margin-top: 245px;
+		margin-top: 230px;
 		width: 100%;
 	}
 

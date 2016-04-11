@@ -79,7 +79,7 @@
 	{
 		width: 126px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
@@ -93,17 +93,19 @@
 	#u408-4
 	{
 		width: 126px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 		left: 0px;
 	}
 
@@ -111,7 +113,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -120,7 +122,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -135,8 +137,9 @@
 	{
 		color: #000000;
 		visibility: inherit;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-size: 18px;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		font-style: normal;
 	}
 
@@ -153,24 +156,26 @@
 	#u743-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u741:hover #u743-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -194,24 +199,26 @@
 	#u795-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u741.MuseMenuActive #u743-4,#u792:hover #u795-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -236,7 +243,7 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
@@ -250,24 +257,26 @@
 	#u841-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u792.MuseMenuActive #u795-4,#u839:hover #u841-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -292,31 +301,33 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u891-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
+		font-family: carme, sans-serif;
+		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u839.MuseMenuActive #u841-4,#u890:hover #u891-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -325,7 +336,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -340,6 +351,7 @@
 	{
 		color: #000000;
 		visibility: inherit;
+		font-size: 18px;
 	}
 
 	#u316-bw

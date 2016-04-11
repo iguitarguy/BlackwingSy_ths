@@ -60,31 +60,33 @@
 	{
 		width: 126px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2973-4
 	{
 		width: 126px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
 		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2972:hover #u2973-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -93,7 +95,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 126px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -117,24 +119,26 @@
 	#u2959-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
 		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2956:hover #u2959-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -158,24 +162,26 @@
 	#u2981-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
 		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2956.MuseMenuActive #u2959-4,#u2979:hover #u2981-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -200,31 +206,33 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
 	#u2952-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
 		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 	}
 
 	#u2979.MuseMenuActive #u2981-4,#u2951:hover #u2952-4
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -233,6 +241,15 @@
 	{
 		color: #29ABE2;
 		visibility: inherit;
+	}
+
+	#u2972.MuseMenuActive #u2973-4 p,#u2956.MuseMenuActive #u2959-4 p,#u2979.MuseMenuActive #u2981-4 p,#u2951.MuseMenuActive #u2952-4 p
+	{
+		color: #000000;
+		visibility: inherit;
+		font-family: dosis, sans-serif;
+		font-weight: 600;
+		font-style: normal;
 	}
 
 	#u2962
@@ -249,7 +266,7 @@
 	{
 		width: 127px;
 		background-color: transparent;
-		padding-bottom: 32px;
+		padding-bottom: 27px;
 		position: relative;
 	}
 
@@ -263,17 +280,19 @@
 	#u2968-4
 	{
 		width: 127px;
-		min-height: 17px;
+		min-height: 22px;
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
+		line-height: 22px;
 		color: #7F7F7F;
+		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
 		font-weight: 400;
 		position: relative;
 		margin-right: -10000px;
-		top: 16px;
+		top: 13px;
 		left: 0px;
 	}
 
@@ -281,7 +300,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -290,7 +309,7 @@
 	{
 		padding-top: 0px;
 		padding-bottom: 0px;
-		min-height: 17px;
+		min-height: 22px;
 		width: 127px;
 		margin: 0px -10000px 0px 0px;
 	}
@@ -301,13 +320,11 @@
 		visibility: inherit;
 	}
 
-	#u2972.MuseMenuActive #u2973-4 p,#u2956.MuseMenuActive #u2959-4 p,#u2979.MuseMenuActive #u2981-4 p,#u2951.MuseMenuActive #u2952-4 p,#u2965.MuseMenuActive #u2968-4 p
+	#u2965.MuseMenuActive #u2968-4 p
 	{
 		color: #000000;
 		visibility: inherit;
-		font-family: dosis, sans-serif;
-		font-weight: 600;
-		font-style: normal;
+		font-size: 18px;
 	}
 
 	#u2944-bw
