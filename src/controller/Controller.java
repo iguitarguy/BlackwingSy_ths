@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -73,6 +75,7 @@ public class Controller implements Initializable {
     protected boolean tapHoldToggle;
     private final boolean TAP = true;
     private final boolean HOLD = false;
+    private HostServices hostServices;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -117,6 +120,14 @@ public class Controller implements Initializable {
         setupContextMenu(Bbtn);
         setupContextMenu(Nbtn);
         setupContextMenu(Mbtn);
+    }
+
+    /**
+     * setHostServices
+     * @param hostServices HostServices
+     */
+    public void setHostServices( HostServices hostServices ) {
+        this.hostServices = hostServices;
     }
 
     /**
@@ -889,5 +900,14 @@ public class Controller implements Initializable {
         });
 
         return item;
+    }
+
+    /**
+     * helpBtn
+     * Redirect the user to our help page
+     */
+    @FXML
+    protected void helpBtn(ActionEvent event) {
+        hostServices.showDocument("http://syths.io");
     }
 }
