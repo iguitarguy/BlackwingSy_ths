@@ -137,6 +137,8 @@ public class Controller implements Initializable {
 
             fileChooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("All Music", "*.*"),
+                    new FileChooser.ExtensionFilter("WAV", "*.wav", "*.wave"),
+                    new FileChooser.ExtensionFilter("MP4", "*.mp4"),
                     new FileChooser.ExtensionFilter("MP3", "*.mp3"));
 
             try {
