@@ -1,5 +1,6 @@
 package view;
 
+import controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,7 +23,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("blackwing.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("blackwing.fxml"));
+        Parent root = loader.load();
+        Controller ctrl = loader.<Controller>getController();
+        ctrl.setHostServices(this.getHostServices());
         primaryStage.setTitle("Blackwing");
         primaryStage.getIcons().add(new Image("/img/Icon.png"));
         primaryStage.setScene(new Scene(root));
