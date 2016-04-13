@@ -10,7 +10,7 @@
 
 	#page
 	{
-		min-height: 580px;
+		min-height: 1143px;
 		padding-bottom: 12px;
 		max-width: 1920px;
 	}
@@ -36,7 +36,7 @@
 
 	#menuu2671
 	{
-		z-index: 11;
+		z-index: 12;
 		width: 643px;
 		border-width: 0px;
 		border-color: transparent;
@@ -71,8 +71,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -123,8 +123,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -174,8 +174,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -229,13 +229,6 @@
 		position: relative;
 	}
 
-	#u2703.MuseMenuActive,#u2675.MuseMenuActive
-	{
-		width: 127px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2676-4
 	{
 		width: 127px;
@@ -243,8 +236,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -287,6 +280,13 @@
 		position: relative;
 	}
 
+	#u2703.MuseMenuActive,#u2675.MuseMenuActive,#u2689.MuseMenuActive
+	{
+		width: 127px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2692-4
 	{
 		width: 127px;
@@ -294,8 +294,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -342,7 +342,7 @@
 
 	#u7740-4
 	{
-		z-index: 46;
+		z-index: 47;
 		min-height: 76px;
 		margin-top: 9px;
 		width: 73.39%;
@@ -351,15 +351,64 @@
 
 	#u7734-4
 	{
-		z-index: 42;
+		z-index: 43;
 		margin-top: 22px;
 		width: 40.79%;
 		margin-left: 29.64%;
 	}
 
+	#u9867
+	{
+		min-height: 297.55000000000007px;
+		padding-bottom: 0px;
+	}
+
+	#u9867_align_to_page
+	{
+		max-width: 1920px;
+		padding-bottom: 66px;
+	}
+
+	#u9831-4
+	{
+		min-height: 70px;
+		width: 89.17%;
+		left: 5.27%;
+	}
+
+	#u9840-4
+	{
+		min-height: 113px;
+		margin-top: 38px;
+		width: 40.79%;
+		left: 29.59%;
+	}
+
+	#u9867-bw
+	{
+		min-height: 297.55000000000007px;
+		margin-top: 59px;
+	}
+
+	#u9849-4
+	{
+		min-height: 131px;
+		margin-top: 69px;
+		width: 89.17%;
+		margin-left: 5.27%;
+	}
+
+	#u9858-4
+	{
+		min-height: 96px;
+		margin-top: 19px;
+		width: 40.79%;
+		margin-left: 29.59%;
+	}
+
 	#pu302
 	{
-		margin-top: 230px;
+		margin-top: 121px;
 		width: 100%;
 	}
 

@@ -1,7 +1,7 @@
 .version.download /* version checker */
 {
-	color: #000008;
-	background-color: #F7CCB7;
+	color: #000011;
+	background-color: #054AA6;
 }
 
 .js body
@@ -17,24 +17,24 @@
 #page
 {
 	margin-left: auto;
+	border-width: 0px;
 	border-color: #000000;
 	z-index: 1;
-	margin-right: auto;
-	border-width: 0px;
 	width: 100%;
+	margin-right: auto;
 	background: transparent url("../images/sayagata-400px.png") repeat left top;
 }
 
 #u2392
 {
-	z-index: 31;
 	background-color: #F0F0F0;
+	z-index: 31;
 }
 
 #u2393
 {
-	z-index: 32;
 	background-color: transparent;
+	z-index: 32;
 	position: relative;
 }
 
@@ -50,44 +50,44 @@
 
 #u3225-4
 {
-	line-height: 58px;
-	position: relative;
-	text-align: center;
-	font-weight: 400;
 	font-family: amaranth, sans-serif;
-	background-color: transparent;
+	position: relative;
 	font-size: 48px;
+	line-height: 58px;
+	background-color: transparent;
+	font-weight: 400;
+	text-align: center;
 }
 
 #u9170-4
 {
-	line-height: 22px;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
+	line-height: 22px;
 	min-height: 46px;
-	text-align: center;
+	background-color: transparent;
 	z-index: 71;
 	font-weight: 400;
-	font-family: carme, sans-serif;
-	background-color: transparent;
-	font-size: 18px;
+	text-align: center;
 }
 
 #u7649
 {
-	width: 88px;
-	margin-right: -10000px;
 	background-color: transparent;
 	position: relative;
 	z-index: 81;
+	width: 88px;
+	margin-right: -10000px;
 }
 
 #u7624
 {
-	width: 101px;
-	margin-right: -10000px;
 	background-color: transparent;
 	position: relative;
 	z-index: 69;
+	width: 101px;
+	margin-right: -10000px;
 }
 
 #u2393_img,#pu7649,#pu9800-4
@@ -97,43 +97,43 @@
 
 #u9800-4
 {
-	line-height: 22px;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
+	line-height: 22px;
 	min-height: 28px;
+	background-color: transparent;
+	margin-right: -10000px;
+	width: 99px;
+	font-weight: 400;
 	text-align: center;
 	z-index: 83;
-	font-weight: 400;
-	font-family: carme, sans-serif;
-	margin-right: -10000px;
-	background-color: transparent;
-	width: 99px;
-	font-size: 18px;
 }
 
 #u9818-4
 {
-	line-height: 22px;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
+	line-height: 22px;
+	background-color: transparent;
+	margin-right: -10000px;
+	font-weight: 400;
 	text-align: center;
 	z-index: 87;
-	font-weight: 400;
-	font-family: carme, sans-serif;
-	margin-right: -10000px;
-	background-color: transparent;
-	font-size: 18px;
 }
 
 #u9200-6
 {
-	line-height: 22px;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
+	line-height: 22px;
 	min-height: 60px;
-	text-align: center;
+	background-color: transparent;
 	z-index: 75;
 	font-weight: 400;
-	font-family: carme, sans-serif;
-	background-color: transparent;
-	font-size: 18px;
+	text-align: center;
 }
 
 #u9218
@@ -144,34 +144,34 @@
 
 #u2392_align_to_page,#u9218_align_to_page
 {
+	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	position: relative;
 }
 
 #u9209-4
 {
-	line-height: 43px;
+	color: #FFFFFF;
+	font-family: ubuntu-mono, sans-serif;
 	position: relative;
-	text-align: center;
+	font-size: 36px;
+	line-height: 43px;
+	background-color: transparent;
 	z-index: 21;
 	font-weight: 400;
-	font-family: ubuntu-mono, sans-serif;
-	background-color: transparent;
-	color: #FFFFFF;
-	font-size: 36px;
+	text-align: center;
 }
 
 #u9239-7
 {
 	color: #FFFFFF;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
 	line-height: 22px;
+	background-color: transparent;
 	z-index: 3;
 	font-weight: 400;
-	font-family: carme, sans-serif;
-	background-color: transparent;
-	font-size: 18px;
 }
 
 #u9239-5 > li:before
@@ -181,27 +181,27 @@
 
 #u9248-4
 {
-	line-height: 43px;
+	color: #FFFFFF;
+	font-family: ubuntu-mono, sans-serif;
 	position: relative;
-	text-align: center;
+	font-size: 36px;
+	line-height: 43px;
+	background-color: transparent;
 	z-index: 10;
 	font-weight: 400;
-	font-family: ubuntu-mono, sans-serif;
-	color: #FFFFFF;
-	background-color: transparent;
-	font-size: 36px;
+	text-align: center;
 }
 
 #u9257-7
 {
 	color: #FFFFFF;
+	font-family: carme, sans-serif;
 	position: relative;
+	font-size: 18px;
 	line-height: 22px;
+	background-color: transparent;
 	z-index: 14;
 	font-weight: 400;
-	font-family: carme, sans-serif;
-	background-color: transparent;
-	font-size: 18px;
 }
 
 #u9218-bw
@@ -211,16 +211,16 @@
 
 #u302
 {
-	width: 79px;
 	position: relative;
+	width: 79px;
 	z-index: 29;
 }
 
 #u247-4
 {
-	position: relative;
 	min-height: 18px;
 	z-index: 25;
+	position: relative;
 }
 
 .html
@@ -308,8 +308,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -368,8 +368,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -422,8 +422,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -466,13 +466,6 @@ body
 		position: relative;
 	}
 
-	#u2404.MuseMenuActive,#u2399.MuseMenuActive
-	{
-		width: 127px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 127px;
@@ -480,8 +473,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -524,6 +517,13 @@ body
 		position: relative;
 	}
 
+	#u2404.MuseMenuActive,#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 127px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 127px;
@@ -531,8 +531,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -779,8 +779,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -839,8 +839,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -893,8 +893,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -937,13 +937,6 @@ body
 		position: relative;
 	}
 
-	#u2404.MuseMenuActive,#u2399.MuseMenuActive
-	{
-		width: 115px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 115px;
@@ -951,8 +944,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -995,6 +988,13 @@ body
 		position: relative;
 	}
 
+	#u2404.MuseMenuActive,#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 115px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 115px;
@@ -1002,8 +1002,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1236,8 +1236,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1294,8 +1294,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1356,8 +1356,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1409,13 +1409,6 @@ body
 		position: relative;
 	}
 
-	#u2399.MuseMenuActive
-	{
-		width: 115px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 115px;
@@ -1423,8 +1416,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1467,6 +1460,13 @@ body
 		position: relative;
 	}
 
+	#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 115px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 115px;
@@ -1474,8 +1474,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1713,8 +1713,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1771,8 +1771,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1834,8 +1834,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1878,13 +1878,6 @@ body
 		position: relative;
 	}
 
-	#u2399.MuseMenuActive
-	{
-		width: 115px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 115px;
@@ -1892,8 +1885,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -1936,6 +1929,13 @@ body
 		position: relative;
 	}
 
+	#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 115px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 115px;
@@ -1943,8 +1943,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2180,8 +2180,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2238,8 +2238,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2301,8 +2301,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2345,13 +2345,6 @@ body
 		position: relative;
 	}
 
-	#u2399.MuseMenuActive
-	{
-		width: 115px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 115px;
@@ -2359,8 +2352,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2403,6 +2396,13 @@ body
 		position: relative;
 	}
 
+	#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 115px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 115px;
@@ -2410,8 +2410,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2631,8 +2631,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2689,8 +2689,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2752,8 +2752,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2796,13 +2796,6 @@ body
 		position: relative;
 	}
 
-	#u2399.MuseMenuActive
-	{
-		width: 115px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u2400-4
 	{
 		width: 115px;
@@ -2810,8 +2803,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -2854,6 +2847,13 @@ body
 		position: relative;
 	}
 
+	#u2399.MuseMenuActive,#u2413.MuseMenuActive
+	{
+		width: 115px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u2416-4
 	{
 		width: 115px;
@@ -2861,8 +2861,8 @@ body
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -3362,6 +3362,13 @@ body
 		background-color: transparent;
 		padding-bottom: 32px;
 		position: relative;
+	}
+
+	#u6660.MuseMenuActive
+	{
+		width: 81px;
+		min-height: 0px;
+		margin: 0px;
 	}
 
 	#u6663-4

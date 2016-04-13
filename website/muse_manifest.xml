@@ -1,46 +1,43 @@
-<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460347019916">
+<manifest alg="2" build="2015.1.2.344" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="syths.io" resolutions="1x" timestamp="1460584685547">
   <folder name="assets">
     <file name="blackwing-v0.4.0-beta.jar" crc="4140462348" seo="true" mt="1460343950000"/>
     <file name="blackwing-v0.4.0-beta.exe" crc="288685159" seo="true" mt="1460344125000"/>
   </folder>
   <folder name="css">
     <file name="site_global.css" crc="131700929"/>
-    <file name="master_a-master.css" crc="109968158" ref="contact:download:index:about"/>
-    <file name="nomq_preview_master_a-master.css" crc="321525473" ref="contact:download:index:about"/>
-    <file name="contact.css" crc="4294517784" ref="contact"/>
-    <file name="nomq_contact.css" crc="4238102204" ref="contact"/>
-    <file name="download.css" crc="150457527" ref="download"/>
-    <file name="nomq_download.css" crc="3865250600" ref="download"/>
-    <file name="index.css" crc="194841675" ref="index"/>
-    <file name="nomq_index.css" crc="353572489" ref="index"/>
-    <file name="about.css" crc="57880068" ref="about"/>
-    <file name="nomq_about.css" crc="393196079" ref="about"/>
+    <file name="master_a-master.css" crc="3960867393" ref="download:index:about"/>
+    <file name="nomq_preview_master_a-master.css" crc="321525473" ref="download:index:about"/>
+    <file name="download.css" crc="285559462" ref="download"/>
+    <file name="nomq_download.css" crc="3844396124" ref="download"/>
+    <file name="index.css" crc="4157310800" ref="index"/>
+    <file name="nomq_index.css" crc="372210685" ref="index"/>
+    <file name="about.css" crc="3894726782" ref="about"/>
+    <file name="nomq_about.css" crc="396770704" ref="about"/>
   </folder>
   <folder name="scripts">
-    <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about:contact"/>
-    <file name="museutils.js" crc="3790713428" ref="index:download:about:contact"/>
-    <file name="whatinput.js" crc="84559013" ref="index:download:about:contact"/>
-    <file name="jquery.watch.js" crc="4244854265" ref="index:download:about:contact"/>
-    <file name="jquery.musemenu.js" crc="238543590" ref="index:download:about:contact"/>
-    <file name="html5shiv.js" crc="4241844378" ref="index:download:about:contact"/>
-    <file name="jquery.museresponsive.js" crc="3895133147" ref="index:download:about:contact"/>
+    <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:download:about"/>
+    <file name="museutils.js" crc="3790713428" ref="index:download:about"/>
+    <file name="whatinput.js" crc="84559013" ref="index:download:about"/>
+    <file name="jquery.watch.js" crc="4244854265" ref="index:download:about"/>
+    <file name="jquery.musemenu.js" crc="238543590" ref="index:download:about"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:download:about"/>
+    <file name="jquery.museresponsive.js" crc="3895133147" ref="index:download:about"/>
     <file name="pie.js" crc="3827607177" ref="index"/>
   </folder>
   <folder name="images">
-    <file name="600px-blackwing-syths.png" crc="302152248" seo="true" ref="index:download:about:contact"/>
-    <file name="icon2.png" crc="283725729" seo="true" ref="index:download:about:contact"/>
-    <file name="blank.gif" crc="4208392903" ref="index:download:about:contact"/>
+    <file name="600px-blackwing-syths.png" crc="302152248" seo="true" ref="index:download:about"/>
+    <file name="icon2.png" crc="283725729" seo="true" ref="index:download:about"/>
+    <file name="blank.gif" crc="4208392903" ref="index:download:about"/>
     <file name="a-master-favicon.ico" crc="123104215" ref="index"/>
     <file name="layoutv030-beta.jpg" crc="4168725262" seo="true" ref="index"/>
     <file name="layoutv030-beta332x191.jpg" crc="106701251" seo="true" ref="index"/>
     <file name="apple.png" crc="4155777929" seo="true" ref="download"/>
     <file name="windows.png" crc="22730482" seo="true" ref="download"/>
-    <file name="sayagata-400px.png" crc="280243021" ref="index:download:about:contact"/>
+    <file name="sayagata-400px.png" crc="280243021" ref="index:download:about"/>
     <file name="use_your_illusion.jpg" crc="3972078751" ref="index"/>
-    <file name="grey_wash_wall.jpg" crc="356112155" ref="index:download"/>
+    <file name="grey_wash_wall.jpg" crc="356112155" ref="index:download:about"/>
   </folder>
-  <file name="index.html" crc="4019236875" seo="true" mt="1460346910936" redirect="true"/>
-  <file name="download.html" crc="3990855818" seo="true" mt="1460346792999" redirect="true"/>
-  <file name="about.html" crc="453952146" seo="true" mt="1460346830099" redirect="true"/>
-  <file name="contact.html" crc="3985409568" seo="true" mt="1460346826934" redirect="true"/>
+  <file name="index.html" crc="3988973063" seo="true" mt="1460584640648" redirect="true"/>
+  <file name="download.html" crc="429775163" seo="true" mt="1460584656330" redirect="true"/>
+  <file name="about.html" crc="4080584621" seo="true" mt="1460584667454" redirect="true"/>
 </manifest>

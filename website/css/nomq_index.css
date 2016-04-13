@@ -97,8 +97,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -160,8 +160,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -203,8 +203,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -247,13 +247,6 @@
 		position: relative;
 	}
 
-	#u839.MuseMenuActive
-	{
-		width: 127px;
-		min-height: 0px;
-		margin: 0px;
-	}
-
 	#u841-4
 	{
 		width: 127px;
@@ -261,8 +254,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
@@ -305,6 +298,13 @@
 		position: relative;
 	}
 
+	#u839.MuseMenuActive,#u890.MuseMenuActive
+	{
+		width: 127px;
+		min-height: 0px;
+		margin: 0px;
+	}
+
 	#u891-4
 	{
 		width: 127px;
@@ -312,8 +312,8 @@
 		border-width: 0px;
 		border-color: transparent;
 		background-color: transparent;
-		line-height: 22px;
 		color: #7F7F7F;
+		line-height: 22px;
 		font-size: 18px;
 		text-align: center;
 		font-family: carme, sans-serif;
