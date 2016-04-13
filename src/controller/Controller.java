@@ -897,6 +897,22 @@ public class Controller implements Initializable {
 
         // Create a sub-menu for the colors
         Menu colors = new Menu("Colors");
+        
+        // Create a sub-menu for the sounds
+        Menu sounds = new Menu("Sounds");
+        
+        
+        // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
+        Menu songs = new Menu("Songs");
+        Menu drums = new Menu("Drums");
+        Menu vocals = new Menu("Vocals");
+        Menu sEffects = new Menu("Sound Effects");
+       
+        // Add items to the sub-menu
+        sounds.getItems().add(songs);
+        sounds.getItems().add(drums);
+        sounds.getItems().add(vocals);
+        sounds.getItems().add(sEffects);
 
         // Add the menu items to the sub-menu
         colors.getItems().add(colorMenuItem(btn, "red"));
@@ -906,9 +922,11 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "blue"));
         colors.getItems().add(colorMenuItem(btn, "teal"));
         colors.getItems().add(colorMenuItem(btn, "violet"));
+        
 
         // Add the sub-menu to the context menu
         menu.getItems().add(colors);
+        menu.getItems().add(sounds);
 
         // Assign the context menu to btn
         btn.setContextMenu(menu);
@@ -952,4 +970,5 @@ public class Controller implements Initializable {
     protected void helpBtn( ActionEvent event ) {
         hostServices.showDocument("http://syths.io");
     }
+    
 }
