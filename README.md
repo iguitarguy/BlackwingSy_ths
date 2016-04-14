@@ -59,5 +59,6 @@ For the moment being, our application will be written entirely in Java.
 ## Our Beginnings...
 Originally meant to be a GPG Messaging platform project, BlackWing Sy_ths (formerly Armored Pigeon), opted to switch away from Encrypted messaging and switched to the DiskJockeying world, by creating a user friendly app that turns your keyboard into a MIDI controller.
 
+* Lean Canvas https://canvanizer.com/canvas/wtgZ7ZtsMCA 
 
 [Back to top] (https://github.com/soft-eng-practicum/gpg-messaging#description)
