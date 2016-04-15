@@ -21,6 +21,7 @@ import model.Button;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -115,6 +116,7 @@ public class Controller implements Initializable {
     private final boolean TAP = true;
     private final boolean HOLD = false;
     private HostServices hostServices;
+    private ArrayList< Button > btns;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -122,43 +124,48 @@ public class Controller implements Initializable {
         System.out.println("View is now loaded!");
         error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
+        btns = new ArrayList();
 
-        setupContextMenu(N1btn);
-        setupContextMenu(N2btn);
-        setupContextMenu(N3btn);
-        setupContextMenu(N4btn);
-        setupContextMenu(N5btn);
-        setupContextMenu(N6btn);
-        setupContextMenu(N7btn);
-        setupContextMenu(N8btn);
-        setupContextMenu(N9btn);
-        setupContextMenu(N0btn);
-        setupContextMenu(Qbtn);
-        setupContextMenu(Wbtn);
-        setupContextMenu(Ebtn);
-        setupContextMenu(Rbtn);
-        setupContextMenu(Tbtn);
-        setupContextMenu(Ybtn);
-        setupContextMenu(Ubtn);
-        setupContextMenu(Ibtn);
-        setupContextMenu(Obtn);
-        setupContextMenu(Pbtn);
-        setupContextMenu(Abtn);
-        setupContextMenu(Sbtn);
-        setupContextMenu(Dbtn);
-        setupContextMenu(Fbtn);
-        setupContextMenu(Gbtn);
-        setupContextMenu(Hbtn);
-        setupContextMenu(Jbtn);
-        setupContextMenu(Kbtn);
-        setupContextMenu(Lbtn);
-        setupContextMenu(Zbtn);
-        setupContextMenu(Xbtn);
-        setupContextMenu(Cbtn);
-        setupContextMenu(Vbtn);
-        setupContextMenu(Bbtn);
-        setupContextMenu(Nbtn);
-        setupContextMenu(Mbtn);
+        btns.add(N1btn);
+        btns.add(N2btn);
+        btns.add(N3btn);
+        btns.add(N4btn);
+        btns.add(N5btn);
+        btns.add(N6btn);
+        btns.add(N7btn);
+        btns.add(N8btn);
+        btns.add(N9btn);
+        btns.add(N0btn);
+        btns.add(Qbtn);
+        btns.add(Wbtn);
+        btns.add(Ebtn);
+        btns.add(Rbtn);
+        btns.add(Tbtn);
+        btns.add(Ybtn);
+        btns.add(Ubtn);
+        btns.add(Ibtn);
+        btns.add(Obtn);
+        btns.add(Pbtn);
+        btns.add(Abtn);
+        btns.add(Sbtn);
+        btns.add(Dbtn);
+        btns.add(Fbtn);
+        btns.add(Gbtn);
+        btns.add(Hbtn);
+        btns.add(Jbtn);
+        btns.add(Kbtn);
+        btns.add(Lbtn);
+        btns.add(Zbtn);
+        btns.add(Xbtn);
+        btns.add(Cbtn);
+        btns.add(Vbtn);
+        btns.add(Bbtn);
+        btns.add(Nbtn);
+        btns.add(Mbtn);
+
+        for ( int i = 0; i < btns.size(); i++ ) {
+            setupContextMenu(btns.get(i));
+        }
     }
 
     /**
@@ -328,12 +335,15 @@ public class Controller implements Initializable {
      * @param btn Button
      * Start playback of sound
      */
-    protected void playMusic( Button btn ) {
+    protected void playMusic( final Button btn ) {
 
         btn.playSound();
-        if ( !btn.getStyleClass().contains("active") ) {
+        if ( btn.isPlaying() ) {
+            btn.getSound().setOnEndOfMedia(null);
+            if ( !btn.getStyleClass().contains("active") ) {
 
-            btn.getStyleClass().add("active");
+                btn.getStyleClass().add("active");
+            }
         }
     }
 
@@ -346,6 +356,23 @@ public class Controller implements Initializable {
 
         btn.stopSound();
         btn.getStyleClass().remove("active");
+    }
+
+    /**
+     * stopAll
+     * stop all of the sounds playing
+     * remove any end of media events
+     */
+    protected void stopAll() {
+
+        for ( int i = 0; i < btns.size(); i++ ) {
+
+            Button btn = btns.get(i);
+            if (btn.getSound() != null) {
+                btn.stopSound();
+                btn.getSound().setOnEndOfMedia(null);
+            }
+        }
     }
 
     /**
@@ -840,6 +867,7 @@ public class Controller implements Initializable {
 
             tapHoldToggle = TAP;
             playStopToggle.setText("Hold to Play");
+            stopAll();
             gui.setOnKeyPressed(new EventHandler< KeyEvent >() {
                 @Override
                 public void handle( KeyEvent event ) {
@@ -897,17 +925,16 @@ public class Controller implements Initializable {
 
         // Create a sub-menu for the colors
         Menu colors = new Menu("Colors");
-        
+
         // Create a sub-menu for the sounds
         Menu sounds = new Menu("Sounds");
-        
-        
+
         // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
         Menu songs = new Menu("Songs");
         Menu drums = new Menu("Drums");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
-       
+
         // Add items to the sub-menu
         sounds.getItems().add(songs);
         sounds.getItems().add(drums);
@@ -922,7 +949,6 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "blue"));
         colors.getItems().add(colorMenuItem(btn, "teal"));
         colors.getItems().add(colorMenuItem(btn, "violet"));
-        
 
         // Add the sub-menu to the context menu
         menu.getItems().add(colors);
@@ -970,5 +996,5 @@ public class Controller implements Initializable {
     protected void helpBtn( ActionEvent event ) {
         hostServices.showDocument("http://syths.io");
     }
-    
+
 }
