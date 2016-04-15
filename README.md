@@ -14,6 +14,7 @@
 ### Installation
 * Download App
   * ([GitHub Releases](https://github.com/soft-eng-practicum/BBlackwingSy_ths/releases))
+  * ([Website](http://www.syths.io/download.html))
 * Verify your security settings. (Let your computer know it's a safe file)
 
 ###### Minimum System Requirements
@@ -71,8 +72,8 @@ Our application will convert a standard computer keyboard into a basic, easy to 
 * Import keystrokes for editing
 
 ###### User Submitted
-* [Special Mac Icon](#5)
-* [EZ button](#6)
-* [Custom Backgrounds](#18)
+* [Special Mac Icon](https://github.com/soft-eng-practicum/BlackwingSy_ths/issues/5)
+* [EZ button](https://github.com/soft-eng-practicum/BlackwingSy_ths/issues/6)
+* [Custom Backgrounds](https://github.com/soft-eng-practicum/BlackwingSy_ths/issues/18)
 
 [Back to top](https://github.com/soft-eng-practicum/gpg-messaging#description)
