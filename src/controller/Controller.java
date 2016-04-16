@@ -949,6 +949,7 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "blue"));
         colors.getItems().add(colorMenuItem(btn, "teal"));
         colors.getItems().add(colorMenuItem(btn, "violet"));
+        colors.getItems().add(colorMenuItem(btn, "white"));
 
         // Add the sub-menu to the context menu
         menu.getItems().add(colors);
