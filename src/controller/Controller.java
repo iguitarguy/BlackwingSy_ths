@@ -932,7 +932,7 @@ public class Controller implements Initializable {
         
         // Add the drum menu items to the sub-menu
         for ( int i = 0; i < drumP.size(); i++ ) {
-        	loops.getItems().add(soundMenuItem(btn,(drumP.get(i))));
+        	drums.getItems().add(soundMenuItem(btn,(drumP.get(i))));
         }
         // Add the loop menu items to the sub-menu
         for ( int i = 0; i < loopP.size(); i++ ) {
@@ -940,15 +940,15 @@ public class Controller implements Initializable {
         }
         // Add the SFX menu items to the sub-menu
         for ( int i = 0; i < sfxP.size(); i++ ) {
-        	loops.getItems().add(soundMenuItem(btn,(sfxP.get(i))));
+        	sEffects.getItems().add(soundMenuItem(btn,(sfxP.get(i))));
         }
         // Add the song menu items to the sub-menu
         for ( int i = 0; i < songP.size(); i++ ) {
-        	loops.getItems().add(soundMenuItem(btn,(songP.get(i))));
+        	songs.getItems().add(soundMenuItem(btn,(songP.get(i))));
         }
         // Add the vocal menu items to the sub-menu
         for ( int i = 0; i < vocalP.size(); i++ ) {
-        	loops.getItems().add(soundMenuItem(btn,(vocalP.get(i))));
+        	vocals.getItems().add(soundMenuItem(btn,(vocalP.get(i))));
         }
 
         // Add the sub-menu to the context menu
