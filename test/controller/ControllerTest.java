@@ -178,7 +178,7 @@ public class ControllerTest {
 
         System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
 
-        System.out.printf("Set Qbtn to BassLoop1.m+p3\n");
+        System.out.printf("Set Qbtn to BassLoop1.mp3\n");
         Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
 
         Controller ctrl = new Controller();
