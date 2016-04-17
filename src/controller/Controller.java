@@ -119,8 +119,12 @@ public class Controller implements Initializable {
     private final boolean HOLD = false;
     private HostServices hostServices;
     protected ArrayList< Button > btns;
-    protected static ArrayList< String > drumP = new ArrayList< String >();
-    protected static ArrayList< String > loopP = new ArrayList< String >();
+    protected static ArrayList< String > hatP = new ArrayList< String >();
+    protected static ArrayList< String > kickP = new ArrayList< String >();
+    protected static ArrayList< String > snareP = new ArrayList< String >();
+    protected static ArrayList< String > bLoopP = new ArrayList< String >();
+    protected static ArrayList< String > dLoopP = new ArrayList< String >();
+    protected static ArrayList< String > pLoopP = new ArrayList< String >();
     protected static ArrayList< String > sfxP = new ArrayList< String >();
     protected static ArrayList< String > vocalP = new ArrayList< String >();
     protected static ArrayList< String > allP = new ArrayList< String >();
@@ -134,16 +138,24 @@ public class Controller implements Initializable {
         String OS = System.getProperty("os.name");
         if ( OS.startsWith("Windows") ) {
 
-            fileWalk("bin\\Composite\\Drums", drumP);
-            fileWalk("bin\\Composite\\Loops", loopP);
+            fileWalk("bin\\Composite\\Drums\\Hat", hatP);
+            fileWalk("bin\\Composite\\Drums\\Kick", kickP);
+            fileWalk("bin\\Composite\\Drums\\Snare", snareP);
+            fileWalk("bin\\Composite\\Loops\\Bass", bLoopP);
+            fileWalk("bin\\Composite\\Loops\\Drum", dLoopP);
+            fileWalk("bin\\Composite\\Loops\\Piano", pLoopP);
             fileWalk("bin\\Composite\\SFX", sfxP);
             fileWalk("bin\\Composite\\Vocals", vocalP);
             fileWalk("bin\\Composite\\", allP);
         }
         else {
 
-            fileWalk("bin/Composite/Drums", drumP);
-            fileWalk("bin/Composite/Loops", loopP);
+            fileWalk("bin/Composite/Drums/Hat", hatP);
+            fileWalk("bin/Composite/Drums/Kick", kickP);
+            fileWalk("bin/Composite/Drums/Snare", snareP);
+            fileWalk("bin/Composite/Loops/Bass", bLoopP);
+            fileWalk("bin/Composite/Loops/Drum", dLoopP);
+            fileWalk("bin/Composite/Loops/Piano", pLoopP);
             fileWalk("bin/Composite/SFX", sfxP);
             fileWalk("bin/Composite/Vocals", vocalP);
             fileWalk("bin/Composite/", allP);
@@ -916,17 +928,37 @@ public class Controller implements Initializable {
         // Create a sub-menu for the sounds
         Menu sounds = new Menu("Sounds");
 
-        // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
+        // Create sub-menus for Drums, Loops, Vocals, and Sound Effects
         Menu drums = new Menu("Drums");
         Menu loops = new Menu("Loops");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
+        
+        // Create sub-menus for Drums
+        Menu dHat = new Menu("Hat");
+        Menu dKick = new Menu("Kick");
+        Menu dSnare = new Menu("Snare");
+        
+        // Create sub-menus for Loops
+        Menu bLoop = new Menu("Bass");
+        Menu dLoop = new Menu("Drum");
+        Menu pLoop = new Menu("Piano");
 
         // Add items to the sub-menu
         sounds.getItems().add(drums);
         sounds.getItems().add(loops);
         sounds.getItems().add(vocals);
         sounds.getItems().add(sEffects);
+        
+        // Add sub-menus to Drums
+        drums.getItems().add(dHat);
+        drums.getItems().add(dKick);
+        drums.getItems().add(dSnare);
+        
+        // Add sub-menus to Loops
+        loops.getItems().add(bLoop);
+        loops.getItems().add(dLoop);
+        loops.getItems().add(pLoop);
 
         // Add the menu items to the sub-menu
         colors.getItems().add(colorMenuItem(btn, "red"));
@@ -939,12 +971,24 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "white"));
 
         // Add the drum menu items to the sub-menu
-        for ( int i = 0; i < drumP.size(); i++ ) {
-            drums.getItems().add(soundMenuItem(btn, ( drumP.get(i) )));
+        for ( int i = 0; i < hatP.size(); i++ ) {
+        	dHat.getItems().add(soundMenuItem(btn, ( hatP.get(i) )));
+        }
+        for ( int i = 0; i < kickP.size(); i++ ) {
+        	dKick.getItems().add(soundMenuItem(btn, ( kickP.get(i) )));
+        }
+        for ( int i = 0; i < snareP.size(); i++ ) {
+        	dSnare.getItems().add(soundMenuItem(btn, ( snareP.get(i) )));
         }
         // Add the loop menu items to the sub-menu
-        for ( int i = 0; i < loopP.size(); i++ ) {
-            loops.getItems().add(soundMenuItem(btn, ( loopP.get(i) )));
+        for ( int i = 0; i < bLoopP.size(); i++ ) {
+        	bLoop.getItems().add(soundMenuItem(btn, ( bLoopP.get(i) )));
+        }
+        for ( int i = 0; i < dLoopP.size(); i++ ) {
+        	dLoop.getItems().add(soundMenuItem(btn, ( dLoopP.get(i) )));
+        }
+        for ( int i = 0; i < pLoopP.size(); i++ ) {
+        	pLoop.getItems().add(soundMenuItem(btn, ( pLoopP.get(i) )));
         }
         // Add the SFX menu items to the sub-menu
         for ( int i = 0; i < sfxP.size(); i++ ) {
