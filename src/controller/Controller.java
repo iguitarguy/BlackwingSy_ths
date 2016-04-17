@@ -116,7 +116,7 @@ public class Controller implements Initializable {
     private final boolean TAP = true;
     private final boolean HOLD = false;
     private HostServices hostServices;
-    private ArrayList< Button > btns;
+    protected ArrayList< Button > btns;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
