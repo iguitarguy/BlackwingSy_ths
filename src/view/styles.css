@@ -16,11 +16,6 @@
   -fx-text-fill: #fff;
 }
 
-.light-bg {
-  -fx-background-color: #fff;
-  -fx-text-fill: #000;
-}
-
 .menu-bar {
   -fx-background-color: #464646;
 }
@@ -68,6 +63,13 @@
 #ffffff
 */
 
+.white {
+  -fx-fill: #fff;
+  -fx-stroke: #000;
+  -fx-background-color: #fff;
+  -fx-text-fill: #000;
+}
+
 .red {
   -fx-fill: #ff0000;
   -fx-background-color: #ff0000;
@@ -108,13 +110,6 @@
   -fx-fill: #ff00ff;
   -fx-background-color: #ff00ff;
   -fx-text-fill: #fff;
-}
-
-.white {
-  -fx-fill: #fff;
-  -fx-stroke: #000;
-  -fx-background-color: #fff;
-  -fx-text-fill: #000;
 }
 
 .active {
