@@ -201,7 +201,7 @@ public class Controller implements Initializable {
             try {
                 File file = fileChooser.showOpenDialog(null);
                 btn.setSound(file);
-                btn.getStyleClass().add("light-bg");
+                btn.getStyleClass().add("white");
                 btn.getStyleClass().remove("medium-bg");
                 this.error.setText("");
             }
@@ -368,7 +368,7 @@ public class Controller implements Initializable {
         for ( int i = 0; i < btns.size(); i++ ) {
 
             Button btn = btns.get(i);
-            if (btn.getSound() != null) {
+            if ( btn.getSound() != null ) {
                 btn.stopSound();
                 btn.getSound().setOnEndOfMedia(null);
             }
@@ -913,6 +913,32 @@ public class Controller implements Initializable {
         // Replace old class with newClass to btn
         btn.getStyleClass().remove(btn.getStyleClass().get(btn.getStyleClass().size() - 1));
         btn.getStyleClass().add(newClass);
+    }
+
+    /**
+     * clearColors
+     * @param event ActionEvent
+     * Reset all button colors to default
+     * medium-bg for unassigned buttons
+     * white for assigned buttons
+     */
+    @FXML
+    protected void clearColors( ActionEvent event ) {
+
+        for ( int i = 0; i < btns.size(); i++ ) {
+
+            Button btn = btns.get(i);
+            btn.getStyleClass().remove(btn.getStyleClass().size() - 1);
+
+            if ( btn.getSound() != null ) {
+
+                btn.getStyleClass().add("white");
+            }
+            else {
+
+                btn.getStyleClass().add("medium-bg");
+            }
+        }
     }
 
     /**
