@@ -221,7 +221,7 @@ public class Controller implements Initializable {
     @FXML
     protected void reset( ActionEvent event ) {
 
-        for ( int i = 0; i < this.btns.size();i++){
+        for ( int i = 0; i < this.btns.size(); i++ ) {
 
             Button btn = this.btns.get(i);
             btn.unbindSound();
