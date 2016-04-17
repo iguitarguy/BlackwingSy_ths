@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +19,10 @@ import javafx.stage.FileChooser;
 import model.Button;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -117,6 +119,13 @@ public class Controller implements Initializable {
     private final boolean HOLD = false;
     private HostServices hostServices;
     protected ArrayList< Button > btns;
+    private static ArrayList<String> drumP = new ArrayList<String>();
+	private static ArrayList<String> loopP = new ArrayList<String>();
+	private static ArrayList<String> sfxP = new ArrayList<String>();
+	private static ArrayList<String> songP = new ArrayList<String>();
+	private static ArrayList<String> vocalP = new ArrayList<String>();
+	private static ArrayList<String> allP = new ArrayList<String>();
+	private int id;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -124,7 +133,13 @@ public class Controller implements Initializable {
         System.out.println("View is now loaded!");
         error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
-        btns = new ArrayList();
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Drums", drumP);
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Loops", loopP);
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/SFX", sfxP);
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Songs", songP);
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Vocals", vocalP);
+        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/", allP);
+        btns = new ArrayList<Button>();
 
         btns.add(N1btn);
         btns.add(N2btn);
@@ -175,6 +190,22 @@ public class Controller implements Initializable {
     public void setHostServices( HostServices hostServices ) {
         this.hostServices = hostServices;
     }
+    
+    // Get File Paths
+	public void fileWalk(String path, ArrayList<String> al){
+	try {
+			
+			Files.walk(Paths.get(path)).forEach(filePath -> {
+			    if (Files.isRegularFile(filePath)) {
+			    	al.add(filePath.toString());
+			        //System.out.println(filePath);
+			        
+			    }
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}  
 
     /**
      * assignMusic
@@ -814,6 +845,26 @@ public class Controller implements Initializable {
         btn.getStyleClass().remove(btn.getStyleClass().get(btn.getStyleClass().size() - 1));
         btn.getStyleClass().add(newClass);
     }
+    //Create sound menu button
+    protected void soundButton( Button btn, ActionEvent event ) {
+
+        // Retrieve the MenuItem clicked on
+        //MenuItem item = (MenuItem) event.getSource();
+
+        try {
+            File file = new File(allP.get(id));
+            btn.setSound(file);
+            btn.getStyleClass().add("light-bg");
+            btn.getStyleClass().remove("medium-bg");
+            this.error.setText("");
+        }
+        catch ( NullPointerException npe ) {
+            this.error.setText("No File Selected");
+        }
+        catch ( MediaException me ) {
+            this.error.setText("Unsupported File Type");
+        }
+    }
 
     /**
      * clearColors
@@ -858,12 +909,14 @@ public class Controller implements Initializable {
         // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
         Menu songs = new Menu("Songs");
         Menu drums = new Menu("Drums");
+        Menu loops = new Menu("Loops");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
 
         // Add items to the sub-menu
         sounds.getItems().add(songs);
         sounds.getItems().add(drums);
+        sounds.getItems().add(loops);
         sounds.getItems().add(vocals);
         sounds.getItems().add(sEffects);
 
@@ -876,6 +929,27 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "teal"));
         colors.getItems().add(colorMenuItem(btn, "violet"));
         colors.getItems().add(colorMenuItem(btn, "white"));
+        
+        // Add the drum menu items to the sub-menu
+        for ( int i = 0; i < drumP.size(); i++ ) {
+        	loops.getItems().add(soundMenuItem(btn,(drumP.get(i))));
+        }
+        // Add the loop menu items to the sub-menu
+        for ( int i = 0; i < loopP.size(); i++ ) {
+        	loops.getItems().add(soundMenuItem(btn,(loopP.get(i))));
+        }
+        // Add the SFX menu items to the sub-menu
+        for ( int i = 0; i < sfxP.size(); i++ ) {
+        	loops.getItems().add(soundMenuItem(btn,(sfxP.get(i))));
+        }
+        // Add the song menu items to the sub-menu
+        for ( int i = 0; i < songP.size(); i++ ) {
+        	loops.getItems().add(soundMenuItem(btn,(songP.get(i))));
+        }
+        // Add the vocal menu items to the sub-menu
+        for ( int i = 0; i < vocalP.size(); i++ ) {
+        	loops.getItems().add(soundMenuItem(btn,(vocalP.get(i))));
+        }
 
         // Add the sub-menu to the context menu
         menu.getItems().add(colors);
@@ -912,6 +986,21 @@ public class Controller implements Initializable {
             }
         });
 
+        return item;
+    }
+    /**
+     * Create sound menu items with event handler
+     */
+    protected MenuItem soundMenuItem( final Button btn, String str ) {
+
+        
+        // Create the MenuItem and create an event handler
+        MenuItem item = new MenuItem(str);
+        item.setOnAction(new EventHandler< ActionEvent >() {
+            public void handle( ActionEvent event ) {
+                soundButton(btn, event);
+            }
+        });
         return item;
     }
 
