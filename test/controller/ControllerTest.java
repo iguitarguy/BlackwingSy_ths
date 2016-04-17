@@ -193,6 +193,31 @@ public class ControllerTest {
     }
 
     @Test
+    public void stopMusic() {
+
+        System.out.printf("\nStop Music:\nStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        Button Qbtn = new Button();
+
+        System.out.printf("Set Qbtn to bassloop-17.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+
+        System.out.printf("Add the white Style Class to Qbtn\n");
+        Qbtn.getStyleClass().add("white");
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept Qbtn\n");
+        ctrl.Qbtn = Qbtn;
+
+        System.out.printf("Stop sound track\n");
+        System.out.printf("Remove active to Qbtn's Style Class\n\n");
+        ctrl.playMusic(Qbtn);
+        ctrl.stopMusic(Qbtn);
+        assert (!Qbtn.isPlaying());
+        System.out.println(Qbtn.getStyleClass());
+        assert (Qbtn.getStyleClass().toString().equals("button white"));
+    }
+
+    @Test
     public void playMusicEvent() throws Exception {
 
         System.out.printf("\nPlay Music Event:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
