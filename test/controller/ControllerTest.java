@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -170,6 +171,42 @@ public class ControllerTest {
     @After
     public void tearDown() throws Exception {
 
+    }
+
+    @Test
+    public void reset() throws Exception {
+
+        System.out.printf("Reset:\n" +
+                "Unbind all sounds\n" +
+                "Change style classes to medium-bgn\n\n");
+
+        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop (1).mp3"));
+        System.out.printf("Set Wbtn to BassLoop (1).mp3\n");
+        Wbtn.setSound(new File("bin/Composite/Loops/BassLoop (1).mp3"));
+        System.out.printf("Set Gbtn to BassLoop (1).mp3\n");
+        Gbtn.setSound(new File("bin/Composite/Loops/BassLoop (1).mp3"));
+
+        System.out.printf("Change the style class of Qbtn to red\n");
+        Qbtn.getStyleClass().add("red");
+        System.out.printf("Change the style class of Wbtn to violet\n");
+        Wbtn.getStyleClass().add("violet");
+        System.out.printf("Change the style class of Gbtn to active\n");
+        Gbtn.getStyleClass().add("active");
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept All Buttons");
+        ctrl.btns = btns;
+
+        System.out.printf("Unbind sound tracks\n" +
+                "Change style class back to medium-bg");
+        ctrl.reset(new ActionEvent());
+        assert (Qbtn.getSound() == null);
+        assert (Qbtn.getStyleClass().toString().equals("button medium-bg"));
+        assert (Wbtn.getSound() == null);
+        assert (Wbtn.getStyleClass().toString().equals("button medium-bg"));
+        assert (Gbtn.getSound() == null);
+        assert (Gbtn.getStyleClass().toString().equals("button medium-bg"));
     }
 
     @Test
