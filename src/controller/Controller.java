@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -17,6 +16,7 @@ import javafx.scene.media.MediaException;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import model.Button;
+import model.MenuItem;
 
 import java.io.File;
 import java.io.IOException;
@@ -122,7 +122,7 @@ public class Controller implements Initializable {
     protected static ArrayList< String > drumP = new ArrayList< String >();
     protected static ArrayList< String > loopP = new ArrayList< String >();
     protected static ArrayList< String > sfxP = new ArrayList< String >();
-//    protected static ArrayList< String > songP = new ArrayList< String >();
+    //    protected static ArrayList< String > songP = new ArrayList< String >();
     protected static ArrayList< String > vocalP = new ArrayList< String >();
     protected static ArrayList< String > allP = new ArrayList< String >();
     private int id;
@@ -868,7 +868,7 @@ public class Controller implements Initializable {
 
         try {
 //            File file = new File(allP.get(id));
-            btn.setSound(new File(item.getText()));
+            btn.setSound(item.getFile());
             btn.getStyleClass().add("white");
             btn.getStyleClass().remove("medium-bg");
             this.error.setText("");
@@ -1010,7 +1010,9 @@ public class Controller implements Initializable {
     protected MenuItem soundMenuItem( final Button btn, String str ) {
 
         // Create the MenuItem and create an event handler
-        MenuItem item = new MenuItem(str);
+        File file = new File(str);
+        MenuItem item = new MenuItem(file.getName().substring(0, file.getName().length() - 4));
+        item.setFile(file);
         item.setOnAction(new EventHandler< ActionEvent >() {
             public void handle( ActionEvent event ) {
                 soundButton(btn, event);
