@@ -178,8 +178,8 @@ public class ControllerTest {
 
         System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
 
-        System.out.printf("Set Qbtn to bassloop-17.mp3\n");
-        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        System.out.printf("Set Qbtn to BassLoop1.m+p3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
 
         Controller ctrl = new Controller();
         System.out.printf("Intercept Qbtn\n");
@@ -197,8 +197,8 @@ public class ControllerTest {
 
         System.out.printf("\nStop Music:\nStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
 
-        System.out.printf("Set Qbtn to bassloop-17.mp3\n");
-        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        System.out.printf("Set Qbtn to BassLoop1.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
 
         System.out.printf("Add the white Style Class to Qbtn\n");
         Qbtn.getStyleClass().add("white");
@@ -221,12 +221,12 @@ public class ControllerTest {
 
         System.out.printf("\nStop All:\nStop all music tracks playing\nRemove any On End of Media Events\n\n");
 
-        System.out.printf("Set Qbtn to bassloop-17.mp3\n");
-        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
-        System.out.printf("Set Wbtn to bassloop-17.mp3\n");
-        Wbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
-        System.out.printf("Set Gbtn to bassloop-17.mp3\n");
-        Gbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        System.out.printf("Set Qbtn to BassLoop1.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
+        System.out.printf("Set Wbtn to BassLoop1.mp3\n");
+        Wbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
+        System.out.printf("Set Gbtn to BassLoop1.mp3\n");
+        Gbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
 
         System.out.printf("Set On End of Media Event to Qbtn");
         Qbtn.getSound().setOnEndOfMedia(new Runnable() {
@@ -268,8 +268,8 @@ public class ControllerTest {
 
         System.out.printf("\nPlay Music Event:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
 
-        System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
-        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        System.out.printf("Set Qbtn sound to BassLoop1.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
 
         Controller ctrl = new Controller();
         System.out.printf("Intercept Qbtn\n");
@@ -288,8 +288,8 @@ public class ControllerTest {
 
         System.out.printf("\nStop Music Event:\nStop playing the music track assigned to the Qbtn when key released\n\n");
 
-        System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
-        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+        System.out.printf("Set Qbtn sound to BassLoop1.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
         Controller ctrl = new Controller();
 
         System.out.printf("Intercept Qbtn\n");
