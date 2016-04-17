@@ -27,7 +27,6 @@ public class ControllerTest {
 
     public static class testApp extends Application {
 
-        public Button Qbtn;
         public Button N1btn;
         public Button N2btn;
         public Button N3btn;
@@ -69,7 +68,6 @@ public class ControllerTest {
         @Override
         public void start( Stage primaryStage ) throws Exception {
 
-            Qbtn = new Button("Q");
             N1btn = new Button("1");
             N2btn = new Button("2");
             N3btn = new Button("3");
@@ -172,6 +170,26 @@ public class ControllerTest {
     @After
     public void tearDown() throws Exception {
 
+    }
+
+    @Test
+    public  void playMusic() throws Exception {
+
+        System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        Button Qbtn = new Button();
+
+        System.out.printf("Set Qbtn to bassloop-17.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept Qbtn\n");
+        ctrl.Qbtn = Qbtn;
+
+        System.out.printf("Start sound track\n");
+        System.out.printf("Add active to Qbtn's Style Class\n\n");
+        ctrl.playMusic(Qbtn);
+        assert (Qbtn.isPlaying());
+        assert (Qbtn.getStyleClass().toString().equals("button active"));
     }
 
     @Test
