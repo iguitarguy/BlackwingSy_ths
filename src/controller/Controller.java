@@ -119,13 +119,13 @@ public class Controller implements Initializable {
     private final boolean HOLD = false;
     private HostServices hostServices;
     protected ArrayList< Button > btns;
-    private static ArrayList<String> drumP = new ArrayList<String>();
-	private static ArrayList<String> loopP = new ArrayList<String>();
-	private static ArrayList<String> sfxP = new ArrayList<String>();
-	private static ArrayList<String> songP = new ArrayList<String>();
-	private static ArrayList<String> vocalP = new ArrayList<String>();
-	private static ArrayList<String> allP = new ArrayList<String>();
-	private int id;
+    protected static ArrayList< String > drumP = new ArrayList< String >();
+    protected static ArrayList< String > loopP = new ArrayList< String >();
+    protected static ArrayList< String > sfxP = new ArrayList< String >();
+//    protected static ArrayList< String > songP = new ArrayList< String >();
+    protected static ArrayList< String > vocalP = new ArrayList< String >();
+    protected static ArrayList< String > allP = new ArrayList< String >();
+    private int id;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -133,13 +133,26 @@ public class Controller implements Initializable {
         System.out.println("View is now loaded!");
         error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Drums", drumP);
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Loops", loopP);
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/SFX", sfxP);
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Songs", songP);
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/Vocals", vocalP);
-        fileWalk("C:\\Users/sasqu/Documents/GitHub/BlackwingSy_ths/bin/Composite/", allP);
-        btns = new ArrayList<Button>();
+        String OS = System.getProperty("os.name");
+        if ( OS.startsWith("Windows") ) {
+
+            fileWalk("bin\\Composite\\Drums", drumP);
+            fileWalk("bin\\Composite\\Loops", loopP);
+            fileWalk("bin\\Composite\\SFX", sfxP);
+//            fileWalk("bin\\Composite\\Songs", songP);
+            fileWalk("bin\\Composite\\Vocals", vocalP);
+            fileWalk("bin\\Composite\\", allP);
+        }
+        else {
+
+            fileWalk("bin/Composite/Drums", drumP);
+            fileWalk("bin/Composite/Loops", loopP);
+            fileWalk("bin/Composite/SFX", sfxP);
+//            fileWalk("bin/Composite/Songs", songP);
+            fileWalk("bin/Composite/Vocals", vocalP);
+            fileWalk("bin/Composite/", allP);
+        }
+        btns = new ArrayList< Button >();
 
         btns.add(N1btn);
         btns.add(N2btn);
@@ -190,22 +203,23 @@ public class Controller implements Initializable {
     public void setHostServices( HostServices hostServices ) {
         this.hostServices = hostServices;
     }
-    
+
     // Get File Paths
-	public void fileWalk(String path, ArrayList<String> al){
-	try {
-			
-			Files.walk(Paths.get(path)).forEach(filePath -> {
-			    if (Files.isRegularFile(filePath)) {
-			    	al.add(filePath.toString());
-			        //System.out.println(filePath);
-			        
-			    }
-			});
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}  
+    public void fileWalk( String path, ArrayList< String > al ) {
+        try {
+
+            Files.walk(Paths.get(path)).forEach(filePath -> {
+                if ( Files.isRegularFile(filePath) ) {
+                    al.add(filePath.toString());
+                    //System.out.println(filePath);
+
+                }
+            });
+        }
+        catch ( IOException e ) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * assignMusic
@@ -845,16 +859,17 @@ public class Controller implements Initializable {
         btn.getStyleClass().remove(btn.getStyleClass().get(btn.getStyleClass().size() - 1));
         btn.getStyleClass().add(newClass);
     }
+
     //Create sound menu button
     protected void soundButton( Button btn, ActionEvent event ) {
 
         // Retrieve the MenuItem clicked on
-        //MenuItem item = (MenuItem) event.getSource();
+        MenuItem item = (MenuItem) event.getSource();
 
         try {
-            File file = new File(allP.get(id));
-            btn.setSound(file);
-            btn.getStyleClass().add("light-bg");
+//            File file = new File(allP.get(id));
+            btn.setSound(item.getText());
+            btn.getStyleClass().add("white");
             btn.getStyleClass().remove("medium-bg");
             this.error.setText("");
         }
@@ -907,14 +922,14 @@ public class Controller implements Initializable {
         Menu sounds = new Menu("Sounds");
 
         // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
-        Menu songs = new Menu("Songs");
+//        Menu songs = new Menu("Songs");
         Menu drums = new Menu("Drums");
         Menu loops = new Menu("Loops");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
 
         // Add items to the sub-menu
-        sounds.getItems().add(songs);
+//        sounds.getItems().add(songs);
         sounds.getItems().add(drums);
         sounds.getItems().add(loops);
         sounds.getItems().add(vocals);
@@ -929,26 +944,26 @@ public class Controller implements Initializable {
         colors.getItems().add(colorMenuItem(btn, "teal"));
         colors.getItems().add(colorMenuItem(btn, "violet"));
         colors.getItems().add(colorMenuItem(btn, "white"));
-        
+
         // Add the drum menu items to the sub-menu
         for ( int i = 0; i < drumP.size(); i++ ) {
-        	drums.getItems().add(soundMenuItem(btn,(drumP.get(i))));
+            drums.getItems().add(soundMenuItem(btn, ( drumP.get(i) )));
         }
         // Add the loop menu items to the sub-menu
         for ( int i = 0; i < loopP.size(); i++ ) {
-        	loops.getItems().add(soundMenuItem(btn,(loopP.get(i))));
+            loops.getItems().add(soundMenuItem(btn, ( loopP.get(i) )));
         }
         // Add the SFX menu items to the sub-menu
         for ( int i = 0; i < sfxP.size(); i++ ) {
-        	sEffects.getItems().add(soundMenuItem(btn,(sfxP.get(i))));
+            sEffects.getItems().add(soundMenuItem(btn, ( sfxP.get(i) )));
         }
         // Add the song menu items to the sub-menu
-        for ( int i = 0; i < songP.size(); i++ ) {
-        	songs.getItems().add(soundMenuItem(btn,(songP.get(i))));
-        }
+//        for ( int i = 0; i < songP.size(); i++ ) {
+//            songs.getItems().add(soundMenuItem(btn, ( songP.get(i) )));
+//        }
         // Add the vocal menu items to the sub-menu
         for ( int i = 0; i < vocalP.size(); i++ ) {
-        	vocals.getItems().add(soundMenuItem(btn,(vocalP.get(i))));
+            vocals.getItems().add(soundMenuItem(btn, ( vocalP.get(i) )));
         }
 
         // Add the sub-menu to the context menu
@@ -988,12 +1003,12 @@ public class Controller implements Initializable {
 
         return item;
     }
+
     /**
      * Create sound menu items with event handler
      */
     protected MenuItem soundMenuItem( final Button btn, String str ) {
 
-        
         // Create the MenuItem and create an event handler
         MenuItem item = new MenuItem(str);
         item.setOnAction(new EventHandler< ActionEvent >() {
