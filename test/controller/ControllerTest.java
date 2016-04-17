@@ -177,7 +177,6 @@ public class ControllerTest {
     public  void playMusic() throws Exception {
 
         System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
-        Button Qbtn = new Button();
 
         System.out.printf("Set Qbtn to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
@@ -197,7 +196,6 @@ public class ControllerTest {
     public void stopMusic() {
 
         System.out.printf("\nStop Music:\nStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
-        Button Qbtn = new Button();
 
         System.out.printf("Set Qbtn to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
@@ -269,7 +267,6 @@ public class ControllerTest {
     public void playMusicEvent() throws Exception {
 
         System.out.printf("\nPlay Music Event:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
-        Button Qbtn = new Button();
 
         System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
@@ -290,7 +287,6 @@ public class ControllerTest {
     public void stopMusicEvent() throws Exception {
 
         System.out.printf("\nStop Music Event:\nStop playing the music track assigned to the Qbtn when key released\n\n");
-        Button Qbtn = new Button();
 
         System.out.printf("Set Qbtn sound to bassloop-17.mp3\n");
         Qbtn.setSound(new File("bin/Composite/bassloop-17.mp3"));
