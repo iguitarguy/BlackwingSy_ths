@@ -868,7 +868,7 @@ public class Controller implements Initializable {
 
         try {
 //            File file = new File(allP.get(id));
-            btn.setSound(item.getText());
+            btn.setSound(new File(item.getText()));
             btn.getStyleClass().add("white");
             btn.getStyleClass().remove("medium-bg");
             this.error.setText("");
