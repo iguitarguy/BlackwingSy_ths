@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
 
 /**
  * Controller
- * @author Mike Deiters
+ * @author BlackwingSy_ths
  * @version 1.0
  *
  * Description: FX Controls
@@ -122,10 +122,8 @@ public class Controller implements Initializable {
     protected static ArrayList< String > drumP = new ArrayList< String >();
     protected static ArrayList< String > loopP = new ArrayList< String >();
     protected static ArrayList< String > sfxP = new ArrayList< String >();
-    //    protected static ArrayList< String > songP = new ArrayList< String >();
     protected static ArrayList< String > vocalP = new ArrayList< String >();
     protected static ArrayList< String > allP = new ArrayList< String >();
-    private int id;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -139,7 +137,6 @@ public class Controller implements Initializable {
             fileWalk("bin\\Composite\\Drums", drumP);
             fileWalk("bin\\Composite\\Loops", loopP);
             fileWalk("bin\\Composite\\SFX", sfxP);
-//            fileWalk("bin\\Composite\\Songs", songP);
             fileWalk("bin\\Composite\\Vocals", vocalP);
             fileWalk("bin\\Composite\\", allP);
         }
@@ -148,7 +145,6 @@ public class Controller implements Initializable {
             fileWalk("bin/Composite/Drums", drumP);
             fileWalk("bin/Composite/Loops", loopP);
             fileWalk("bin/Composite/SFX", sfxP);
-//            fileWalk("bin/Composite/Songs", songP);
             fileWalk("bin/Composite/Vocals", vocalP);
             fileWalk("bin/Composite/", allP);
         }
@@ -234,7 +230,7 @@ public class Controller implements Initializable {
             Button btn = (Button) event.getSource();
 
             FileChooser fileChooser = new FileChooser();
-//        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+//        	fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
             fileChooser.setTitle("Select Music Bite");
 
             fileChooser.getExtensionFilters().addAll               (
@@ -867,7 +863,6 @@ public class Controller implements Initializable {
         MenuItem item = (MenuItem) event.getSource();
 
         try {
-//            File file = new File(allP.get(id));
             btn.setSound(item.getFile());
             btn.getStyleClass().add("white");
             btn.getStyleClass().remove("medium-bg");
@@ -922,14 +917,12 @@ public class Controller implements Initializable {
         Menu sounds = new Menu("Sounds");
 
         // Create sub-menus for Songs, Drums, Vocals, and Sound Effects
-//        Menu songs = new Menu("Songs");
         Menu drums = new Menu("Drums");
         Menu loops = new Menu("Loops");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
 
         // Add items to the sub-menu
-//        sounds.getItems().add(songs);
         sounds.getItems().add(drums);
         sounds.getItems().add(loops);
         sounds.getItems().add(vocals);
@@ -957,10 +950,6 @@ public class Controller implements Initializable {
         for ( int i = 0; i < sfxP.size(); i++ ) {
             sEffects.getItems().add(soundMenuItem(btn, ( sfxP.get(i) )));
         }
-        // Add the song menu items to the sub-menu
-//        for ( int i = 0; i < songP.size(); i++ ) {
-//            songs.getItems().add(soundMenuItem(btn, ( songP.get(i) )));
-//        }
         // Add the vocal menu items to the sub-menu
         for ( int i = 0; i < vocalP.size(); i++ ) {
             vocals.getItems().add(soundMenuItem(btn, ( vocalP.get(i) )));
