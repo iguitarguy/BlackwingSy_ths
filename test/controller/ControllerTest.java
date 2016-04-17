@@ -201,12 +201,12 @@ public class ControllerTest {
         System.out.printf("Unbind sound tracks\n" +
                 "Change style class back to medium-bg");
         ctrl.reset(new ActionEvent());
-        assert (Qbtn.getSound() == null);
-        assert (Qbtn.getStyleClass().toString().equals("button medium-bg"));
-        assert (Wbtn.getSound() == null);
-        assert (Wbtn.getStyleClass().toString().equals("button medium-bg"));
-        assert (Gbtn.getSound() == null);
-        assert (Gbtn.getStyleClass().toString().equals("button medium-bg"));
+        assert ( Qbtn.getSound() == null );
+        assert ( Qbtn.getStyleClass().toString().equals("button medium-bg") );
+        assert ( Wbtn.getSound() == null );
+        assert ( Wbtn.getStyleClass().toString().equals("button medium-bg") );
+        assert ( Gbtn.getSound() == null );
+        assert ( Gbtn.getStyleClass().toString().equals("button medium-bg") );
     }
 
     @Test
@@ -380,4 +380,30 @@ public class ControllerTest {
         assert ( !Qbtn.isPlaying() );
     }
 
+    @Test
+    public void toggleMusicEvent() throws Exception {
+
+        System.out.printf("Toggle Music Event:\n" +
+                "Start playing the music track\n" +
+                "Stop playing if playing\n\n");
+
+        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop (1).mp3"));
+        Qbtn.getStyleClass().add("white");
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept Qbtn\n");
+        ctrl.Qbtn = Qbtn;
+
+        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
+        KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+
+        System.out.printf("Start sound track\n");
+        ctrl.toggleMusicEvent(event);
+        assert ( Qbtn.isPlaying() );
+
+        System.out.printf("Stop sound track\n");
+        ctrl.toggleMusicEvent(event);
+        assert ( !Qbtn.isPlaying() );
+    }
 }
