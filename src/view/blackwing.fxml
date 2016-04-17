@@ -57,6 +57,7 @@
 				<Menu mnemonicParsing="false" text="Edit">
 					<items>
 						<MenuItem fx:id="playStopToggle" mnemonicParsing="false" onAction="#toggleTapHold" text="Tap to Play" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearColors" text="Clear Button Colors" />
 					</items>
 				</Menu>
 				<Menu mnemonicParsing="false" text="Help">
