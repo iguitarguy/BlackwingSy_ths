@@ -61,13 +61,12 @@ public class ControllerTest {
     public Button Bbtn;
     public Button Nbtn;
     public Button Mbtn;
-    public ArrayList<Button> btns;
+    public ArrayList< Button > btns;
 
     public static class testApp extends Application {
 
         @Override
         public void start( Stage primaryStage ) throws Exception {
-
 
         }
     }
@@ -79,7 +78,7 @@ public class ControllerTest {
         Thread t1 = new Thread("Java init thread") {
             @Override
             public void run() {
-                Application.launch(testApp.class, new String[0]);
+                Application.launch(testApp.class, new String[ 0 ]);
             }
         };
         t1.setDaemon(true);
@@ -174,7 +173,7 @@ public class ControllerTest {
     }
 
     @Test
-    public  void playMusic() throws Exception {
+    public void playMusic() throws Exception {
 
         System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
 
@@ -188,8 +187,8 @@ public class ControllerTest {
         System.out.printf("Start sound track\n");
         System.out.printf("Add active to Qbtn's Style Class\n\n");
         ctrl.playMusic(Qbtn);
-        assert (Qbtn.isPlaying());
-        assert (Qbtn.getStyleClass().toString().equals("button active"));
+        assert ( Qbtn.isPlaying() );
+        assert ( Qbtn.getStyleClass().toString().equals("button active") );
     }
 
     @Test
@@ -211,9 +210,9 @@ public class ControllerTest {
         System.out.printf("Remove active to Qbtn's Style Class\n\n");
         ctrl.playMusic(Qbtn);
         ctrl.stopMusic(Qbtn);
-        assert (!Qbtn.isPlaying());
+        assert ( !Qbtn.isPlaying() );
         System.out.println(Qbtn.getStyleClass());
-        assert (Qbtn.getStyleClass().toString().equals("button white"));
+        assert ( Qbtn.getStyleClass().toString().equals("button white") );
     }
 
     @Test
@@ -257,10 +256,53 @@ public class ControllerTest {
         ctrl.playMusic(Wbtn);
         ctrl.playMusic(Gbtn);
         ctrl.stopAll();
-        assert (!Qbtn.isPlaying() && !Wbtn.isPlaying() && !Gbtn.isPlaying());
-        assert (Qbtn.getSound().getOnEndOfMedia() == null);
-        assert (Wbtn.getSound().getOnEndOfMedia() == null);
-        assert (Gbtn.getSound().getOnEndOfMedia() == null);
+        assert ( !Qbtn.isPlaying() && !Wbtn.isPlaying() && !Gbtn.isPlaying() );
+        assert ( Qbtn.getSound().getOnEndOfMedia() == null );
+        assert ( Wbtn.getSound().getOnEndOfMedia() == null );
+        assert ( Gbtn.getSound().getOnEndOfMedia() == null );
+    }
+
+    @Test
+    public void toggleMusic() {
+
+        System.out.printf("Toggle Music:\n" +
+                "Start playing the music track\n" +
+                "Stop playing if playing\n" +
+                "Stop playing playback has ended\n" +
+                "When playing change style class to active\n" +
+                "When not playing change style class to white\n\n");
+
+        System.out.printf("Set Qbtn to BassLoop1.mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/BassLoop1.mp3"));
+
+        System.out.printf("Add the white Style Class to Qbtn\n");
+        Qbtn.getStyleClass().add("white");
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept Qbtn\n");
+        ctrl.Qbtn = Qbtn;
+        System.out.printf("Start playing\n" +
+                "Change style class to active");
+        ctrl.toggleMusic(Qbtn);
+        assert ( Qbtn.isPlaying() );
+        assert ( Qbtn.getStyleClass().toString().equals("button white active") );
+        try {
+            Thread.sleep(200);
+            System.out.printf("Stop playing\n" +
+                    "Change style class to white");
+            ctrl.toggleMusic(Qbtn);
+            assert ( !Qbtn.isPlaying() );
+            assert ( Qbtn.getStyleClass().toString().equals("button white") );
+        }
+        catch ( InterruptedException ie ) {
+            // Do Nothing
+        }
+
+        System.out.printf("Start then Stop playing");
+        ctrl.toggleMusic(Qbtn);
+        assert ( Qbtn.isPlaying() );
+        ctrl.toggleMusic(Qbtn);
+        assert ( !Qbtn.isPlaying() );
     }
 
     @Test
@@ -280,7 +322,7 @@ public class ControllerTest {
 
         System.out.printf("Start sound track\n\n");
         ctrl.playMusicEvent(event);
-        assert (Qbtn.isPlaying());
+        assert ( Qbtn.isPlaying() );
     }
 
     @Test
@@ -302,7 +344,7 @@ public class ControllerTest {
         System.out.printf("Stop sound track\n\n");
         ctrl.playMusicEvent(press);
         ctrl.stopMusicEvent(release);
-        assert (!Qbtn.isPlaying());
+        assert ( !Qbtn.isPlaying() );
     }
 
 }
