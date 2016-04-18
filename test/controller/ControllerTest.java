@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import static javafx.scene.input.KeyEvent.KEY_PRESSED;
 import static javafx.scene.input.KeyEvent.KEY_RELEASED;
+import static org.junit.Assert.*;
 
 /**
  * ControllerTest
@@ -178,297 +179,313 @@ public class ControllerTest {
     @Test
     public void reset() throws Exception {
 
-        System.out.printf("Reset:\n" +
-                "Unbind all sounds\n" +
-                "Change style classes to medium-bgn\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        System.out.printf("Set Wbtn to BassLoop (1).mp3\n");
-        Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        System.out.printf("Set Gbtn to BassLoop (1).mp3\n");
-        Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
 
-        System.out.printf("Change the style class of Qbtn to red\n");
-        Qbtn.getStyleClass().add("red");
-        System.out.printf("Change the style class of Wbtn to violet\n");
-        Wbtn.getStyleClass().add("violet");
-        System.out.printf("Change the style class of Gbtn to active\n");
-        Gbtn.getStyleClass().add("active");
+            Qbtn.getStyleClass().add("red");
+            Wbtn.getStyleClass().add("violet");
+            Gbtn.getStyleClass().add("active");
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept All Buttons\n");
-        ctrl.btns = btns;
+            Controller ctrl = new Controller();
+            ctrl.btns = btns;
 
-        System.out.printf("Unbind sound tracks\n" +
-                "Change style class back to medium-bg\n\n");
-        ctrl.reset(new ActionEvent());
-        assert ( Qbtn.getSound() == null );
-        assert ( Qbtn.getStyleClass().toString().equals("button medium-bg") );
-        assert ( Wbtn.getSound() == null );
-        assert ( Wbtn.getStyleClass().toString().equals("button medium-bg") );
-        assert ( Gbtn.getSound() == null );
-        assert ( Gbtn.getStyleClass().toString().equals("button medium-bg") );
+            ctrl.reset(new ActionEvent());
+            assertNull("Unbind Qbtn sound track", Qbtn.getSound());
+            assertEquals("Change Qbtn style class back to medium-bg", Qbtn.getStyleClass().toString(), "button medium-bg");
+            assertNull("Unbind Wbtn sound track", Wbtn.getSound());
+            assertEquals("Change Wbtn style class back to medium-bg", Wbtn.getStyleClass().toString(), "button medium-bg");
+            assertNull("Unbind Gbtn sound track", Gbtn.getSound());
+            assertEquals("Change Gbtn style class back to medium-bg", Gbtn.getStyleClass().toString(), "button medium-bg");
+
+            System.out.printf("Reset: - passed\n" +
+                    "Unbind all sounds\n" +
+                    "Change style classes to medium-bgn\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Reset: - failed\n" +
+                    "Unbind all sounds\n" +
+                    "Change style classes to medium-bg\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void playMusic() throws Exception {
 
-        System.out.printf("\nPlay Music:\nStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
 
-        System.out.printf("Start sound track\n");
-        System.out.printf("Add active to Qbtn's Style Class\n\n");
-        ctrl.playMusic(Qbtn);
-        assert ( Qbtn.isPlaying() );
-        assert ( Qbtn.getStyleClass().toString().equals("button active") );
+            ctrl.playMusic(Qbtn);
+            assertTrue("Start sound track", Qbtn.isPlaying());
+            assertEquals("Add active to Qbtn's Style Class", Qbtn.getStyleClass().toString(), "button active");
+
+            System.out.printf("Play Music: - passed\n" +
+                    "Start playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Play Music: - failed\n" +
+                    "Start playing the music track assigned to the Qbtn and change the Style Class\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void stopMusic() throws Exception {
 
-        System.out.printf("\nStop Music:\nStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.getStyleClass().add("white");
 
-        System.out.printf("Add the white Style Class to Qbtn\n");
-        Qbtn.getStyleClass().add("white");
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
+            ctrl.playMusic(Qbtn);
+            ctrl.stopMusic(Qbtn);
+            assertFalse("Stop sound track", Qbtn.isPlaying());
+            assertEquals("Remove active to Qbtn's Style Class", Qbtn.getStyleClass().toString(), "button white");
 
-        System.out.printf("Stop sound track\n");
-        System.out.printf("Remove active to Qbtn's Style Class\n\n");
-        ctrl.playMusic(Qbtn);
-        ctrl.stopMusic(Qbtn);
-        assert ( !Qbtn.isPlaying() );
-        System.out.println(Qbtn.getStyleClass());
-        assert ( Qbtn.getStyleClass().toString().equals("button white") );
+            System.out.printf("Stop Music: - passed\n" +
+                    "Stop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Stop Music: - failed\n" +
+                    "Stop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void stopAll() throws Exception {
 
-        System.out.printf("\nStop All:\nStop all music tracks playing\nRemove any On End of Media Events\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        System.out.printf("Set Wbtn to BassLoop (1).mp3\n");
-        Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        System.out.printf("Set Gbtn to BassLoop (1).mp3\n");
-        Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
 
-        System.out.printf("Set On End of Media Event to Qbtn\n");
-        Qbtn.getSound().setOnEndOfMedia(new Runnable() {
-            public void run() {
-                Qbtn.stopSound();
-            }
-        });
-        System.out.printf("Set On End of Media Event to Wbtn\n");
-        Wbtn.getSound().setOnEndOfMedia(new Runnable() {
-            public void run() {
-                Wbtn.stopSound();
-            }
-        });
-        System.out.printf("Set On End of Media Event to Gbtn\n");
-        Gbtn.getSound().setOnEndOfMedia(new Runnable() {
-            public void run() {
-                Gbtn.stopSound();
-            }
-        });
+            Qbtn.getSound().setOnEndOfMedia(new Runnable() {
+                public void run() {
+                    Qbtn.stopSound();
+                }
+            });
+            Wbtn.getSound().setOnEndOfMedia(new Runnable() {
+                public void run() {
+                    Wbtn.stopSound();
+                }
+            });
+            Gbtn.getSound().setOnEndOfMedia(new Runnable() {
+                public void run() {
+                    Gbtn.stopSound();
+                }
+            });
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept All Buttons\n");
-        ctrl.btns = this.btns;
+            Controller ctrl = new Controller();
+            ctrl.btns = this.btns;
 
-        System.out.printf("Stop all tracks\n");
-        System.out.printf("Remove On End of Media Events\n\n");
-        ctrl.playMusic(Qbtn);
-        ctrl.playMusic(Wbtn);
-        ctrl.playMusic(Gbtn);
-        ctrl.stopAll();
-        assert ( !Qbtn.isPlaying() && !Wbtn.isPlaying() && !Gbtn.isPlaying() );
-        assert ( Qbtn.getSound().getOnEndOfMedia() == null );
-        assert ( Wbtn.getSound().getOnEndOfMedia() == null );
-        assert ( Gbtn.getSound().getOnEndOfMedia() == null );
+            ctrl.playMusic(Qbtn);
+            ctrl.playMusic(Wbtn);
+            ctrl.playMusic(Gbtn);
+            ctrl.stopAll();
+            assertFalse("Stop all tracks, Qbtn", Qbtn.isPlaying());
+            assertFalse("Stop all tracks, Wbtn", Wbtn.isPlaying());
+            assertFalse("Stop all tracks, Gbtn", Gbtn.isPlaying());
+            assertNull("Remove Qbtn On End of Media Event", Qbtn.getSound().getOnEndOfMedia());
+            assertNull("Remove Wbtn On End of Media Event", Wbtn.getSound().getOnEndOfMedia());
+            assertNull("Remove Gbtn On End of Media Event", Gbtn.getSound().getOnEndOfMedia());
+
+            System.out.printf("Stop All: - passed\n" +
+                    "Stop all music tracks playing\n" +
+                    "Remove any On End of Media Events\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Stop All: - failed\n" +
+                    "Stop all music tracks playing\n" +
+                    "Remove any On End of Media Events\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void toggleMusic() throws Exception {
 
-        System.out.printf("Toggle Music:\n" +
-                "Start playing the music track\n" +
-                "Stop playing if playing\n" +
-                "Stop playing playback has ended\n" +
-                "When playing change style class to active\n" +
-                "When not playing change style class to white\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to AcousticSnare (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Drums/Snare/AcousticSnare (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Drums/Snare/AcousticSnare (1).mp3"));
+            Qbtn.getStyleClass().add("white");
 
-        System.out.printf("Add the white Style Class to Qbtn\n");
-        Qbtn.getStyleClass().add("white");
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            ctrl.toggleMusic(Qbtn);
+            assertTrue("Start playing", Qbtn.isPlaying());
+            assertEquals("Change style class to active", Qbtn.getStyleClass().toString(), "button white active");
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
-        System.out.printf("Start playing\n" +
-                "Change style class to active\n");
-        ctrl.toggleMusic(Qbtn);
-        assert ( Qbtn.isPlaying() );
-        assert ( Qbtn.getStyleClass().toString().equals("button white active") );
+            Thread.sleep(2000);
+            assertFalse("Stop Playing", Qbtn.isPlaying());
+            assertEquals("Change style class to white", Qbtn.getStyleClass().toString(), "button white");
 
-        Thread.sleep(2000);
-        System.out.printf("Stop playing\n" +
-                "Change style class to white\n");
-        assert ( !Qbtn.isPlaying() );
-        assert ( Qbtn.getStyleClass().toString().equals("button white") );
+            ctrl.toggleMusic(Qbtn);
+            assertTrue("Started Playing", Qbtn.isPlaying());
+            ctrl.toggleMusic(Qbtn);
+            assertFalse("Stopped Playing", Qbtn.isPlaying());
 
-        System.out.printf("Start then Stop playing\n\n");
-        ctrl.toggleMusic(Qbtn);
-        assert ( Qbtn.isPlaying() );
-        ctrl.toggleMusic(Qbtn);
-        assert ( !Qbtn.isPlaying() );
+            System.out.printf("Toggle Music: - passed\n" +
+                    "Start playing the music track\n" +
+                    "Stop playing if playing\n" +
+                    "Stop playing playback has ended\n" +
+                    "When playing change style class to active\n" +
+                    "When not playing change style class to white\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Toggle Music: - failed\n" +
+                    "Start playing the music track\n" +
+                    "Stop playing if playing\n" +
+                    "Stop playing playback has ended\n" +
+                    "When playing change style class to active\n" +
+                    "When not playing change style class to white\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void playMusicEvent() throws Exception {
 
-        System.out.printf("\nPlay Music Event:\nStart playing the music track assigned to the Qbtn when key pressed\n\n");
+        try {
 
-        System.out.printf("Set Qbtn sound to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
 
-        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
-        KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            ctrl.playMusicEvent(event);
+            assertTrue("Start sound track", Qbtn.isPlaying());
 
-        System.out.printf("Start sound track\n\n");
-        ctrl.playMusicEvent(event);
-        assert ( Qbtn.isPlaying() );
+            System.out.printf("Play Music Event: - passed\n" +
+                    "Start playing the music track assigned to the Qbtn when key pressed\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Play Music Event: - failed\n" +
+                    "Start playing the music track assigned to the Qbtn when key pressed\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void stopMusicEvent() throws Exception {
 
-        System.out.printf("\nStop Music Event:\nStop playing the music track assigned to the Qbtn when key released\n\n");
+        try {
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
 
-        System.out.printf("Set Qbtn sound to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        Controller ctrl = new Controller();
+            ctrl.playMusicEvent(press);
+            ctrl.stopMusicEvent(release);
+            assertFalse("Stop sound track", Qbtn.isPlaying());
 
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
+            System.out.printf("Stop Music Event: - passed\n" +
+                    "Stop playing the music track assigned to the Qbtn when key released\n\n");
+        }
+        catch ( AssertionError ae ) {
 
-        System.out.printf("Emulate a KEY_RELEASED KeyEvent of the \'Q\' button\n");
-        KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
-        KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
-
-        System.out.printf("Stop sound track\n\n");
-        ctrl.playMusicEvent(press);
-        ctrl.stopMusicEvent(release);
-        assert ( !Qbtn.isPlaying() );
+            System.out.printf("Stop Music Event: - failed\n" +
+                    "Stop playing the music track assigned to the Qbtn when key released\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void toggleMusicEvent() throws Exception {
 
-        System.out.printf("Toggle Music Event:\n" +
-                "Start playing the music track\n" +
-                "Stop playing if playing\n\n");
+        try {
 
-        System.out.printf("Set Qbtn to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-        Qbtn.getStyleClass().add("white");
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.getStyleClass().add("white");
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept Qbtn\n");
-        ctrl.Qbtn = Qbtn;
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
 
-        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
-        KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            ctrl.toggleMusicEvent(event);
+            assertTrue("Start sound track", Qbtn.isPlaying());
 
-        System.out.printf("Start sound track\n");
-        ctrl.toggleMusicEvent(event);
-        assert ( Qbtn.isPlaying() );
+            ctrl.toggleMusicEvent(event);
+            assertFalse("Stop sound track", Qbtn.isPlaying());
 
-        System.out.printf("Stop sound track\n");
-        ctrl.toggleMusicEvent(event);
-        assert ( !Qbtn.isPlaying() );
+            System.out.printf("Toggle Music Event: - passed\n" +
+                    "Start playing the music track\n" +
+                    "Stop playing if playing\n\n");
+        }
+        catch ( AssertionError ae ) {
+
+            System.out.printf("Toggle Music Event: - failed\n" +
+                    "Start playing the music track\n" +
+                    "Stop playing if playing\n\n");
+            fail(ae.getMessage());
+        }
     }
 
     @Test
     public void toggleTapHold() {
 
-        System.out.printf("Toggle Tap Hold:\n" +
-                "Toggle between hold to play and tap to play\n\n");
+        try {
+            boolean tapHoldToggle = false;
+            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
 
-        System.out.printf("Set tapHoldToggle to HOLD\n");
-        boolean tapHoldToggle = false;
+            Controller ctrl = new Controller();
+            ctrl.tapHoldToggle = tapHoldToggle;
+            ctrl.playStopToggle = new MenuItem();
+            ctrl.gui = new Pane();
+            ctrl.btns = btns;
+            ctrl.Qbtn = Qbtn;
 
-        System.out.printf("Set Qbtn sound to BassLoop (1).mp3\n");
-        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            ctrl.toggleTapHold(new ActionEvent());
 
-        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
-        KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            assertTrue("Toggle tapHoldToggle to TAP", ctrl.tapHoldToggle);
+            assertEquals("Swap playStopToggle to 'Hold to Play'", ctrl.playStopToggle.getText(), "Hold to Play");
 
-        System.out.printf("Emulate a KEY_RELEASED KeyEvent of the \'Q\' button\n");
-        KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
+            ctrl.gui.getOnKeyPressed().handle(press);
+            ctrl.gui.getOnKeyPressed().handle(press);
+            assertFalse("Set onKeyPressed to toggleMusicEvent", Qbtn.isPlaying());
+            assertNull("Set onKeyReleased to null", ctrl.gui.getOnKeyReleased());
 
-        Controller ctrl = new Controller();
-        System.out.printf("Intercept tapHoldToggle\n" +
-                "Intercept playStopToggle\n" +
-                "Intercept gui\n" +
-                "Intercept all buttons\n");
-        ctrl.tapHoldToggle = tapHoldToggle;
-        ctrl.playStopToggle = new MenuItem();
-        ctrl.gui = new Pane();
-        ctrl.btns = btns;
-        ctrl.Qbtn = Qbtn;
+            ctrl.toggleTapHold(new ActionEvent());
 
-        ctrl.toggleTapHold(new ActionEvent());
+            assertFalse("Toggle tapHoldToggle to HOLD", ctrl.tapHoldToggle);
+            assertEquals("Swap playStopToggle to 'Tap to Play'", ctrl.playStopToggle.getText(), "Tap to Play");
 
-        System.out.printf("Toggle tapHoldToggle to TAP\n");
-        assert (ctrl.tapHoldToggle);
+            ctrl.gui.getOnKeyPressed().handle(press);
+            ctrl.gui.getOnKeyPressed().handle(press);
+            assertTrue("Set onKeyPressed to playMusicEvent", Qbtn.isPlaying());
 
-        System.out.printf("Swap playStopToggle to 'Hold to Play'\n");
-        assert (ctrl.playStopToggle.getText().equals("Hold to Play"));
+            ctrl.gui.getOnKeyReleased().handle(release);
+            assertFalse("Set onKeyReleased to stopMusicEvent", Qbtn.isPlaying());
 
-        System.out.printf("Set onKeyPressed to toggleMusicEvent\n");
-        ctrl.gui.getOnKeyPressed().handle(press);
-        ctrl.gui.getOnKeyPressed().handle(press);
-        assert (!Qbtn.isPlaying());
+            System.out.printf("Toggle Tap Hold: - passed\n" +
+                    "Toggle between hold to play and tap to play");
+        }
+        catch ( AssertionError ae ) {
 
-        System.out.printf("Set onKeyReleased to null\n\n");
-        assert (ctrl.gui.getOnKeyReleased() == null);
-
-
-        ctrl.toggleTapHold(new ActionEvent());
-
-        System.out.printf("Toggle tapHoldToggle to HOLD\n");
-        assert (!ctrl.tapHoldToggle);
-
-        System.out.printf("Swap playStopToggle to 'Tap to Play'\n");
-        assert (ctrl.playStopToggle.getText().equals("Tap to Play"));
-
-        System.out.printf("Set onKeyPressed to playMusicEvent\n");
-        ctrl.gui.getOnKeyPressed().handle(press);
-        ctrl.gui.getOnKeyPressed().handle(press);
-        assert (Qbtn.isPlaying());
-
-        System.out.printf("Set onKeyReleased to stopMusicEvent\n\n");
-        ctrl.gui.getOnKeyReleased().handle(release);
-        assert (!Qbtn.isPlaying());
+            System.out.printf("Toggle Tap Hold: - failed\n" +
+                    "Toggle between hold to play and tap to play");
+            fail(ae.getMessage());
+        }
     }
 }
