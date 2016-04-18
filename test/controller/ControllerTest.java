@@ -195,11 +195,11 @@ public class ControllerTest {
         Gbtn.getStyleClass().add("active");
 
         Controller ctrl = new Controller();
-        System.out.printf("Intercept All Buttons");
+        System.out.printf("Intercept All Buttons\n");
         ctrl.btns = btns;
 
         System.out.printf("Unbind sound tracks\n" +
-                "Change style class back to medium-bg");
+                "Change style class back to medium-bg\n\n");
         ctrl.reset(new ActionEvent());
         assert ( Qbtn.getSound() == null );
         assert ( Qbtn.getStyleClass().toString().equals("button medium-bg") );
@@ -264,19 +264,19 @@ public class ControllerTest {
         System.out.printf("Set Gbtn to BassLoop (1).mp3\n");
         Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
 
-        System.out.printf("Set On End of Media Event to Qbtn");
+        System.out.printf("Set On End of Media Event to Qbtn\n");
         Qbtn.getSound().setOnEndOfMedia(new Runnable() {
             public void run() {
                 Qbtn.stopSound();
             }
         });
-        System.out.printf("Set On End of Media Event to Wbtn");
+        System.out.printf("Set On End of Media Event to Wbtn\n");
         Wbtn.getSound().setOnEndOfMedia(new Runnable() {
             public void run() {
                 Wbtn.stopSound();
             }
         });
-        System.out.printf("Set On End of Media Event to Gbtn");
+        System.out.printf("Set On End of Media Event to Gbtn\n");
         Gbtn.getSound().setOnEndOfMedia(new Runnable() {
             public void run() {
                 Gbtn.stopSound();
@@ -288,7 +288,7 @@ public class ControllerTest {
         ctrl.btns = this.btns;
 
         System.out.printf("Stop all tracks\n");
-        System.out.printf("Remove On End of Media Events");
+        System.out.printf("Remove On End of Media Events\n\n");
         ctrl.playMusic(Qbtn);
         ctrl.playMusic(Wbtn);
         ctrl.playMusic(Gbtn);
