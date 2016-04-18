@@ -2,9 +2,11 @@ package controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Menu;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import model.Button;
 import model.MenuItem;
@@ -441,9 +443,10 @@ public class ControllerTest {
     }
 
     @Test
-    public void toggleTapHold() {
+    public void toggleTapHold() throws Exception {
 
         try {
+
             boolean tapHoldToggle = false;
             Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
             KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
@@ -485,6 +488,34 @@ public class ControllerTest {
 
             System.out.printf("Toggle Tap Hold: - failed\n" +
                     "Toggle between hold to play and tap to play");
+            fail(ae.getMessage());
+        }
+    }
+
+    @Test
+    public void styleButton() throws Exception {
+
+        try {
+
+            Circle circle = new Circle();
+            circle.setRadius(6);
+            circle.getStyleClass().add("red");
+            MenuItem item = new MenuItem("red", circle);
+            Qbtn.getStyleClass().add("white");
+
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            ActionEvent event = new ActionEvent(item, null);
+
+            ctrl.styleButton(Qbtn, event);
+            assertEquals("Change Qbtn's style class to red", Qbtn.getStyleClass().toString(), "button red");
+
+            System.out.printf("Style Button: - passed\n" +
+                    "Change the style class of the button");
+        } catch ( AssertionError ae ) {
+
+            System.out.printf("Style Button: - failed\n" +
+                    "Change the style class of the button");
             fail(ae.getMessage());
         }
     }
