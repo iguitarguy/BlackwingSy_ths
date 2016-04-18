@@ -4,8 +4,10 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Button;
+import model.MenuItem;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -404,5 +406,69 @@ public class ControllerTest {
         System.out.printf("Stop sound track\n");
         ctrl.toggleMusicEvent(event);
         assert ( !Qbtn.isPlaying() );
+    }
+
+    @Test
+    public void toggleTapHold() {
+
+        System.out.printf("Toggle Tap Hold:\n" +
+                "Toggle between hold to play and tap to play\n\n");
+
+        System.out.printf("Set tapHoldToggle to HOLD\n");
+        boolean tapHoldToggle = false;
+
+        System.out.printf("Set Qbtn sound to BassLoop (1).mp3\n");
+        Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+
+        System.out.printf("Emulate a KEY_PRESSED KeyEvent of the \'Q\' button\n");
+        KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+
+        System.out.printf("Emulate a KEY_RELEASED KeyEvent of the \'Q\' button\n");
+        KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
+
+        Controller ctrl = new Controller();
+        System.out.printf("Intercept tapHoldToggle\n" +
+                "Intercept playStopToggle\n" +
+                "Intercept gui\n" +
+                "Intercept all buttons\n");
+        ctrl.tapHoldToggle = tapHoldToggle;
+        ctrl.playStopToggle = new MenuItem();
+        ctrl.gui = new Pane();
+        ctrl.btns = btns;
+        ctrl.Qbtn = Qbtn;
+
+        ctrl.toggleTapHold(new ActionEvent());
+
+        System.out.printf("Toggle tapHoldToggle to TAP\n");
+        assert (ctrl.tapHoldToggle);
+
+        System.out.printf("Swap playStopToggle to 'Hold to Play'\n");
+        assert (ctrl.playStopToggle.getText().equals("Hold to Play"));
+
+        System.out.printf("Set onKeyPressed to toggleMusicEvent\n");
+        ctrl.gui.getOnKeyPressed().handle(press);
+        ctrl.gui.getOnKeyPressed().handle(press);
+        assert (!Qbtn.isPlaying());
+
+        System.out.printf("Set onKeyReleased to null\n\n");
+        assert (ctrl.gui.getOnKeyReleased() == null);
+
+
+        ctrl.toggleTapHold(new ActionEvent());
+
+        System.out.printf("Toggle tapHoldToggle to HOLD\n");
+        assert (!ctrl.tapHoldToggle);
+
+        System.out.printf("Swap playStopToggle to 'Tap to Play'\n");
+        assert (ctrl.playStopToggle.getText().equals("Tap to Play"));
+
+        System.out.printf("Set onKeyPressed to playMusicEvent\n");
+        ctrl.gui.getOnKeyPressed().handle(press);
+        ctrl.gui.getOnKeyPressed().handle(press);
+        assert (Qbtn.isPlaying());
+
+        System.out.printf("Set onKeyReleased to stopMusicEvent\n\n");
+        ctrl.gui.getOnKeyReleased().handle(release);
+        assert (!Qbtn.isPlaying());
     }
 }
