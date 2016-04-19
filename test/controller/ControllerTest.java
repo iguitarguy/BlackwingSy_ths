@@ -210,11 +210,11 @@ public class ControllerTest {
 
             ctrl.reset(new ActionEvent());
             assertNull("Unbind Qbtn sound track", Qbtn.getSound());
-            assertEquals("Change Qbtn style class back to medium-bg", Qbtn.getStyleClass().toString(), "button medium-bg");
+            assertEquals("Change Qbtn style class back to medium-bg", "button medium-bg" , Qbtn.getStyleClass().toString());
             assertNull("Unbind Wbtn sound track", Wbtn.getSound());
-            assertEquals("Change Wbtn style class back to medium-bg", Wbtn.getStyleClass().toString(), "button medium-bg");
+            assertEquals("Change Wbtn style class back to medium-bg", "button medium-bg" , Wbtn.getStyleClass().toString());
             assertNull("Unbind Gbtn sound track", Gbtn.getSound());
-            assertEquals("Change Gbtn style class back to medium-bg", Gbtn.getStyleClass().toString(), "button medium-bg");
+            assertEquals("Change Gbtn style class back to medium-bg", "button medium-bg" , Gbtn.getStyleClass().toString());
 
             System.out.printf("Reset: - passed\n" +
                     "Unbind all sounds\n" +
@@ -241,7 +241,7 @@ public class ControllerTest {
 
             ctrl.playMusic(Qbtn);
             assertTrue("Start sound track", Qbtn.isPlaying());
-            assertEquals("Add active to Qbtn's Style Class", Qbtn.getStyleClass().toString(), "button active");
+            assertEquals("Add active to Qbtn's Style Class", "button active" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Play Music: - passed\n" +
                     "Start playing the music track assigned to the Qbtn and change the Style Class\n\n");
@@ -268,7 +268,7 @@ public class ControllerTest {
             ctrl.playMusic(Qbtn);
             ctrl.stopMusic(Qbtn);
             assertFalse("Stop sound track", Qbtn.isPlaying());
-            assertEquals("Remove active to Qbtn's Style Class", Qbtn.getStyleClass().toString(), "button white");
+            assertEquals("Remove active to Qbtn's Style Class", "button white" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Stop Music: - passed\n" +
                     "Stop playing the music track assigned to the Qbtn and change the Style Class\n\n");
@@ -345,11 +345,11 @@ public class ControllerTest {
             ctrl.Qbtn = Qbtn;
             ctrl.toggleMusic(Qbtn);
             assertTrue("Start playing", Qbtn.isPlaying());
-            assertEquals("Change style class to active", Qbtn.getStyleClass().toString(), "button white active");
+            assertEquals("Change style class to active", "button white active" , Qbtn.getStyleClass().toString());
 
             Thread.sleep(2000);
             assertFalse("Stop Playing", Qbtn.isPlaying());
-            assertEquals("Change style class to white", Qbtn.getStyleClass().toString(), "button white");
+            assertEquals("Change style class to white", "button white" , Qbtn.getStyleClass().toString());
 
             ctrl.toggleMusic(Qbtn);
             assertTrue("Started Playing", Qbtn.isPlaying());
@@ -476,7 +476,7 @@ public class ControllerTest {
             ctrl.toggleTapHold(new ActionEvent());
 
             assertTrue("Toggle tapHoldToggle to TAP", ctrl.tapHoldToggle);
-            assertEquals("Swap playStopToggle to 'Hold to Play'", ctrl.playStopToggle.getText(), "Hold to Play");
+            assertEquals("Swap playStopToggle to 'Hold to Play'", "Hold to Play" , ctrl.playStopToggle.getText());
 
             ctrl.gui.getOnKeyPressed().handle(press);
             ctrl.gui.getOnKeyPressed().handle(press);
@@ -486,7 +486,7 @@ public class ControllerTest {
             ctrl.toggleTapHold(new ActionEvent());
 
             assertFalse("Toggle tapHoldToggle to HOLD", ctrl.tapHoldToggle);
-            assertEquals("Swap playStopToggle to 'Tap to Play'", ctrl.playStopToggle.getText(), "Tap to Play");
+            assertEquals("Swap playStopToggle to 'Tap to Play'", "Tap to Play" , ctrl.playStopToggle.getText());
 
             ctrl.gui.getOnKeyPressed().handle(press);
             ctrl.gui.getOnKeyPressed().handle(press);
@@ -522,7 +522,7 @@ public class ControllerTest {
             ActionEvent event = new ActionEvent(item, null);
 
             ctrl.styleButton(Qbtn, event);
-            assertEquals("Change Qbtn's style class to red", Qbtn.getStyleClass().toString(), "button red");
+            assertEquals("Change Qbtn's style class to red", "button red" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Style Button: - passed\n" +
                     "Change the style class of the button\n\n");
