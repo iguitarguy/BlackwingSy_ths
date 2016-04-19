@@ -534,4 +534,39 @@ public class ControllerTest {
             fail(ae.getMessage());
         }
     }
+
+    @Test
+    public void clearColors() throws Exception {
+
+        try {
+
+            Qbtn.setSound(sound1);
+            Hbtn.setSound(sound1);
+            Qbtn.getStyleClass().add("red");
+            Hbtn.getStyleClass().add("blue");
+            Tbtn.getStyleClass().add("green");
+            Xbtn.getStyleClass().add("red");
+
+            Controller ctrl = new Controller();
+            ctrl.btns = btns;
+
+            ctrl.clearColors(new ActionEvent());
+            assertEquals("Change Qbtn's style class to white", "button white", Qbtn.getStyleClass().toString());
+            assertEquals("Change Hbtn's style class to white", "button white", Hbtn.getStyleClass().toString());
+            assertEquals("Change Tbtn's style class to medium-bg", "button medium-bg", Tbtn.getStyleClass().toString());
+            assertEquals("Change Xbtn's style class to medium-bg", "button medium-bg", Xbtn.getStyleClass().toString());
+
+            System.out.printf("Clear Colors: - passed\n" +
+                    "\tReset all button style classes back\n" +
+                    "\t\twhite if a music track is assigned\n" +
+                    "\t\tmedium-bg otherwise\n\n");
+        } catch (AssertionError ae) {
+
+            System.out.printf("Clear Colors: - failed\n" +
+                    "\tReset all button style classes back\n" +
+                    "\t\twhite if a music track is assigned\n" +
+                    "\t\tmedium-bg otherwise\n\n");
+            fail(ae.getMessage());
+        }
+    }
 }
