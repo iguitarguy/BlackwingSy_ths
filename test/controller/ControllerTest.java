@@ -217,14 +217,14 @@ public class ControllerTest {
             assertEquals("Change Gbtn style class back to medium-bg", "button medium-bg" , Gbtn.getStyleClass().toString());
 
             System.out.printf("Reset: - passed\n" +
-                    "Unbind all sounds\n" +
-                    "Change style classes to medium-bgn\n\n");
+                    "\tUnbind all sounds\n" +
+                    "\tChange style classes to medium-bgn\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Reset: - failed\n" +
-                    "Unbind all sounds\n" +
-                    "Change style classes to medium-bg\n\n");
+                    "\tUnbind all sounds\n" +
+                    "\tChange style classes to medium-bg\n\n");
             fail(ae.getMessage());
         }
     }
@@ -244,12 +244,12 @@ public class ControllerTest {
             assertEquals("Add active to Qbtn's Style Class", "button active" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Play Music: - passed\n" +
-                    "Start playing the music track assigned to the Qbtn and change the Style Class\n\n");
+                    "\tStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Play Music: - failed\n" +
-                    "Start playing the music track assigned to the Qbtn and change the Style Class\n\n");
+                    "\tStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
             fail(ae.getMessage());
         }
     }
@@ -271,12 +271,12 @@ public class ControllerTest {
             assertEquals("Remove active to Qbtn's Style Class", "button white" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Stop Music: - passed\n" +
-                    "Stop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+                    "\tStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Stop Music: - failed\n" +
-                    "Stop playing the music track assigned to the Qbtn and change the Style Class\n\n");
+                    "\tStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
             fail(ae.getMessage());
         }
     }
@@ -321,14 +321,14 @@ public class ControllerTest {
             assertNull("Remove Gbtn On End of Media Event", Gbtn.getSound().getOnEndOfMedia());
 
             System.out.printf("Stop All: - passed\n" +
-                    "Stop all music tracks playing\n" +
-                    "Remove any On End of Media Events\n\n");
+                    "\tStop all music tracks playing\n" +
+                    "\tRemove any On End of Media Events\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Stop All: - failed\n" +
-                    "Stop all music tracks playing\n" +
-                    "Remove any On End of Media Events\n\n");
+                    "\tStop all music tracks playing\n" +
+                    "\tRemove any On End of Media Events\n\n");
             fail(ae.getMessage());
         }
     }
@@ -357,20 +357,20 @@ public class ControllerTest {
             assertFalse("Stopped Playing", Qbtn.isPlaying());
 
             System.out.printf("Toggle Music: - passed\n" +
-                    "Start playing the music track\n" +
-                    "Stop playing if playing\n" +
-                    "Stop playing playback has ended\n" +
-                    "When playing change style class to active\n" +
-                    "When not playing change style class to white\n\n");
+                    "\tStart playing the music track\n" +
+                    "\tStop playing if playing\n" +
+                    "\tStop playing playback has ended\n" +
+                    "\tWhen playing change style class to active\n" +
+                    "\tWhen not playing change style class to white\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Toggle Music: - failed\n" +
-                    "Start playing the music track\n" +
-                    "Stop playing if playing\n" +
-                    "Stop playing playback has ended\n" +
-                    "When playing change style class to active\n" +
-                    "When not playing change style class to white\n\n");
+                    "\tStart playing the music track\n" +
+                    "\tStop playing if playing\n" +
+                    "\tStop playing playback has ended\n" +
+                    "\tWhen playing change style class to active\n" +
+                    "\tWhen not playing change style class to white\n\n");
             fail(ae.getMessage());
         }
     }
@@ -390,12 +390,12 @@ public class ControllerTest {
             assertTrue("Start sound track", Qbtn.isPlaying());
 
             System.out.printf("Play Music Event: - passed\n" +
-                    "Start playing the music track assigned to the Qbtn when key pressed\n\n");
+                    "\tStart playing the music track assigned to the Qbtn when key pressed\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Play Music Event: - failed\n" +
-                    "Start playing the music track assigned to the Qbtn when key pressed\n\n");
+                    "\tStart playing the music track assigned to the Qbtn when key pressed\n\n");
             fail(ae.getMessage());
         }
     }
@@ -415,12 +415,12 @@ public class ControllerTest {
             assertFalse("Stop sound track", Qbtn.isPlaying());
 
             System.out.printf("Stop Music Event: - passed\n" +
-                    "Stop playing the music track assigned to the Qbtn when key released\n\n");
+                    "\tStop playing the music track assigned to the Qbtn when key released\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Stop Music Event: - failed\n" +
-                    "Stop playing the music track assigned to the Qbtn when key released\n\n");
+                    "\tStop playing the music track assigned to the Qbtn when key released\n\n");
             fail(ae.getMessage());
         }
     }
@@ -444,14 +444,14 @@ public class ControllerTest {
             assertFalse("Stop sound track", Qbtn.isPlaying());
 
             System.out.printf("Toggle Music Event: - passed\n" +
-                    "Start playing the music track\n" +
-                    "Stop playing if playing\n\n");
+                    "\tStart playing the music track\n" +
+                    "\tStop playing if playing\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Toggle Music Event: - failed\n" +
-                    "Start playing the music track\n" +
-                    "Stop playing if playing\n\n");
+                    "\tStart playing the music track\n" +
+                    "\tStop playing if playing\n\n");
             fail(ae.getMessage());
         }
     }
@@ -496,12 +496,12 @@ public class ControllerTest {
             assertFalse("Set onKeyReleased to stopMusicEvent", Qbtn.isPlaying());
 
             System.out.printf("Toggle Tap Hold: - passed\n" +
-                    "Toggle between hold to play and tap to play");
+                    "\tToggle between hold to play and tap to play");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Toggle Tap Hold: - failed\n" +
-                    "Toggle between hold to play and tap to play");
+                    "\tToggle between hold to play and tap to play");
             fail(ae.getMessage());
         }
     }
@@ -525,12 +525,12 @@ public class ControllerTest {
             assertEquals("Change Qbtn's style class to red", "button red" , Qbtn.getStyleClass().toString());
 
             System.out.printf("Style Button: - passed\n" +
-                    "Change the style class of the button\n\n");
+                    "\tChange the style class of the button\n\n");
         }
         catch ( AssertionError ae ) {
 
             System.out.printf("Style Button: - failed\n" +
-                    "Change the style class of the button\n\n");
+                    "\tChange the style class of the button\n\n");
             fail(ae.getMessage());
         }
     }
