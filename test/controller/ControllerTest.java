@@ -68,6 +68,8 @@ public class ControllerTest {
     public Button Nbtn;
     public Button Mbtn;
     public ArrayList< Button > btns;
+    public File sound1;
+    public File sound2;
 
     public static class testApp extends Application {
 
@@ -171,6 +173,18 @@ public class ControllerTest {
         btns.add(Bbtn);
         btns.add(Nbtn);
         btns.add(Mbtn);
+
+        String OS = System.getProperty("os.name");
+        if ( OS.startsWith("Windows") ) {
+
+            sound1 = new File("bin\\Composite\\Loops\\Bass\\BassLoop (1).mp3");
+            sound2 = new File("bin\\Composite\\Drums\\Snare\\AcousticSnare (1).mp3");
+        }
+        else {
+
+            sound1 = new File("bin/Composite/Loops/Bass/BassLoop (1).mp3");
+            sound2 = new File("bin/Composite/Drums/Snare/AcousticSnare (1).mp3");
+        }
     }
 
     @After
@@ -183,9 +197,9 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-            Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-            Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
+            Wbtn.setSound(sound1);
+            Gbtn.setSound(sound1);
 
             Qbtn.getStyleClass().add("red");
             Wbtn.getStyleClass().add("violet");
@@ -220,7 +234,7 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
 
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
@@ -245,7 +259,7 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
             Qbtn.getStyleClass().add("white");
 
             Controller ctrl = new Controller();
@@ -272,9 +286,9 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-            Wbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
-            Gbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
+            Wbtn.setSound(sound1);
+            Gbtn.setSound(sound1);
 
             Qbtn.getSound().setOnEndOfMedia(new Runnable() {
                 public void run() {
@@ -324,7 +338,7 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Drums/Snare/AcousticSnare (1).mp3"));
+            Qbtn.setSound(sound2);
             Qbtn.getStyleClass().add("white");
 
             Controller ctrl = new Controller();
@@ -366,7 +380,7 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
 
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
@@ -390,7 +404,7 @@ public class ControllerTest {
     public void stopMusicEvent() throws Exception {
 
         try {
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
             KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
@@ -416,7 +430,7 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
             Qbtn.getStyleClass().add("white");
 
             Controller ctrl = new Controller();
@@ -448,7 +462,7 @@ public class ControllerTest {
         try {
 
             boolean tapHoldToggle = false;
-            Qbtn.setSound(new File("bin/Composite/Loops/Bass/BassLoop (1).mp3"));
+            Qbtn.setSound(sound1);
             KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
             KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
 
@@ -511,11 +525,12 @@ public class ControllerTest {
             assertEquals("Change Qbtn's style class to red", Qbtn.getStyleClass().toString(), "button red");
 
             System.out.printf("Style Button: - passed\n" +
-                    "Change the style class of the button");
-        } catch ( AssertionError ae ) {
+                    "Change the style class of the button\n\n");
+        }
+        catch ( AssertionError ae ) {
 
             System.out.printf("Style Button: - failed\n" +
-                    "Change the style class of the button");
+                    "Change the style class of the button\n\n");
             fail(ae.getMessage());
         }
     }
