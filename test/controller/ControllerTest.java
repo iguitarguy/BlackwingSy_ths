@@ -569,4 +569,33 @@ public class ControllerTest {
             fail(ae.getMessage());
         }
     }
+
+    @Test
+    public void colorMenuItem() throws Exception {
+
+        try {
+
+            Qbtn.getStyleClass().add("white");
+
+            Controller ctrl = new Controller();
+            ctrl.Qbtn = Qbtn;
+            MenuItem item = ctrl.colorMenuItem(Qbtn, "red");
+
+            assertEquals("Create a circle with the style class red", "red", item.getGraphic().getStyleClass().toString());
+            assertEquals("Menuitem text is Red", "Red", item.getText());
+            
+            item.getOnAction().handle(new ActionEvent(item, null));
+            assertEquals("Change the style class of the Qbtn to red", "button red", Qbtn.getStyleClass().toString());
+
+            System.out.printf("Color Menu Item: - passed\n" +
+                    "\tCreate a menu item for the colors sub-menu\n" +
+                    "\tCreate an event handler for the menu item");
+        } catch ( AssertionError ae ) {
+
+            System.out.printf("Color Menu Item: - failed\n" +
+                    "\tCreate a menu item for the colors sub-menu\n" +
+                    "\tCreate an event handler for the menu item");
+            fail(ae.getMessage());
+        }
+    }
 }
