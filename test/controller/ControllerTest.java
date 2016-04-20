@@ -70,6 +70,8 @@ public class ControllerTest {
     public ArrayList< Button > btns;
     public File sound1;
     public File sound2;
+    public String[] chars;
+    public KeyCode[] codes;
 
     public static class testApp extends Application {
 
@@ -174,6 +176,56 @@ public class ControllerTest {
         btns.add(Nbtn);
         btns.add(Mbtn);
 
+        chars = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M" };
+        codes = new KeyCode[] {
+                KeyCode.DIGIT1,
+                KeyCode.DIGIT2,
+                KeyCode.DIGIT3,
+                KeyCode.DIGIT4,
+                KeyCode.DIGIT5,
+                KeyCode.DIGIT6,
+                KeyCode.DIGIT7,
+                KeyCode.DIGIT8,
+                KeyCode.DIGIT9,
+                KeyCode.DIGIT0,
+                KeyCode.Q,
+                KeyCode.W,
+                KeyCode.E,
+                KeyCode.R,
+                KeyCode.T,
+                KeyCode.Y,
+                KeyCode.U,
+                KeyCode.I,
+                KeyCode.O,
+                KeyCode.P,
+                KeyCode.A,
+                KeyCode.S,
+                KeyCode.D,
+                KeyCode.F,
+                KeyCode.G,
+                KeyCode.H,
+                KeyCode.J,
+                KeyCode.K,
+                KeyCode.L,
+                KeyCode.Z,
+                KeyCode.X,
+                KeyCode.C,
+                KeyCode.V,
+                KeyCode.B,
+                KeyCode.N,
+                KeyCode.M,
+                KeyCode.NUMPAD1,
+                KeyCode.NUMPAD2,
+                KeyCode.NUMPAD3,
+                KeyCode.NUMPAD4,
+                KeyCode.NUMPAD5,
+                KeyCode.NUMPAD6,
+                KeyCode.NUMPAD7,
+                KeyCode.NUMPAD8,
+                KeyCode.NUMPAD9,
+                KeyCode.NUMPAD0
+        };
+
         String OS = System.getProperty("os.name");
         if ( OS.startsWith("Windows") ) {
 
@@ -210,11 +262,11 @@ public class ControllerTest {
 
             ctrl.reset(new ActionEvent());
             assertNull("Unbind Qbtn sound track", Qbtn.getSound());
-            assertEquals("Change Qbtn style class back to medium-bg", "button medium-bg" , Qbtn.getStyleClass().toString());
+            assertEquals("Change Qbtn style class back to medium-bg", "button medium-bg", Qbtn.getStyleClass().toString());
             assertNull("Unbind Wbtn sound track", Wbtn.getSound());
-            assertEquals("Change Wbtn style class back to medium-bg", "button medium-bg" , Wbtn.getStyleClass().toString());
+            assertEquals("Change Wbtn style class back to medium-bg", "button medium-bg", Wbtn.getStyleClass().toString());
             assertNull("Unbind Gbtn sound track", Gbtn.getSound());
-            assertEquals("Change Gbtn style class back to medium-bg", "button medium-bg" , Gbtn.getStyleClass().toString());
+            assertEquals("Change Gbtn style class back to medium-bg", "button medium-bg", Gbtn.getStyleClass().toString());
 
             System.out.printf("Reset: - passed\n" +
                     "\tUnbind all sounds\n" +
@@ -241,7 +293,7 @@ public class ControllerTest {
 
             ctrl.playMusic(Qbtn);
             assertTrue("Start sound track", Qbtn.isPlaying());
-            assertEquals("Add active to Qbtn's Style Class", "button active" , Qbtn.getStyleClass().toString());
+            assertEquals("Add active to Qbtn's Style Class", "button active", Qbtn.getStyleClass().toString());
 
             System.out.printf("Play Music: - passed\n" +
                     "\tStart playing the music track assigned to the Qbtn and change the Style Class\n\n");
@@ -268,7 +320,7 @@ public class ControllerTest {
             ctrl.playMusic(Qbtn);
             ctrl.stopMusic(Qbtn);
             assertFalse("Stop sound track", Qbtn.isPlaying());
-            assertEquals("Remove active to Qbtn's Style Class", "button white" , Qbtn.getStyleClass().toString());
+            assertEquals("Remove active to Qbtn's Style Class", "button white", Qbtn.getStyleClass().toString());
 
             System.out.printf("Stop Music: - passed\n" +
                     "\tStop playing the music track assigned to the Qbtn and change the Style Class\n\n");
@@ -345,11 +397,11 @@ public class ControllerTest {
             ctrl.Qbtn = Qbtn;
             ctrl.toggleMusic(Qbtn);
             assertTrue("Start playing", Qbtn.isPlaying());
-            assertEquals("Change style class to active", "button white active" , Qbtn.getStyleClass().toString());
+            assertEquals("Change style class to active", "button white active", Qbtn.getStyleClass().toString());
 
             Thread.sleep(2000);
             assertFalse("Stop Playing", Qbtn.isPlaying());
-            assertEquals("Change style class to white", "button white" , Qbtn.getStyleClass().toString());
+            assertEquals("Change style class to white", "button white", Qbtn.getStyleClass().toString());
 
             ctrl.toggleMusic(Qbtn);
             assertTrue("Started Playing", Qbtn.isPlaying());
@@ -380,14 +432,75 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(sound1);
-
             Controller ctrl = new Controller();
-            ctrl.Qbtn = Qbtn;
-            KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
 
-            ctrl.playMusicEvent(event);
-            assertTrue("Start sound track", Qbtn.isPlaying());
+            for ( int i = 0; i < btns.size(); i++ ) {
+                Button btn = btns.get(i);
+                btn.setSound(sound1);
+                btn.getSound().setMute(true);
+            }
+
+            ctrl.N1btn = N1btn;
+            ctrl.N2btn = N2btn;
+            ctrl.N3btn = N3btn;
+            ctrl.N4btn = N4btn;
+            ctrl.N5btn = N5btn;
+            ctrl.N6btn = N6btn;
+            ctrl.N7btn = N7btn;
+            ctrl.N8btn = N8btn;
+            ctrl.N9btn = N9btn;
+            ctrl.N0btn = N0btn;
+            ctrl.Qbtn = Qbtn;
+            ctrl.Wbtn = Wbtn;
+            ctrl.Ebtn = Ebtn;
+            ctrl.Rbtn = Rbtn;
+            ctrl.Tbtn = Tbtn;
+            ctrl.Ybtn = Ybtn;
+            ctrl.Ubtn = Ubtn;
+            ctrl.Ibtn = Ibtn;
+            ctrl.Obtn = Obtn;
+            ctrl.Pbtn = Pbtn;
+            ctrl.Abtn = Abtn;
+            ctrl.Sbtn = Sbtn;
+            ctrl.Dbtn = Dbtn;
+            ctrl.Fbtn = Fbtn;
+            ctrl.Gbtn = Gbtn;
+            ctrl.Hbtn = Hbtn;
+            ctrl.Jbtn = Jbtn;
+            ctrl.Kbtn = Kbtn;
+            ctrl.Lbtn = Lbtn;
+            ctrl.Zbtn = Zbtn;
+            ctrl.Xbtn = Xbtn;
+            ctrl.Cbtn = Cbtn;
+            ctrl.Vbtn = Vbtn;
+            ctrl.Bbtn = Bbtn;
+            ctrl.Nbtn = Nbtn;
+            ctrl.Mbtn = Mbtn;
+
+            for ( int i = 0; i < codes.length; i++ ) {
+
+                String str;
+                KeyCode code;
+                Button btn;
+
+                if ( i >= btns.size() ) {
+
+                    btn = btns.get(i - btns.size());
+                    str = chars[ i - btns.size() ];
+                    code = codes[ i ];
+                }
+                else {
+
+                    btn = btns.get(i);
+                    str = chars[ i ];
+                    code = codes[ i ];
+                }
+
+                KeyEvent event = new KeyEvent(null, null, KEY_PRESSED, "", str, code, false, false, false, false);
+                ctrl.playMusicEvent(event);
+                assertTrue("Start " + btn.getText() + "'s sound track", btn.isPlaying());
+                btn.stopSound();
+            }
 
             System.out.printf("Play Music Event: - passed\n" +
                     "\tStart playing the music track assigned to the Qbtn when key pressed\n\n");
@@ -404,16 +517,76 @@ public class ControllerTest {
     public void stopMusicEvent() throws Exception {
 
         try {
-            Qbtn.setSound(sound1);
             Controller ctrl = new Controller();
+
+            for ( int i = 0; i < btns.size(); i++ ) {
+                Button btn = btns.get(i);
+                btn.setSound(sound1);
+                btn.getSound().setMute(true);
+            }
+
+            ctrl.N1btn = N1btn;
+            ctrl.N2btn = N2btn;
+            ctrl.N3btn = N3btn;
+            ctrl.N4btn = N4btn;
+            ctrl.N5btn = N5btn;
+            ctrl.N6btn = N6btn;
+            ctrl.N7btn = N7btn;
+            ctrl.N8btn = N8btn;
+            ctrl.N9btn = N9btn;
+            ctrl.N0btn = N0btn;
             ctrl.Qbtn = Qbtn;
-            KeyEvent press = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
-            KeyEvent release = new KeyEvent(Qbtn, Qbtn, KEY_RELEASED, "", "Q", KeyCode.Q, false, false, false, false);
+            ctrl.Wbtn = Wbtn;
+            ctrl.Ebtn = Ebtn;
+            ctrl.Rbtn = Rbtn;
+            ctrl.Tbtn = Tbtn;
+            ctrl.Ybtn = Ybtn;
+            ctrl.Ubtn = Ubtn;
+            ctrl.Ibtn = Ibtn;
+            ctrl.Obtn = Obtn;
+            ctrl.Pbtn = Pbtn;
+            ctrl.Abtn = Abtn;
+            ctrl.Sbtn = Sbtn;
+            ctrl.Dbtn = Dbtn;
+            ctrl.Fbtn = Fbtn;
+            ctrl.Gbtn = Gbtn;
+            ctrl.Hbtn = Hbtn;
+            ctrl.Jbtn = Jbtn;
+            ctrl.Kbtn = Kbtn;
+            ctrl.Lbtn = Lbtn;
+            ctrl.Zbtn = Zbtn;
+            ctrl.Xbtn = Xbtn;
+            ctrl.Cbtn = Cbtn;
+            ctrl.Vbtn = Vbtn;
+            ctrl.Bbtn = Bbtn;
+            ctrl.Nbtn = Nbtn;
+            ctrl.Mbtn = Mbtn;
 
-            ctrl.playMusicEvent(press);
-            ctrl.stopMusicEvent(release);
-            assertFalse("Stop sound track", Qbtn.isPlaying());
+            for ( int i = 0; i < codes.length; i++ ) {
 
+                String str;
+                KeyCode code;
+                Button btn;
+
+                if ( i >= btns.size() ) {
+
+                    btn = btns.get(i - btns.size());
+                    str = chars[ i - btns.size() ];
+                    code = codes[ i ];
+                }
+                else {
+
+                    btn = btns.get(i);
+                    str = chars[ i ];
+                    code = codes[ i ];
+                }
+                KeyEvent press = new KeyEvent(btn, btn, KEY_PRESSED, "", str, code, false, false, false, false);
+                KeyEvent release = new KeyEvent(btn, btn, KEY_RELEASED, "", str, code, false, false, false, false);
+
+                ctrl.playMusicEvent(press);
+                ctrl.stopMusicEvent(release);
+                assertFalse("Stop " + btn.getText() + "'s sound track", btn.isPlaying());
+            }
             System.out.printf("Stop Music Event: - passed\n" +
                     "\tStop playing the music track assigned to the Qbtn when key released\n\n");
         }
@@ -430,19 +603,78 @@ public class ControllerTest {
 
         try {
 
-            Qbtn.setSound(sound1);
-            Qbtn.getStyleClass().add("white");
-
             Controller ctrl = new Controller();
+
+            for ( int i = 0; i < btns.size(); i++ ) {
+                Button btn = btns.get(i);
+                btn.setSound(sound1);
+                btn.getStyleClass().add("white");
+                btn.getSound().setMute(true);
+            }
+
+            ctrl.N1btn = N1btn;
+            ctrl.N2btn = N2btn;
+            ctrl.N3btn = N3btn;
+            ctrl.N4btn = N4btn;
+            ctrl.N5btn = N5btn;
+            ctrl.N6btn = N6btn;
+            ctrl.N7btn = N7btn;
+            ctrl.N8btn = N8btn;
+            ctrl.N9btn = N9btn;
+            ctrl.N0btn = N0btn;
             ctrl.Qbtn = Qbtn;
-            KeyEvent event = new KeyEvent(Qbtn, Qbtn, KEY_PRESSED, "", "Q", KeyCode.Q, false, false, false, false);
+            ctrl.Wbtn = Wbtn;
+            ctrl.Ebtn = Ebtn;
+            ctrl.Rbtn = Rbtn;
+            ctrl.Tbtn = Tbtn;
+            ctrl.Ybtn = Ybtn;
+            ctrl.Ubtn = Ubtn;
+            ctrl.Ibtn = Ibtn;
+            ctrl.Obtn = Obtn;
+            ctrl.Pbtn = Pbtn;
+            ctrl.Abtn = Abtn;
+            ctrl.Sbtn = Sbtn;
+            ctrl.Dbtn = Dbtn;
+            ctrl.Fbtn = Fbtn;
+            ctrl.Gbtn = Gbtn;
+            ctrl.Hbtn = Hbtn;
+            ctrl.Jbtn = Jbtn;
+            ctrl.Kbtn = Kbtn;
+            ctrl.Lbtn = Lbtn;
+            ctrl.Zbtn = Zbtn;
+            ctrl.Xbtn = Xbtn;
+            ctrl.Cbtn = Cbtn;
+            ctrl.Vbtn = Vbtn;
+            ctrl.Bbtn = Bbtn;
+            ctrl.Nbtn = Nbtn;
+            ctrl.Mbtn = Mbtn;
 
-            ctrl.toggleMusicEvent(event);
-            assertTrue("Start sound track", Qbtn.isPlaying());
+            for ( int i = 0; i < codes.length; i++ ) {
 
-            ctrl.toggleMusicEvent(event);
-            assertFalse("Stop sound track", Qbtn.isPlaying());
+                String str;
+                KeyCode code;
+                Button btn;
 
+                if ( i >= btns.size() ) {
+
+                    btn = btns.get(i - btns.size());
+                    str = chars[ i - btns.size() ];
+                    code = codes[ i ];
+                }
+                else {
+
+                    btn = btns.get(i);
+                    str = chars[ i ];
+                    code = codes[ i ];
+                }
+                KeyEvent event = new KeyEvent(btn, btn, KEY_PRESSED, "", str, code, false, false, false, false);
+
+                ctrl.toggleMusicEvent(event);
+                assertTrue("Start " + btn.getText() + "'s sound track", btn.isPlaying());
+
+                ctrl.toggleMusicEvent(event);
+                assertFalse("Stop " + btn.getText() + "'s sound track", btn.isPlaying());
+            }
             System.out.printf("Toggle Music Event: - passed\n" +
                     "\tStart playing the music track\n" +
                     "\tStop playing if playing\n\n");
@@ -476,7 +708,7 @@ public class ControllerTest {
             ctrl.toggleTapHold(new ActionEvent());
 
             assertTrue("Toggle tapHoldToggle to TAP", ctrl.tapHoldToggle);
-            assertEquals("Swap playStopToggle to 'Hold to Play'", "Hold to Play" , ctrl.playStopToggle.getText());
+            assertEquals("Swap playStopToggle to 'Hold to Play'", "Hold to Play", ctrl.playStopToggle.getText());
 
             ctrl.gui.getOnKeyPressed().handle(press);
             ctrl.gui.getOnKeyPressed().handle(press);
@@ -486,7 +718,7 @@ public class ControllerTest {
             ctrl.toggleTapHold(new ActionEvent());
 
             assertFalse("Toggle tapHoldToggle to HOLD", ctrl.tapHoldToggle);
-            assertEquals("Swap playStopToggle to 'Tap to Play'", "Tap to Play" , ctrl.playStopToggle.getText());
+            assertEquals("Swap playStopToggle to 'Tap to Play'", "Tap to Play", ctrl.playStopToggle.getText());
 
             ctrl.gui.getOnKeyPressed().handle(press);
             ctrl.gui.getOnKeyPressed().handle(press);
@@ -522,7 +754,7 @@ public class ControllerTest {
             ActionEvent event = new ActionEvent(item, null);
 
             ctrl.styleButton(Qbtn, event);
-            assertEquals("Change Qbtn's style class to red", "button red" , Qbtn.getStyleClass().toString());
+            assertEquals("Change Qbtn's style class to red", "button red", Qbtn.getStyleClass().toString());
 
             System.out.printf("Style Button: - passed\n" +
                     "\tChange the style class of the button\n\n");
@@ -560,7 +792,8 @@ public class ControllerTest {
                     "\tReset all button style classes back\n" +
                     "\t\twhite if a music track is assigned\n" +
                     "\t\tmedium-bg otherwise\n\n");
-        } catch (AssertionError ae) {
+        }
+        catch ( AssertionError ae ) {
 
             System.out.printf("Clear Colors: - failed\n" +
                     "\tReset all button style classes back\n" +
@@ -583,14 +816,15 @@ public class ControllerTest {
 
             assertEquals("Create a circle with the style class red", "red", item.getGraphic().getStyleClass().toString());
             assertEquals("Menuitem text is Red", "Red", item.getText());
-            
+
             item.getOnAction().handle(new ActionEvent(item, null));
             assertEquals("Change the style class of the Qbtn to red", "button red", Qbtn.getStyleClass().toString());
 
             System.out.printf("Color Menu Item: - passed\n" +
                     "\tCreate a menu item for the colors sub-menu\n" +
                     "\tCreate an event handler for the menu item");
-        } catch ( AssertionError ae ) {
+        }
+        catch ( AssertionError ae ) {
 
             System.out.printf("Color Menu Item: - failed\n" +
                     "\tCreate a menu item for the colors sub-menu\n" +
