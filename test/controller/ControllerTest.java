@@ -229,13 +229,13 @@ public class ControllerTest {
         String OS = System.getProperty("os.name");
         if ( OS.startsWith("Windows") ) {
 
-            sound1 = new File("bin\\Composite\\Loops\\Bass\\BassLoop (1).mp3");
-            sound2 = new File("bin\\Composite\\Drums\\Snare\\AcousticSnare (1).mp3");
+            sound1 = new File("\\BassLoop (1).mp3");
+            sound2 = new File("\\AcousticSnare (1).mp3");
         }
         else {
 
-            sound1 = new File("bin/Composite/Loops/Bass/BassLoop (1).mp3");
-            sound2 = new File("bin/Composite/Drums/Snare/AcousticSnare (1).mp3");
+            sound1 = new File(getClass().getResource("/BassLoop (1).mp3").toURI().toString());
+            sound2 = new File(getClass().getResource("/AcousticSnare (1).mp3").toURI().toString());
         }
     }
 
@@ -290,6 +290,7 @@ public class ControllerTest {
 
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
+            Qbtn.getSound().setMute(true);
 
             ctrl.playMusic(Qbtn);
             assertTrue("Start sound track", Qbtn.isPlaying());
@@ -316,6 +317,7 @@ public class ControllerTest {
 
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
+            Qbtn.getSound().setMute(true);
 
             ctrl.playMusic(Qbtn);
             ctrl.stopMusic(Qbtn);
@@ -341,6 +343,9 @@ public class ControllerTest {
             Qbtn.setSound(sound1);
             Wbtn.setSound(sound1);
             Gbtn.setSound(sound1);
+            Qbtn.getSound().setMute(true);
+            Wbtn.getSound().setMute(true);
+            Gbtn.getSound().setMute(true);
 
             Qbtn.getSound().setOnEndOfMedia(new Runnable() {
                 public void run() {
@@ -392,6 +397,7 @@ public class ControllerTest {
 
             Qbtn.setSound(sound2);
             Qbtn.getStyleClass().add("white");
+            Qbtn.getSound().setMute(true);
 
             Controller ctrl = new Controller();
             ctrl.Qbtn = Qbtn;
