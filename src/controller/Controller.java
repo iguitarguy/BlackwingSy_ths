@@ -260,7 +260,7 @@ public class Controller implements Initializable {
 //        }
     }
 
-    private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters ) {
+    private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initDir ) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
@@ -269,10 +269,14 @@ public class Controller implements Initializable {
             fileChooser.getExtensionFilters().addAll(filters);
         }
 
+        if (initDir != null) {
+            fileChooser.setInitialDirectory(new File(initDir));
+        }
+
         return fileChooser.showOpenDialog(null);
     }
 
-    private File saveDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initFileName ) throws FileNotFoundException {
+    private File saveDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initFileName, @Nullable String initDir ) throws FileNotFoundException {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
@@ -283,6 +287,10 @@ public class Controller implements Initializable {
 
         if ( initFileName != null ) {
             fileChooser.setInitialFileName(initFileName);
+        }
+
+        if (initDir != null) {
+            fileChooser.setInitialDirectory(new File(initDir));
         }
 
         File file = fileChooser.showSaveDialog(null);
@@ -308,20 +316,16 @@ public class Controller implements Initializable {
 
         if ( event.getButton().equals(MouseButton.PRIMARY) ) {
 
-            Button btn = (Button) event.getSource();
+            Button btn = (Button) event.getSource();;
 
-            FileChooser fileChooser = new FileChooser();
-//        	fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-            fileChooser.setTitle("Select Music Bite");
-
-            fileChooser.getExtensionFilters().addAll               (
-                    new FileChooser.ExtensionFilter("All Music", "*.*"),
-                    new FileChooser.ExtensionFilter("WAV", "*.wav", "*.wave"),
-                    new FileChooser.ExtensionFilter("MP4", "*.mp4"),
-                    new FileChooser.ExtensionFilter("MP3", "*.mp3"));
+            ArrayList<FileChooser.ExtensionFilter> filters = new ArrayList<>();
+            filters.add(new FileChooser.ExtensionFilter("All Music", "*.*"));
+            filters.add(new FileChooser.ExtensionFilter("WAV", "*.wav", "*.wave"));
+            filters.add(new FileChooser.ExtensionFilter("MP4", "*.mp4"));
+            filters.add(new FileChooser.ExtensionFilter("MP3", "*.mp3"));
 
             try {
-                File file = fileChooser.showOpenDialog(null);
+                File file = openDialog("Select Music Bite", filters, null);
                 btn.setSound(file);
                 btn.getStyleClass().add("white");
                 btn.getStyleClass().remove("medium-bg");
@@ -1153,7 +1157,7 @@ public class Controller implements Initializable {
         fe.add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
 
         try {
-            WriteFile writer = new WriteFile(out, saveDialog("Save Key Bindings", fe, "*.txt"));
+            WriteFile writer = new WriteFile(out, saveDialog("Save Key Bindings", fe, "*.txt", null));
         }
         catch ( NullPointerException npe ) {
             error.setText("No File Selected");
