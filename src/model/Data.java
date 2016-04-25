@@ -14,6 +14,7 @@ public class Data {
     public ArrayList< String > sfxP;
     public ArrayList< String > vocalP;
     public ArrayList< String > allP;
+    public File saveFile;
 
     public Data() throws Exception {
 
@@ -36,6 +37,8 @@ public class Data {
 
             unixFiles();
         }
+
+        saveFile = new File(System.getProperty("user.home")+File.separator+"blackwing"+File.separator+"key-bindings.txt");
     }
 
     private void unixFiles() throws Exception {
