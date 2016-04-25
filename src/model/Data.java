@@ -14,7 +14,6 @@ public class Data {
     public ArrayList< String > sfxP;
     public ArrayList< String > vocalP;
     public ArrayList< String > allP;
-    public File saveFile;
 
     public Data() throws Exception {
 
@@ -37,8 +36,6 @@ public class Data {
 
             unixFiles();
         }
-
-        saveFile = new File(System.getProperty("user.home")+File.separator+"blackwing"+File.separator+"key-bindings.txt");
     }
 
     private void unixFiles() throws Exception {
@@ -61,11 +58,11 @@ public class Data {
                 "/bin/Composite/Drums/Kick/Kick (3).mp3",
                 "/bin/Composite/Drums/Kick/Kick (4).mp3",
                 "/bin/Composite/Drums/Kick/Kick (5).mp3",
+                "/bin/Composite/Drums/Kick/Kick (6).mp3",
                 "/bin/Composite/Drums/Kick/Kick (7).mp3",
                 "/bin/Composite/Drums/Kick/Kick (8).mp3",
                 "/bin/Composite/Drums/Kick/Kick (9).mp3",
                 "/bin/Composite/Drums/Kick/Kick (10).mp3",
-                "/bin/Composite/Drums/Kick/Kick (6).mp3",
                 "/bin/Composite/Drums/Kick/Kick (11).mp3",
                 "/bin/Composite/Drums/Kick/Kick (12).mp3",
                 "/bin/Composite/Drums/Kick/Kick (13).mp3",
@@ -203,7 +200,7 @@ public class Data {
                 "\\bin\\Composite\\Loops\\Piano\\Piano (1).mp3",
                 "\\bin\\Composite\\Loops\\Piano\\Piano (5).mp3",
                 "\\bin\\Composite\\Loops\\Piano\\Piano (6).mp3",
-                "\\bin\\Composite\\Loops\\Piano\\Piano (7).mp3",
+                "\\bin\\Composite\\Loops\\Piano\\Piano (7).mp3"
         };
         String[] sfx = new String[] {
                 "\\bin\\Composite\\SFX\\Beat.mp3",
