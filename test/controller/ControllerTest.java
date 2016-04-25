@@ -229,8 +229,8 @@ public class ControllerTest {
         String OS = System.getProperty("os.name");
         if ( OS.startsWith("Windows") ) {
 
-            sound1 = new File("\\BassLoop (1).mp3");
-            sound2 = new File("\\AcousticSnare (1).mp3");
+            sound1 = new File(getClass().getResource("\\BassLoop (1).mp3").toURI().toString());
+            sound2 = new File(getClass().getResource("\\AcousticSnare (1).mp3").toURI().toString());
         }
         else {
 
