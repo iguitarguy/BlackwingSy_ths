@@ -16,15 +16,18 @@ import javafx.scene.media.MediaException;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import model.Button;
+import model.Data;
 import model.MenuItem;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 /**
  * Controller
@@ -119,15 +122,16 @@ public class Controller implements Initializable {
     private final boolean HOLD = false;
     private HostServices hostServices;
     protected ArrayList< Button > btns;
-    protected static ArrayList< String > hatP = new ArrayList< String >();
-    protected static ArrayList< String > kickP = new ArrayList< String >();
-    protected static ArrayList< String > snareP = new ArrayList< String >();
-    protected static ArrayList< String > bLoopP = new ArrayList< String >();
-    protected static ArrayList< String > dLoopP = new ArrayList< String >();
-    protected static ArrayList< String > pLoopP = new ArrayList< String >();
-    protected static ArrayList< String > sfxP = new ArrayList< String >();
-    protected static ArrayList< String > vocalP = new ArrayList< String >();
-    protected static ArrayList< String > allP = new ArrayList< String >();
+    protected Data data;
+    protected static ArrayList< String > hatP;
+    protected static ArrayList< String > kickP;
+    protected static ArrayList< String > snareP;
+    protected static ArrayList< String > bLoopP;
+    protected static ArrayList< String > dLoopP;
+    protected static ArrayList< String > pLoopP;
+    protected static ArrayList< String > sfxP;
+    protected static ArrayList< String > vocalP;
+    protected static ArrayList< String > allP;
 
     @Override
     public void initialize( URL location, ResourceBundle resources ) {
@@ -135,31 +139,24 @@ public class Controller implements Initializable {
         System.out.println("View is now loaded!");
         error.setText("Not all menu buttons are implemented yet.");
         this.tapHoldToggle = HOLD;
-        String OS = System.getProperty("os.name");
-        if ( OS.startsWith("Windows") ) {
 
-            fileWalk("bin\\Composite\\Drums\\Hat", hatP);
-            fileWalk("bin\\Composite\\Drums\\Kick", kickP);
-            fileWalk("bin\\Composite\\Drums\\Snare", snareP);
-            fileWalk("bin\\Composite\\Loops\\Bass", bLoopP);
-            fileWalk("bin\\Composite\\Loops\\Drum", dLoopP);
-            fileWalk("bin\\Composite\\Loops\\Piano", pLoopP);
-            fileWalk("bin\\Composite\\SFX", sfxP);
-            fileWalk("bin\\Composite\\Vocals", vocalP);
-            fileWalk("bin\\Composite\\", allP);
+        try {
+            data = new Data();
+            this.hatP = data.hatP;
+            this.kickP = data.kickP;
+            this.snareP = data.snareP;
+            this.bLoopP = data.bLoopP;
+            this.dLoopP = data.dLoopP;
+            this.pLoopP = data.pLoopP;
+            this.sfxP = data.sfxP;
+            this.vocalP = data.vocalP;
+            this.allP = data.allP;
         }
-        else {
+        catch ( Exception e ) {
+            System.out.println("Data Error");
+            e.printStackTrace();
+        }
 
-            fileWalk("bin/Composite/Drums/Hat", hatP);
-            fileWalk("bin/Composite/Drums/Kick", kickP);
-            fileWalk("bin/Composite/Drums/Snare", snareP);
-            fileWalk("bin/Composite/Loops/Bass", bLoopP);
-            fileWalk("bin/Composite/Loops/Drum", dLoopP);
-            fileWalk("bin/Composite/Loops/Piano", pLoopP);
-            fileWalk("bin/Composite/SFX", sfxP);
-            fileWalk("bin/Composite/Vocals", vocalP);
-            fileWalk("bin/Composite/", allP);
-        }
         btns = new ArrayList< Button >();
 
         btns.add(N1btn);
@@ -214,19 +211,51 @@ public class Controller implements Initializable {
 
     // Get File Paths
     public void fileWalk( String path, ArrayList< String > al ) {
-        try {
 
-            Files.walk(Paths.get(path)).forEach(filePath -> {
-                if ( Files.isRegularFile(filePath) ) {
-                    al.add(filePath.toString());
-                    //System.out.println(filePath);
-
-                }
-            });
-        }
-        catch ( IOException e ) {
-            e.printStackTrace();
-        }
+//        try {
+//
+//            final File jarFile = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
+//
+//            if ( jarFile.isFile() ) {
+//
+//                final JarFile jar = new JarFile(jarFile);
+//                final Enumeration< JarEntry > entries = jar.entries();
+//                while ( entries.hasMoreElements() ) {
+//                    final JarEntry je = entries.nextElement();
+//                    if ( je.getName().startsWith(path) && je.getName().contains(".") ) {
+////                        System.out.println(je.getName());
+//                        al.add("/" + je.getName());
+//                    }
+////                    if ( name.startsWith(path) && name.contains(".") ) {
+////                        al.add(name);
+////                    }
+//                }
+//            }
+//            else {
+//
+////                Files.walk(Paths.get(path)).forEach(filePath -> {
+////                    if ( Files.isRegularFile(filePath) ) {
+////                        al.add(filePath.toString());
+////                        //System.out.println(filePath);
+////
+////                    }
+////                });
+//
+//                final URL url = this.getClass().getResource("/" + path);
+//                if ( url != null ) {
+//                    final File apps = new File(url.toURI());
+//                    for ( File app : apps.listFiles() ) {
+//                        al.add(app.toString());
+//                    }
+//                }
+//            }
+//        }
+//        catch ( IOException e ) {
+//            e.printStackTrace();
+//        }
+//        catch ( URISyntaxException ex ) {
+//            ex.printStackTrace();
+//        }
     }
 
     /**
@@ -869,6 +898,7 @@ public class Controller implements Initializable {
     }
 
     //Create sound menu button
+    @FXML
     protected void soundButton( Button btn, ActionEvent event ) {
 
         // Retrieve the MenuItem clicked on
@@ -885,6 +915,8 @@ public class Controller implements Initializable {
         }
         catch ( MediaException me ) {
             this.error.setText("Unsupported File Type");
+            System.out.println(item.getFile());
+            me.printStackTrace();
         }
     }
 
@@ -933,12 +965,12 @@ public class Controller implements Initializable {
         Menu loops = new Menu("Loops");
         Menu vocals = new Menu("Vocals");
         Menu sEffects = new Menu("Sound Effects");
-        
+
         // Create sub-menus for Drums
         Menu dHat = new Menu("Hat");
         Menu dKick = new Menu("Kick");
         Menu dSnare = new Menu("Snare");
-        
+
         // Create sub-menus for Loops
         Menu bLoop = new Menu("Bass");
         Menu dLoop = new Menu("Drum");
@@ -949,12 +981,12 @@ public class Controller implements Initializable {
         sounds.getItems().add(loops);
         sounds.getItems().add(vocals);
         sounds.getItems().add(sEffects);
-        
+
         // Add sub-menus to Drums
         drums.getItems().add(dHat);
         drums.getItems().add(dKick);
         drums.getItems().add(dSnare);
-        
+
         // Add sub-menus to Loops
         loops.getItems().add(bLoop);
         loops.getItems().add(dLoop);
@@ -972,23 +1004,23 @@ public class Controller implements Initializable {
 
         // Add the drum menu items to the sub-menu
         for ( int i = 0; i < hatP.size(); i++ ) {
-        	dHat.getItems().add(soundMenuItem(btn, ( hatP.get(i) )));
+            dHat.getItems().add(soundMenuItem(btn, ( hatP.get(i) )));
         }
         for ( int i = 0; i < kickP.size(); i++ ) {
-        	dKick.getItems().add(soundMenuItem(btn, ( kickP.get(i) )));
+            dKick.getItems().add(soundMenuItem(btn, ( kickP.get(i) )));
         }
         for ( int i = 0; i < snareP.size(); i++ ) {
-        	dSnare.getItems().add(soundMenuItem(btn, ( snareP.get(i) )));
+            dSnare.getItems().add(soundMenuItem(btn, ( snareP.get(i) )));
         }
         // Add the loop menu items to the sub-menu
         for ( int i = 0; i < bLoopP.size(); i++ ) {
-        	bLoop.getItems().add(soundMenuItem(btn, ( bLoopP.get(i) )));
+            bLoop.getItems().add(soundMenuItem(btn, ( bLoopP.get(i) )));
         }
         for ( int i = 0; i < dLoopP.size(); i++ ) {
-        	dLoop.getItems().add(soundMenuItem(btn, ( dLoopP.get(i) )));
+            dLoop.getItems().add(soundMenuItem(btn, ( dLoopP.get(i) )));
         }
         for ( int i = 0; i < pLoopP.size(); i++ ) {
-        	pLoop.getItems().add(soundMenuItem(btn, ( pLoopP.get(i) )));
+            pLoop.getItems().add(soundMenuItem(btn, ( pLoopP.get(i) )));
         }
         // Add the SFX menu items to the sub-menu
         for ( int i = 0; i < sfxP.size(); i++ ) {
@@ -1044,7 +1076,11 @@ public class Controller implements Initializable {
 
         // Create the MenuItem and create an event handler
         File file = new File(str);
-        MenuItem item = new MenuItem(file.getName().substring(0, file.getName().length() - 4));
+        String name = file.getName().substring(0, file.getName().indexOf('.'));
+        if (name.contains("%")) {
+            name = name.substring(0, name.indexOf('%')) + " " + name.substring(name.indexOf('%') + 3);
+        }
+        MenuItem item = new MenuItem(name);
         item.setFile(file);
         item.setOnAction(new EventHandler< ActionEvent >() {
             public void handle( ActionEvent event ) {
