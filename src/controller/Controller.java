@@ -16,10 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaException;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
-import model.Button;
-import model.Data;
-import model.MenuItem;
-import model.WriteFile;
+import model.*;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -139,7 +136,7 @@ public class Controller implements Initializable {
     public void initialize( URL location, ResourceBundle resources ) {
 
         System.out.println("View is now loaded!");
-        error.setText("Not all menu buttons are implemented yet.");
+        error.setText("");
         this.tapHoldToggle = HOLD;
 
         try {
@@ -260,7 +257,7 @@ public class Controller implements Initializable {
 //        }
     }
 
-    private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initDir ) {
+    private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String fileExtention, @Nullable String initDir ) throws FileNotFoundException {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
@@ -269,11 +266,21 @@ public class Controller implements Initializable {
             fileChooser.getExtensionFilters().addAll(filters);
         }
 
-        if (initDir != null) {
+        if ( initDir != null ) {
             fileChooser.setInitialDirectory(new File(initDir));
         }
 
-        return fileChooser.showOpenDialog(null);
+        File file = fileChooser.showOpenDialog(null);
+
+        if ( file != null && fileExtention != null ) {
+            if ( file.getName().endsWith(fileExtention) ) {
+                return file;
+            }
+            else {
+                throw new FileNotFoundException(file.getName() + " does not have a valid file-extension");
+            }
+        }
+        return null;
     }
 
     private File saveDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initFileName, @Nullable String initDir ) throws FileNotFoundException {
@@ -289,7 +296,7 @@ public class Controller implements Initializable {
             fileChooser.setInitialFileName(initFileName);
         }
 
-        if (initDir != null) {
+        if ( initDir != null ) {
             fileChooser.setInitialDirectory(new File(initDir));
         }
 
@@ -316,16 +323,17 @@ public class Controller implements Initializable {
 
         if ( event.getButton().equals(MouseButton.PRIMARY) ) {
 
-            Button btn = (Button) event.getSource();;
+            Button btn = (Button) event.getSource();
+            ;
 
-            ArrayList<FileChooser.ExtensionFilter> filters = new ArrayList<>();
+            ArrayList< FileChooser.ExtensionFilter > filters = new ArrayList<>();
             filters.add(new FileChooser.ExtensionFilter("All Music", "*.*"));
             filters.add(new FileChooser.ExtensionFilter("WAV", "*.wav", "*.wave"));
             filters.add(new FileChooser.ExtensionFilter("MP4", "*.mp4"));
             filters.add(new FileChooser.ExtensionFilter("MP3", "*.mp3"));
 
             try {
-                File file = openDialog("Select Music Bite", filters, null);
+                File file = openDialog("Select Music Bite", filters, null, null);
                 btn.setSound(file);
                 btn.getStyleClass().add("white");
                 btn.getStyleClass().remove("medium-bg");
@@ -336,6 +344,9 @@ public class Controller implements Initializable {
             }
             catch ( MediaException me ) {
                 this.error.setText("Unsupported File Type");
+            }
+            catch ( FileNotFoundException fnf ) {
+                error.setText(fnf.getMessage());
             }
         }
     }
@@ -1143,6 +1154,124 @@ public class Controller implements Initializable {
         hostServices.showDocument("http://syths.io");
     }
 
+    protected Button findButton( String key ) {
+
+        Button btn = null;
+
+        switch ( key ) {
+            case "1btn":
+                btn = N1btn;
+                break;
+            case "2btn":
+                btn = N2btn;
+                break;
+            case "3btn":
+                btn = N3btn;
+                break;
+            case "4btn":
+                btn = N4btn;
+                break;
+            case "5btn":
+                btn = N5btn;
+                break;
+            case "6btn":
+                btn = N6btn;
+                break;
+            case "7btn":
+                btn = N7btn;
+                break;
+            case "8btn":
+                btn = N8btn;
+                break;
+            case "9btn":
+                btn = N9btn;
+                break;
+            case "0btn":
+                btn = N0btn;
+                break;
+            case "Qbtn":
+                btn = Qbtn;
+                break;
+            case "Wbtn":
+                btn = Wbtn;
+                break;
+            case "Ebtn":
+                btn = Ebtn;
+                break;
+            case "Rbtn":
+                btn = Rbtn;
+                break;
+            case "Tbtn":
+                btn = Tbtn;
+                break;
+            case "Ybtn":
+                btn = Ybtn;
+                break;
+            case "Ubtn":
+                btn = Ubtn;
+                break;
+            case "Ibtn":
+                btn = Ibtn;
+                break;
+            case "Obtn":
+                btn = Obtn;
+                break;
+            case "Pbtn":
+                btn = Pbtn;
+                break;
+            case "Abtn":
+                btn = Abtn;
+                break;
+            case "Sbtn":
+                btn = Sbtn;
+                break;
+            case "Dbtn":
+                btn = Dbtn;
+                break;
+            case "Fbtn":
+                btn = Fbtn;
+                break;
+            case "Gbtn":
+                btn = Gbtn;
+                break;
+            case "Hbtn":
+                btn = Hbtn;
+                break;
+            case "Jbtn":
+                btn = Jbtn;
+                break;
+            case "Kbtn":
+                btn = Kbtn;
+                break;
+            case "Lbtn":
+                btn = Lbtn;
+                break;
+            case "Zbtn":
+                btn = Zbtn;
+                break;
+            case "Xbtn":
+                btn = Xbtn;
+                break;
+            case "Cbtn":
+                btn = Cbtn;
+                break;
+            case "Vbtn":
+                btn = Vbtn;
+                break;
+            case "Bbtn":
+                btn = Bbtn;
+                break;
+            case "Nbtn":
+                btn = Nbtn;
+                break;
+            case "Mbtn":
+                btn = Mbtn;
+                break;
+        }
+
+        return btn;
+    }
+
     @FXML
     protected void save( ActionEvent event ) {
 
@@ -1150,20 +1279,86 @@ public class Controller implements Initializable {
 
         for ( int i = 0; i < btns.size(); i++ ) {
 
-            out.add(btns.get(i).toString());
+            String str = btns.get(i).toString();
+            if ( !str.isEmpty() ) {
+                out.add(str);
+            }
         }
 
         ArrayList< FileChooser.ExtensionFilter > fe = new ArrayList<>();
         fe.add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
 
         try {
-            WriteFile writer = new WriteFile(out, saveDialog("Save Key Bindings", fe, "*.txt", null));
+            WriteFile writer = new WriteFile(out, saveDialog("Save Key Bindings", fe, "*.txt", System.getProperty("user.home")));
         }
         catch ( NullPointerException npe ) {
             error.setText("No File Selected");
         }
         catch ( FileNotFoundException fnf ) {
             error.setText(fnf.getMessage());
+        }
+    }
+
+    @FXML
+    protected void open( ActionEvent event ) {
+
+        ArrayList< String > fileContents = new ArrayList<>();
+        ArrayList< FileChooser.ExtensionFilter > fe = new ArrayList<>();
+        fe.add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
+
+        try {
+            File file = openDialog("Open Key Bindings", fe, ".txt", System.getProperty("user.home"));
+            ReadFile reader = new ReadFile();
+            reader.readFile(file);
+            fileContents = reader.getFileList();
+        }
+        catch ( NullPointerException npe ) {
+            error.setText("No File Selected");
+        }
+        catch ( FileNotFoundException fnf ) {
+            error.setText(fnf.getMessage());
+        }
+
+        if ( !fileContents.isEmpty() ) {
+
+            reset(new ActionEvent());
+
+            for ( int i = 0; i < fileContents.size(); i++ ) {
+
+                String str = fileContents.get(i);
+                String key = str.substring(0, 1) + "btn";
+                str = str.substring(2);
+                File file = null;
+
+                if ( str.contains("file:") ) {
+
+                    file = new File(str.substring(0, str.indexOf(' ')));
+                    str = str.substring(str.indexOf(' ') + 1);
+                }
+
+                ArrayList< String > style = new ArrayList<>();
+                while ( !str.isEmpty() ) {
+                    String sClass = "";
+                    if ( str.contains(" ") ) {
+                        sClass = str.substring(0, str.indexOf(' '));
+                        str = str.substring(str.indexOf(' ') + 1);
+                    }
+                    else {
+                        sClass = str;
+                        str = "";
+                    }
+                    style.add(sClass);
+                }
+
+                Button btn = findButton(key);
+                if ( btn != null ) {
+                    if ( file != null ) {
+                        btn.setSound(file);
+                    }
+                    btn.getStyleClass().remove(btn.getStyleClass().size() - 1);
+                    btn.getStyleClass().addAll(style);
+                }
+            }
         }
     }
 
