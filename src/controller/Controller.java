@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.istack.internal.Nullable;
 import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,6 +19,7 @@ import javafx.stage.FileChooser;
 import model.Button;
 import model.Data;
 import model.MenuItem;
+import model.WriteFile;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -256,6 +258,44 @@ public class Controller implements Initializable {
 //        catch ( URISyntaxException ex ) {
 //            ex.printStackTrace();
 //        }
+    }
+
+    private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters ) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(title);
+
+        if ( filters != null ) {
+            fileChooser.getExtensionFilters().addAll(filters);
+        }
+
+        return fileChooser.showOpenDialog(null);
+    }
+
+    private File saveDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String initFileName ) throws FileNotFoundException {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(title);
+
+        if ( filters != null ) {
+            fileChooser.getExtensionFilters().addAll(filters);
+        }
+
+        if ( initFileName != null ) {
+            fileChooser.setInitialFileName(initFileName);
+        }
+
+        File file = fileChooser.showSaveDialog(null);
+
+        if ( file != null ) {
+            if ( file.getName().endsWith(initFileName.substring(1)) ) {
+                return file;
+            }
+            else {
+                throw new FileNotFoundException(file.getName() + " does not have a valid file-extension");
+            }
+        }
+        return null;
     }
 
     /**
@@ -1077,7 +1117,7 @@ public class Controller implements Initializable {
         // Create the MenuItem and create an event handler
         File file = new File(str);
         String name = file.getName().substring(0, file.getName().indexOf('.'));
-        if (name.contains("%")) {
+        if ( name.contains("%") ) {
             name = name.substring(0, name.indexOf('%')) + " " + name.substring(name.indexOf('%') + 3);
         }
         MenuItem item = new MenuItem(name);
@@ -1097,6 +1137,30 @@ public class Controller implements Initializable {
     @FXML
     protected void helpBtn( ActionEvent event ) {
         hostServices.showDocument("http://syths.io");
+    }
+
+    @FXML
+    protected void save( ActionEvent event ) {
+
+        ArrayList< String > out = new ArrayList<>();
+
+        for ( int i = 0; i < btns.size(); i++ ) {
+
+            out.add(btns.get(i).toString());
+        }
+
+        ArrayList< FileChooser.ExtensionFilter > fe = new ArrayList<>();
+        fe.add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
+
+        try {
+            WriteFile writer = new WriteFile(out, saveDialog("Save Key Bindings", fe, "*.txt"));
+        }
+        catch ( NullPointerException npe ) {
+            error.setText("No File Selected");
+        }
+        catch ( FileNotFoundException fnf ) {
+            error.setText(fnf.getMessage());
+        }
     }
 
 }
