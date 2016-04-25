@@ -49,7 +49,7 @@
 			<menus>
 				<Menu mnemonicParsing="false" text="File">
 					<items>
-						<MenuItem mnemonicParsing="false" text="Open Project" />
+						<MenuItem mnemonicParsing="false" text="Open Project" onAction="#open" />
 						<MenuItem mnemonicParsing="false" text="Save Project" onAction="#save" />
 						<MenuItem mnemonicParsing="false" onAction="#reset" text="Clear Project" />
 					</items>
