@@ -63,4 +63,19 @@ public class Button extends javafx.scene.control.Button {
     	this.sound = null;
     }
 
+    public String toString() {
+
+        String str = getText();
+
+        if (getSound() != null) {
+            str+= " " + getSound().getMedia().getSource().substring(5);
+        }
+
+        if (getStyleClass().toString().substring(7) != "") {
+            str+= " " + getStyleClass().toString().substring(7);
+        }
+
+        return str;
+    }
+
 }
