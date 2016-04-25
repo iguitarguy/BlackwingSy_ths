@@ -29,7 +29,7 @@ public class Button extends javafx.scene.control.Button {
     }
 
     public void setSound( File file ) {
-        this.sound = new MediaPlayer(new Media(file.toURI().toString()));
+        this.sound = new MediaPlayer(new Media(file.toString()));
     }
 
     public void setSound( Media media ) {
