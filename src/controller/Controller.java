@@ -208,55 +208,6 @@ public class Controller implements Initializable {
         this.hostServices = hostServices;
     }
 
-    // Get File Paths
-    public void fileWalk( String path, ArrayList< String > al ) {
-
-//        try {
-//
-//            final File jarFile = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-//
-//            if ( jarFile.isFile() ) {
-//
-//                final JarFile jar = new JarFile(jarFile);
-//                final Enumeration< JarEntry > entries = jar.entries();
-//                while ( entries.hasMoreElements() ) {
-//                    final JarEntry je = entries.nextElement();
-//                    if ( je.getName().startsWith(path) && je.getName().contains(".") ) {
-////                        System.out.println(je.getName());
-//                        al.add("/" + je.getName());
-//                    }
-////                    if ( name.startsWith(path) && name.contains(".") ) {
-////                        al.add(name);
-////                    }
-//                }
-//            }
-//            else {
-//
-////                Files.walk(Paths.get(path)).forEach(filePath -> {
-////                    if ( Files.isRegularFile(filePath) ) {
-////                        al.add(filePath.toString());
-////                        //System.out.println(filePath);
-////
-////                    }
-////                });
-//
-//                final URL url = this.getClass().getResource("/" + path);
-//                if ( url != null ) {
-//                    final File apps = new File(url.toURI());
-//                    for ( File app : apps.listFiles() ) {
-//                        al.add(app.toString());
-//                    }
-//                }
-//            }
-//        }
-//        catch ( IOException e ) {
-//            e.printStackTrace();
-//        }
-//        catch ( URISyntaxException ex ) {
-//            ex.printStackTrace();
-//        }
-    }
-
     private File openDialog( String title, @Nullable ArrayList< FileChooser.ExtensionFilter > filters, @Nullable String fileExtention, @Nullable String initDir ) throws FileNotFoundException {
 
         FileChooser fileChooser = new FileChooser();
